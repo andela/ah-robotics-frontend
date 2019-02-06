@@ -1,9 +1,9 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux';
 
-import app from "../containers/app/reducer";
+import appReducer from '../containers/app/state/reducer';
 
-const rootreducer = combineReducers({
-  app
+const rootReducer = combineReducers({
+  count: appReducer,
 });
 
-export default rootreducer;
+export default rootReducer;
