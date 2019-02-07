@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8a7f9d785f57487d82168df31da93cce)](https://app.codacy.com/app/Teatoller/ah-robotics-frontend?utm_source=github.com&utm_medium=referral&utm_content=andela/ah-robotics-frontend&utm_campaign=Badge_Grade_Dashboard)
+
 In the project directory, you can run:
 
 ### `npm start`
