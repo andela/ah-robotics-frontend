@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/andela/ah-robotics-frontend.svg?style=svg)](https://circleci.com/gh/andela/ah-robotics-frontend)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8694c456caebc8cb7b64/maintainability)](https://codeclimate.com/github/andela/ah-robotics-frontend/maintainability)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
