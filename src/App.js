@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from "react-router-dom"
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import Home from "./components/Home"
+import Home from './components/Home';
 import Login from './components/Login';
 import Error from './components/Error';
-import Navigation from './components/Navigation'
-
+import Navigation from './components/Navigation';
 
 class App extends Component {
   render() {

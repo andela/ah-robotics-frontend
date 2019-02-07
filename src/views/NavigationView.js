@@ -1,33 +1,12 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Menu } from 'semantic-ui-react'
+import React,{Component} from 'react';
+import NavigationView from '../components/Navigation';
 
-
-// Create a navigation Component View
-const NavigationView = ()=>(
-        <div>
-            
-            <Menu text>
-                <NavLink to="/">
-                    <Menu.Item name='Home'/>
-                </NavLink>
-                
-                <NavLink to="/login">
-                    <Menu.Item name='Login'/>
-                </NavLink>
-                <NavLink to="/register">
-                    <Menu.Item name='SignUp'/>
-                </NavLink>
-                <NavLink to="/articles">
-                    <Menu.Item name='Articles'/>
-                </NavLink><NavLink to="/profiles">
-                    <Menu.Item name='Profile'/>
-                </NavLink>
-            </Menu>
-
-        </div>
-
+class Navigation extends Component{
+  render(){
+    return(
+      <NavigationView />
     );
+  }
+}
 
-
-export default NavigationView;
+export default Navigation;
