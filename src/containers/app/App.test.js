@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import App from './index';
 
 describe('RootComponent', () => {
   it('app should render without crashing', () => {
@@ -8,3 +8,5 @@ describe('RootComponent', () => {
     expect(wrapper.length).toBe(1);
   });
 });
+
+it('renders without crashing', () => {});
