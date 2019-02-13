@@ -5,7 +5,6 @@ import './navigation.scss';
 
 const NavigationComponent = () => (
   <div>
-
     <Container>
       <Menu className="navbar" pointing secondary>
         <NavLink to="/">

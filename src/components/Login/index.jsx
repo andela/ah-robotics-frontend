@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
- Button,Label,Message, Form, Image, Grid, Header, Segment,
+ Button, Label, Message, Form, Image, Grid, Header, Segment,
 } from 'semantic-ui-react';
 import './login.scss';
 import PropTypes from 'prop-types';
