@@ -8,14 +8,14 @@ export const resetPasswordUser = (payload) => {
   return {
     type: RESET_PASSWORD_START,
     payload
-  }
+  };
 };
 
 export const resetPasswordSuccess = (payload) => {
   return {
     type: RESET_PASSWORD_SUCCESS,
     payload,
-  }
+  };
 };
 
 export const resetPasswordFail = payload => {
@@ -23,5 +23,5 @@ export const resetPasswordFail = payload => {
   return {
     type: RESET_PASSWORD_ERROR,
     payload,
-  }
+  };
 };

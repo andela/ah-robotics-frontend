@@ -11,21 +11,21 @@ const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
         <Image textAlign='center' src={logo} className="img-logo" alt="logo" />
         <Header as='h2' className='login-header' textAlign='center'>
           Reset Password
-            </Header>
+        </Header>
         <p textAlign='center' id='requirement-text' fluid>Enter your email address below and we'll send you a link to reset your password</p>
         <Form size='large'>
           <Segment basic>
             {(response.errors) ? (
-              <p style={{ color: "#ff4c4c" }}>{response.errors[0]}</p>
+              <p style={{ color: 'red' }}>{response.errors[0]}</p>
             ) : (
-              <p style={{ color: "#00d0a0" }}>Success! {response.message}</p>
+              <p style={{ color: '#00d0a0' }}>Success! {response.message}</p>
               
-              )}
+            )}
             <Form.Input fluid className='txt-login' placeholder='Email address' transparent onChange={onChange} name="email" />
             <br />
             <Button type="submit" color='bg-green' className='btn-login' fluid size='large' style={{ border: 30 }} onClick={handleSubmit}>
               Reset Password
-                </Button>
+            </Button>
           </Segment>
         </Form>
         <br />
