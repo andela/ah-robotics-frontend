@@ -5,6 +5,7 @@ import './navigation.scss';
 import PropTypes from 'prop-types';
 import { logout } from '../../utils/auth';
 
+
 const guestLinks = (
   <Menu.Menu position="right">
     <NavLink to="/">
