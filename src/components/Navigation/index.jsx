@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Container } from 'semantic-ui-react';
-import './navigation.scss';
+
 
 const NavigationComponent = () => (
   <div>
@@ -28,7 +28,6 @@ const NavigationComponent = () => (
         </Menu.Menu>
       </Menu>
     </Container>
-
   </div>
 
 );

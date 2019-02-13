@@ -7,7 +7,13 @@ import {
 const initialState = {
   user: {},
   success: false,
+<<<<<<< HEAD
   isRegistering: false
+=======
+  isRegistering: false,
+  message: '',
+  errors: {}
+>>>>>>> feat(userRegistration): add registration functionality
 };
 
 const registerReducer = (state = initialState, action) => {
@@ -17,10 +23,17 @@ const registerReducer = (state = initialState, action) => {
   }
   case REGISTER_SUCCESS: {
     return {
+<<<<<<< HEAD
       ...state,
       ...action.payload,
       success: true,
       isRegistering: false
+=======
+      ...action.payload,
+      success: true,
+      isRegistering: false,
+      message: 'success'
+>>>>>>> feat(userRegistration): add registration functionality
     };
   }
   case REGISTER_ERROR: {

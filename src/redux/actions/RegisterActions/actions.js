@@ -24,3 +24,4 @@ export const registerFail = (payload) => {
     payload: payload
   };
 };
+

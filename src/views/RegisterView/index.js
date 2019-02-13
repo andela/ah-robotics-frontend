@@ -18,11 +18,17 @@ class RegisterView extends React.Component {
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextprops){
+    if (nextprops.register.success === true) {
+      this.props.history.push('/login');
+    }
+  }
+
   onChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     const { registerUser: registerAction } = this.props;
     e.preventDefault();
     const registerData = {
@@ -30,14 +36,12 @@ class RegisterView extends React.Component {
       username: this.state.username,
       password: this.state.password,
     };
-    console.log(registerData);
-
     registerAction(registerData);
-
   }
   render() {
+    const loading = this.props.register.isRegistering
     return (
-      <RegisterComponent onChange={this.onChange} handleSubmit={this.handleSubmit} errors={this.props.register} />
+      <RegisterComponent onChange={this.onChange} handleSubmit={this.handleSubmit} errors={(this.props.register.errors) ? this.props.register.errors : null} loading={loading}/>
     );
   }
 }

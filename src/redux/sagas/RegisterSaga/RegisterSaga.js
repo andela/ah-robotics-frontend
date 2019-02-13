@@ -9,14 +9,10 @@ function* registerSaga({payload}) {
       type: types.REGISTER_SUCCESS,
       payload: {user: response.data.user}
     });
-
-    yield put({
-      type: types.CLEAR_ERRORS,
-    });
   } catch (err) {
     yield put({
       type: types.REGISTER_ERROR,
-      payload: err.response.data.errors
+      payload: {errors: err.response.data.errors}
     });
   }
 }
