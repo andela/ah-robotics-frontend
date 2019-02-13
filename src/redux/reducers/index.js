@@ -15,6 +15,7 @@ const rootReducer = combineReducers({
   newPassword: newPasswordReducer,
   articles: fetchArticlesReducer,
   createArticle: postArticlesReducer,
+  register: registerReducer,
 });
 
 export default rootReducer;
