@@ -5,15 +5,15 @@ import './register.scss';
 import logo from './logo.png';
 import NavigationComponent from '../../components/Navigation/';
 
-// Create a Register component view
-// This code is a modification of the sample login page in Semantic UI
-const RegisterComponent = ({ onChange, handleSubmit, errors, loading }) => {
+
+const RegisterComponent = ({ onChange, handleSubmit, errors, loading, registerSuccess: registerSuccess }) => {
   return (
     <div className='login-form'>
       <Grid textAlign='center' style={{height: '100%'}} verticalAlign='middle'>
         <Grid.Column className='form-container'>
           <Image src={logo} alt="logo"/>
           <Header as='h2'>Register</Header>
+          {registerSuccess.success === true && <Message color="success" size="tiny" content={registerSuccess.user.message}/> }
           <Form size='large'>
             <Segment basic>
               <p style={{ color: 'red' }}>{(errors) ? errors.email : null}</p> 
