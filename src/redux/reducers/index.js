@@ -16,6 +16,7 @@ const rootReducer = combineReducers({
   articles: fetchArticlesReducer,
   createArticle: postArticlesReducer,
   register: registerReducer,
+  verifyUser: verifyReducer
 });
 
 export default rootReducer;
