@@ -5,8 +5,8 @@ import { shallow } from 'enzyme';
 const response ={
   errors:{}
 };
-test('render a label', () => {
+it('render a label', () => {
   const wrapper = shallow(
     <ResetPasswordComponent response={response}/>);
-  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.length).toBe(1);
 });
