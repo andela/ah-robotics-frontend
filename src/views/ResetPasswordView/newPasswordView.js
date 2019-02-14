@@ -29,11 +29,9 @@ export class NewPasswordView extends Component {
       token: this.props.match.params.token
     };
 
-    //console.log(data)
     newPasswordAction(data);
   };
   render() {
-    console.log(this.props.newPassword.errors);
     return (
       <NewPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} response={this.props.newPassword}/>
     )

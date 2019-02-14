@@ -14,21 +14,13 @@ const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
              
           <Form size='large'>
             <Segment basic>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            
             <Form.Input transparent fluid placeholder='New Password' onChange={onChange} type='password' name="password"/>
-=======
-             
-=======
-             {(response.errors) ? (
-              <p style={{ color: 'red' }}>{response.errors.message}</p>
+           {(response.errors) ? (
+              (response.errors.errors) ? <p style={{ color: 'red' }}>{response.errors.errors.password[0]}</p> : <p style={{ color: 'red' }}>{response.errors[0]}</p>
             ) : (
               <p style={{ color: '#00d0a0' }}>{response.message}</p>
             )}
->>>>>>> 0feb002... feat(resetPassword): set new password
-            <Form.Input transparent fluid placeholder='Password' onChange={onChange} type='password' name="password"/>
->>>>>>> 6887917... feat(resetPassword): set new password functionality
+
             <br/>
             <Form.Input transparent fluid placeholder='Confirm Password' onChange={onChange} type='password' name="confirm_password"/>
             <br />
