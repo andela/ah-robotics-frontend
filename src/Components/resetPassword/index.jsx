@@ -23,7 +23,7 @@ const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
             )}
             <Form.Input fluid className='txt-login' placeholder='Email address' transparent onChange={onChange} name="email" />
             <br />
-            <Button type="submit" color='bg-green' className='btn-login' fluid size='large' style={{ border: 30 }} onClick={handleSubmit}>
+            <Button type="submit" color='#00d0a0' className='btn-login' loading={response.isReseting} fluid size='large' style={{ border: 30 }} onClick={handleSubmit}>
               Reset Password
             </Button>
           </Segment>
