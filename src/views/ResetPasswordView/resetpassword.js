@@ -22,11 +22,10 @@ export class ResetPasswordView extends Component {
       ...this.state
     };
 
-    console.log(data)
+    //console.log(data)
     resetPasswordAction(data);
   };
   render() {
-    console.log(this.props.resetPassword)
     return (
       <ResetPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} response={this.props.resetPassword}/>
     )

@@ -15,10 +15,9 @@ function* newPasswordSaga({payload}) {
     });
 
   } catch (err) {
-    // console.log(err.response.data)
     yield put({
       type: types.NEW_PASSWORD_ERROR,
-      payload: {errors: err.response.data.errors}
+      payload: {errors: err.response.data}
 
     });
   }

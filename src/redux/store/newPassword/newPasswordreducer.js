@@ -14,7 +14,7 @@ const initialState = {
 const newPasswordReducer = (state = initialState, action) => {
   switch (action.type) {
   case NEW_PASSWORD_START: {
-    return { ...state, isResetting: true };
+    return { ...state, isResetting: true, success: false };
   }
   case NEW_PASSWORD_SUCCESS: {
     return {
@@ -25,7 +25,7 @@ const newPasswordReducer = (state = initialState, action) => {
     };
   }
   case NEW_PASSWORD_ERROR: {
-    return { ...action.payload, isResetting: false };
+    return { ...action.payload, isResetting: false, message: 'fail' };
   }
   default:
     return state;

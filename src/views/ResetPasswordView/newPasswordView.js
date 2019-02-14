@@ -33,8 +33,9 @@ export class NewPasswordView extends Component {
     newPasswordAction(data);
   };
   render() {
+    console.log(this.props.newPassword.errors);
     return (
-      <NewPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} newPassword={this.props.newPassword ? this.props.newPassword : null}/>
+      <NewPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} response={this.props.newPassword}/>
     )
   }
 }
