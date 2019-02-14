@@ -17,5 +17,7 @@ describe('Password reset trigger', () => {
     it('should not dispatch NEW_PASSWORD_ERROR', () => {
         expect(newPasswordFail({}).type).toEqual(NEW_PASSWORD_ERROR);
         });
-
+    it('should accept change NEW_PASSWORD_SUCCESS', () => {
+        expect(newPasswordSuccess({}).type).toEqual(NEW_PASSWORD_SUCCESS);
+        });
 });
