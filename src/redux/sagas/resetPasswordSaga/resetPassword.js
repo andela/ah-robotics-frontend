@@ -4,7 +4,6 @@ import * as types from '../../actions/resetPasswordActions/resetPasswordTypes';
 
 
 function * resetPassword ({ payload }) {
-  // console.log({payload})
   try {
     const response = yield call(axios.post, 'http://127.0.0.1:8000/api/v1/account/forgot_password/', payload);
     yield put({

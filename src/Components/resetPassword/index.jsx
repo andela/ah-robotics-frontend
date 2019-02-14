@@ -16,7 +16,7 @@ const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
         <Form size='large'>
           <Segment basic>
             {(response.errors) ? (
-              <p style={{ color: 'red' }}>{response.errors[0]}</p>
+              <p style={{ color: 'red' }}>{response.errors}</p>
             ) : (
               <p style={{ color: '#00d0a0' }}>Success! {response.message}</p>
               

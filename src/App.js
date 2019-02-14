@@ -1,26 +1,30 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import HomeView from './views/HomeView';
-import RegisterView from './views/RegisterView';
-import LoginView from './views/LoginView';
-import Error from './views/ErrorView';
-import NavigationComponent from './views/NavigationVew';
-import VerifyRegistrationView from './views/VerifyRegistrationView/index';
+import Home from './components/Home';
+import Login from './components/Login';
+import Error from './components/Error';
+import ResetPasswordView from './views/ResetPasswordView/resetpassword';
+import NewPasswordView from './views/ResetPasswordView/newPasswordView';
 
-const App = () => (
-  <BrowserRouter>
-    <div>
-      <NavigationComponent />
-      <Switch>
-        <Route path="/" component={HomeView} exact />
-        <Route path="/login" component={LoginView} exact />
-        <Route path="/register" component={RegisterView} />
-        <Route path="/verify/:token" component={VerifyRegistrationView} />
-        <Route component={Error} />
-      </Switch>
-    </div>
-  </BrowserRouter>
-);
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+         
+          <Switch>
+            <Route path ="/" component={Home} exact/>
+            <Route path ="/login" component={Login}/>
+            <Route path ="/resetpassword" component={ResetPasswordView}/>
+            <Route path ="/reset_password/:token" component={NewPasswordView} />
+            <Route component={Error}/>
+          
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
 
 export default App;
