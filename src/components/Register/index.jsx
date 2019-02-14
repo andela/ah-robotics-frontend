@@ -16,13 +16,13 @@ const RegisterComponent = ({ onChange, handleSubmit, errors, loading, registerSu
           {registerSuccess.success === true && <Message color="success" size="tiny" content={registerSuccess.user.message}/> }
           <Form size='large'>
             <Segment basic>
-              <p style={{ color: 'red' }}>{(errors) ? errors.email : null}</p> 
-              <Form.Input transparent fluid placeholder='Email' onChange={onChange} name="email"/>
-              <p style={{ color: 'red' }}>{(errors) ? errors.username : null}</p>
-              <Form.Input transparent fluid placeholder='Username' onChange={onChange} name="username"/>
-              <p style={{ color: 'red' }}>{(errors) ? errors.password : null}</p>
-              <Form.Input transparent fluid placeholder='Password' onChange={onChange} type='password' name="password"/>
-              <Form.Input transparent fluid placeholder='Confirm Password' onChange={onChange} type='password'/>
+              {((errors) ? errors.email : null) ? <Label size="tiny" pointing="below" basic color="red">{errors.email }</Label>: null}
+              <Form.Input transparent fluid placeholder='Email' onChange={onChange} name="email" icon='mail' iconPosition='left'/>
+              {((errors) ? errors.username : null) ? <Label size="tiny" pointing="below" basic color="red">{errors.username }</Label>: null}
+              <Form.Input transparent fluid placeholder='Username' onChange={onChange} name="username" icon='user' iconPosition='left'/>
+              {((errors) ? errors.password : null) ? <Label size="tiny" pointing="below" basic color="red">{errors.password }</Label>: null}
+              <Form.Input transparent fluid placeholder='Password' onChange={onChange} type='password' name="password" icon='lock' iconPosition='left'/>
+              <Form.Input transparent fluid placeholder='Confirm Password' onChange={onChange} type='password' name="confirmPassword" icon='lock' iconPosition='left'/>
               <br/>
               <Button fluid size='medium' loading={loading} onClick={handleSubmit}>Register
               </Button>

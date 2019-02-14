@@ -41,7 +41,13 @@ class RegisterView extends React.Component {
   render() {
     const loading = this.props.register.isRegistering
     return (
-      <RegisterComponent onChange={this.onChange} handleSubmit={this.handleSubmit} errors={(this.props.register.errors) ? this.props.register.errors : null} loading={loading}/>
+      <RegisterComponent
+        onChange={this.onChange}
+        handleSubmit={this.handleSubmit}
+        registerSuccess={this.props.register}
+        errors={this.props.register.errors ? this.props.register.errors : null}
+        loading={loading}
+      />
     );
   }
 }

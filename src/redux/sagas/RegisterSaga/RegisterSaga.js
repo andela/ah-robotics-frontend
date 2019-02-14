@@ -4,7 +4,7 @@ import axios from 'axios';
 
 function* registerSaga({payload}) {
   try {
-    const response = yield call(axios.post, 'https://ah-robotics-staging.herokuapp.com/api/v1/users/', {user: payload});
+    const response = yield call(axios.post, 'http://127.0.0.1:8000/api/v1/users/', {user: payload});
     yield put({
       type: types.REGISTER_SUCCESS,
       payload: {user: response.data.user}

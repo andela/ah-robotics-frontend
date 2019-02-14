@@ -1,10 +1,12 @@
-import { fork, all } from 'redux-saga/effects';
 import loginWatcher from './LoginSaga/loginSaga';
+import { all, fork } from 'redux-saga/effects';
 import watchRegister from './RegisterSaga/RegisterSaga';
+import watchVerify from './VerifyRegistrationSaga/VerifyRegistrationSaga';
+
 
 export default function* rootSaga() {
-  yield all([
-    fork(loginWatcher),
-    fork(watchRegister),
-  ]);
+  yield fork(loginWatcher);
+  yield fork(watchRegister);
+  yield fork(watchVerify);
+
 }
