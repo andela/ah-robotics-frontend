@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
- Button,Label,Message, Form, Image, Grid, Header, Segment,
+ Button, Label, Message, Form, Image, Grid, Header, Segment,
 } from 'semantic-ui-react';
 import './login.scss';
 import PropTypes from 'prop-types';
@@ -45,6 +45,7 @@ const LoginComponent = ({
               onChange={onChange}
             />
             <Form.Field>
+              {(login.errors.password) ? <Label size="tiny" pointing="below" basic color="red">{login.errors.password}</Label> : null}
               <Form.Input
                 transparent
                 fluid
@@ -56,7 +57,6 @@ const LoginComponent = ({
                 name="password"
                 onChange={onChange}
               />
-              {(login.errors.password) ? <Label size="tiny" pointing basic color="red">{login.errors.password}</Label> : null}
             </Form.Field>
             <br />
             <Button type="submit" loading={login.isLoading} className="btn-login bg-green" fluid size="medium" style={{ border: 30 }} onClick={handleSubmit}>
@@ -75,11 +75,11 @@ const LoginComponent = ({
         <br />
         <p>
               Forgot
-          <NavLink to="reset"> Password? Reset.</NavLink>
+          <NavLink to="reset"> Password? Reset</NavLink>
         </p>
         <p>
               Dont have an account?
-          <NavLink to="register">Register</NavLink>
+          <NavLink to="register"> Register</NavLink>
           {' '}
 
         </p>

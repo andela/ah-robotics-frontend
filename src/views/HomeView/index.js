@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import HomeComponent from '../../components/Home/index';
 
-const HomeView = () => (
-  <HomeComponent />
-);
+class HomeView extends Component {
+  render() {
+    const { login } = this.props;
+    return (
+      <HomeComponent user={login.user} />
+    );
+  }
+}
 
-export default HomeView;
+const mapStateToProps = ({ login }) => ({
+  login,
+});
+
+HomeView.propTypes = {
+  login: PropTypes.shape({}).isRequired,
+};
+export default connect(mapStateToProps)(HomeView);

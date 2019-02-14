@@ -12,9 +12,7 @@ function* loginWorker({ payload }) {
     });
     const { token } = response.data.user;
     localStorage.setItem('accessToken', token);
-    setTimeout(() => {
-    window.location.replace('/');
-    }, 800);
+    localStorage.setItem('user', response.data.user);
   } catch (error) {
     yield put({
       type: types.LOGIN_ERROR,

@@ -2,7 +2,7 @@ import {
   LOGIN_USER,
   LOGIN_SUCCESS,
   LOGIN_ERROR,
-} from '../../actions/LoginActions/types'
+} from '../../actions/LoginActions/types';
 
 export const initialState = {
   user: {},
@@ -18,12 +18,17 @@ const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER: {
       return {
- ...state, isLoading: true, errors: {}, isAuthenticated: false };
+ ...state, isLoading: true, errors: {}, isAuthenticated: false,
+};
     }
     case LOGIN_SUCCESS: {
       return {
-        ...state, ...action.payload, isLoading: false, errors: {},
-        success: true, isAuthenticated: true,
+        ...state,
+...action.payload,
+isLoading: false,
+errors: {},
+        success: true,
+isAuthenticated: true,
       };
     }
     case LOGIN_ERROR: {
