@@ -14,8 +14,13 @@ const NewPasswordComponent = ({ onChange, handleSubmit }) => (
              
           <Form size='large'>
             <Segment basic>
+<<<<<<< HEAD
             
             <Form.Input transparent fluid placeholder='New Password' onChange={onChange} type='password' name="password"/>
+=======
+             
+            <Form.Input transparent fluid placeholder='Password' onChange={onChange} type='password' name="password"/>
+>>>>>>> 6887917... feat(resetPassword): set new password functionality
             <br/>
             <Form.Input transparent fluid placeholder='Confirm Password' onChange={onChange} type='password' name="confirm_password"/>
             <br />

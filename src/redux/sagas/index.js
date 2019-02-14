@@ -7,6 +7,7 @@ import watchResetPassword from './resetPasswordSaga/resetPassword';
 import watchNewPassword from './newPasswordSaga/newPassword';
 
 export default function* rootSaga() {
+
   yield all([
     fork(loginWatcher),
     fork(watchRegister),
