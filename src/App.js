@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Home from './components/Home';
-import Login from './components/Login';
-import Error from './components/Error';
-import ResetPasswordView from './views/ResetPasswordView/resetpasswordView';
-import NewPasswordView from './views/NewPasswordView/newPasswordView';
+import Home from './components/Home/index';
+import Login from './components/Login/index';
+import Error from './components/Error/index';
+import ResetPasswordView from './views/ResetPasswordView';
+import NewPasswordView from './views/NewPasswordView';
 
 class App extends Component {
   render() {

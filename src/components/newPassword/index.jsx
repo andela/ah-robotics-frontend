@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, Image, Grid, Header, Segment } from 'semantic-ui-react';
-import './resetpassword.scss';
+import './newpassword.scss';
 import logo from './logo.png';
 
 export const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
@@ -22,7 +22,8 @@ export const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
             )}
 
             <br/>
-            <Form.Input transparent fluid placeholder='Confirm Password' onChange={onChange} type='password' name="confirm_password"/>
+            <Form.Input transparent
+             fluid placeholder='Confirm Password' onChange={onChange} type='password' name="confirm_password"/>
             <br />
               <Button type="submit" color='bg-green' className='btn-login' fluid size='large' loading={response.isResetting} style={{ border: 30 }} onClick={handleSubmit}>
                 Reset Password

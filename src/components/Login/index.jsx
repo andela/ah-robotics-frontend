@@ -93,4 +93,5 @@ LoginComponent.propTypes = {
   login: PropTypes.shape({}).isRequired,
 
 };
+
 export default LoginComponent;

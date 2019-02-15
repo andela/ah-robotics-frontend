@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import NewPasswordComponent from '../../components/newPassword';
+import NewPasswordComponent from '../../components/newPassword/index'
 import { newPasswordStart } from '../../redux/actions/newPasswordActions/actions';
 
 export class NewPasswordView extends Component {
@@ -34,7 +34,7 @@ export class NewPasswordView extends Component {
   render() {
     return (
       <NewPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} response={this.props.newPassword}/>
-    )
+      )
   }
 }
 const mapStateToProps = (state) => ({
