@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import ResetPasswordComponent from "../../components/resetPassword"
+import ResetPasswordComponent from '../../components/resetPassword';
 import { resetPasswordUser } from '../../redux/actions/resetPasswordActions/resetPasswordActions';
 
 export class ResetPasswordView extends Component {

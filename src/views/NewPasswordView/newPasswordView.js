@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import NewPasswordComponent from "../../components/newPassword";
+import NewPasswordComponent from '../../components/newPassword';
 import { newPasswordStart } from '../../redux/actions/newPasswordActions/actions';
 
 export class NewPasswordView extends Component {

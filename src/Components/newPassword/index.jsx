@@ -3,7 +3,7 @@ import { Button, Form, Image, Grid, Header, Segment } from 'semantic-ui-react';
 import './resetpassword.scss';
 import logo from './logo.png';
 
-const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
+export const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
     <div className='login-form'>
       <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
         <Grid.Column className='form-container' >
