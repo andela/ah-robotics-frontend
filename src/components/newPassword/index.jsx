@@ -14,9 +14,8 @@ export const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
              
           <Form size='large'>
             <Segment basic>
-            <Form.Input transparent fluid placeholder='New Password' onChange={onChange} type='password' name="password"/>
-           {(response.errors) ? (
-              (response.errors.errors) ? <p style={{ color: 'red' }}>{response.errors.errors.password[0]}</p> : <p style={{ color: 'red' }}>{response.errors[0]}</p>
+             {(response.errors) ? (
+              (response.errors.errors) ? <p style={{ color: 'red' }}>{response.errors.errors.password[0]}</p> : <p style={{ color: 'red' }}>{response.errors.message}</p>
             ) : (
               <p style={{ color: '#00d0a0' }}>{response.message}</p>
             )}

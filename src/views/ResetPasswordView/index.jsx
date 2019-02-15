@@ -26,6 +26,10 @@ export class ResetPasswordView extends Component {
     resetPasswordAction(data);
   };
   render() {
+<<<<<<< HEAD
+=======
+    //console.log(this.props.resetPassword)
+>>>>>>> c6d89c5... feat(resetPassword): fix reset password errors
     return (
       <ResetPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} response={this.props.resetPassword}/>
     )

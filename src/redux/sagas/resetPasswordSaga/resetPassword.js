@@ -11,7 +11,6 @@ function * resetPassword ({ payload }) {
       payload: {message: response.data.message} 
     });
   } catch (err) {
-    console.log(err.response.data);
     yield put({
       type: types.RESET_PASSWORD_ERROR,
       payload: {errors: err.response.data}
