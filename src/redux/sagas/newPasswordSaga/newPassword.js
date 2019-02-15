@@ -8,7 +8,7 @@ function* newPasswordSaga({payload}) {
       password: payload.password,
       confirm_password: payload.confirm_password
     };
-    const response = yield call(axios.put, `http://127.0.0.1:8000/api/v1/account/reset_password/${payload.token}`, passData);
+    const response = yield call(axios.put, `https://ah-robotics-staging.herokuapp.com/api/v1/account/reset_password/${payload.token}`, passData);
     yield put({
       type: types.NEW_PASSWORD_SUCCESS,
       payload: response.data.user

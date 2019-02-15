@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, Image, Grid, Header, Segment } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom'
 import './resetpassword.scss';
 import logo from './logo.png';
 
@@ -29,7 +30,7 @@ const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
         </Form>
         <br />
 
-        <p id='return-text' ><a href="#"> Log In</a> or <a href="#"> Sign Up </a></p>
+        <p id='return-text'><NavLink to='/login'> Log In</NavLink> or<NavLink to='/login'> Sign Up</NavLink> </p>
       </Grid.Column>
     </Grid>
   </div>
