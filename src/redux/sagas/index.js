@@ -1,6 +1,8 @@
-import { fork } from 'redux-saga/effects';
-import updateCountSaga from './sagas';
+import { fork, all } from 'redux-saga/effects';
+import loginWatcher from './LoginSaga/loginSaga';
 
 export default function* rootSaga() {
-  yield fork(updateCountSaga);
+  yield all([
+    fork(loginWatcher),
+  ]);
 }
