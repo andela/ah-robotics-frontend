@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -27,6 +28,13 @@ import {connect} from "react-redux";
 import VerifyRegistrationComponent from "../../components/VerifyRegistration";
 import {verifyUser} from "../../redux/actions/VerifyRegistrationActions/actions";
 import {bindActionCreators} from "redux";
+=======
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import VerifyRegistrationComponent from '../../components/VerifyRegistration';
+import { verifyUser } from '../../redux/actions/VerifyRegistrationActions/actions';
+>>>>>>> feat(register): add more tests
 
 class VerifyRegistrationView extends React.Component {
   constructor(props) {
@@ -34,20 +42,16 @@ class VerifyRegistrationView extends React.Component {
     this.state = {
       verified: false,
       message: '',
-      errors: {}
+      errors: {},
     };
   }
- 
 
-  componentDidMount(){
+
+  componentDidMount() {
       const { verifyUser: verifyAction } = this.props;
-      const token = this.props.match.params.token
-      verifyAction({token})
+      const token = this.props.match.params.token;
+      verifyAction({ token });
   }
-
-  componentWillReceiveProps(nextprops) {
-
-}
 
 
   render() {
@@ -62,6 +66,7 @@ class VerifyRegistrationView extends React.Component {
   }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 VerifyRegistrationView.propTypes = {
   verifyUser: PropTypes.func.isRequired,
@@ -91,12 +96,20 @@ const mapStateToProps = state => {
     verify: state.verifyUser
   };
 };
+=======
+const mapStateToProps = state => ({
+    verify: state.verifyUser,
+  });
+>>>>>>> feat(register): add more tests
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({verifyUser}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ verifyUser }, dispatch);
 
 export default connect(
   mapStateToProps,
+<<<<<<< HEAD
   mapDispatchToProps
 >>>>>>> feat(register): add email verification functionality
+=======
+  mapDispatchToProps,
+>>>>>>> feat(register): add more tests
 )(VerifyRegistrationView);

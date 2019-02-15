@@ -19,7 +19,7 @@ class RegisterView extends Component {
     }
   }
 
-  componentWillReceiveProps(nextprops){
+  componentWillReceiveProps(nextprops) {
     if (nextprops.register.success === true) {
       this.props.history.push('/login');
     }
@@ -29,7 +29,7 @@ class RegisterView extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     const { registerUser: registerAction } = this.props;
     const data = this.state;
     e.preventDefault();

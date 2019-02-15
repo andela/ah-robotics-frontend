@@ -45,12 +45,14 @@ const protectedLinks = (
 
 const NavigationComponent = ({ isAuthenticated }) => (
   <div>
+
     <Container>
       <Menu className="navbar" pointing secondary>
         {!isAuthenticated && guestLinks}
         {isAuthenticated && protectedLinks}
       </Menu>
     </Container>
+
   </div>
 );
 
