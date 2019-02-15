@@ -1,8 +1,8 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import RegisterView from './index';
-import RegisterComponent from '../../components/Register';
+import VerifyRegistrationView from './index';
+import VerifyRegistrationComponent from '../../components/VerifyRegistration';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -11,7 +11,13 @@ function setup() {
     register: {},
   };
 
-  const wrapper = shallow(<RegisterComponent registerSuccess={registerSuccess} />);
+  const verifyUser = {
+    errors: {},
+  };
+
+  const wrapper = shallow(
+    <VerifyRegistrationComponent registerSuccess={registerSuccess} verifyUser={verifyUser} />,
+);
 
   return {
     // props,
@@ -29,7 +35,7 @@ describe('Register View', () => {
     expect(wrapper.find('button')).toBeDefined();
   });
   it('app should match the snapshot', () => {
-    const wrapper = shallow(<RegisterView />);
+    const wrapper = shallow(<VerifyRegistrationView />);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -6,7 +6,7 @@ import verifyReducer from './VerifyRegristrationReducer/verifyRegistrationReduce
 const rootReducer = combineReducers({
   login: loginReducer,
   register: registerReducer,
-  verifyUser: verifyReducer
+  verifyUser: verifyReducer,
 });
 
 export default rootReducer;

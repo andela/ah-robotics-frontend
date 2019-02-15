@@ -1,25 +1,26 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
-import * as types from '../../actions/RegisterActions/types';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
+import * as types from '../../actions/RegisterActions/types';
 
-function* registerSaga({payload}) {
+function* registerSaga({ payload }) {
   try {
-    const response = yield call(axios.post, 'http://127.0.0.1:8000/api/v1/users/', {user: payload});
+    const response = yield call(axios.post, 'https://ah-robotics-staging.herokuapp.com/api/v1/users/', { user: payload });
     yield put({
       type: types.REGISTER_SUCCESS,
-      payload: {user: response.data.user}
+      payload: { user: response.data.user },
     });
   } catch (err) {
     yield put({
       type: types.REGISTER_ERROR,
-      payload: {errors: err.response.data.errors}
+      payload: { errors: err.response.data.errors },
     });
   }
 }
 
 function* watchRegister() {
   yield takeEvery(
-    types.REGISTER_START, registerSaga)
+    types.REGISTER_START, registerSaga,
+);
 }
 
 export default watchRegister;

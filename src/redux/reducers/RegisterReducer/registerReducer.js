@@ -1,19 +1,15 @@
 import {
   REGISTER_START,
   REGISTER_SUCCESS,
-  REGISTER_ERROR
+  REGISTER_ERROR,
 } from '../../actions/RegisterActions/types';
 
 const initialState = {
   user: {},
   success: false,
-<<<<<<< HEAD
-  isRegistering: false
-=======
   isRegistering: false,
   message: '',
-  errors: {}
->>>>>>> feat(userRegistration): add registration functionality
+  errors: {},
 };
 
 const registerReducer = (state = initialState, action) => {
@@ -23,17 +19,10 @@ const registerReducer = (state = initialState, action) => {
   }
   case REGISTER_SUCCESS: {
     return {
-<<<<<<< HEAD
-      ...state,
-      ...action.payload,
-      success: true,
-      isRegistering: false
-=======
       ...action.payload,
       success: true,
       isRegistering: false,
-      message: 'success'
->>>>>>> feat(userRegistration): add registration functionality
+      message: 'success',
     };
   }
   case REGISTER_ERROR: {

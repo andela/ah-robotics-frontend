@@ -6,10 +6,10 @@ describe('Login reducer tests', () => {
     expect(loginReducer(initialState, {})).toEqual(initialState);
   });
   it('it should show is loading on login submit', () => {
-  expect(loginReducer(null, {
-    type: LOGIN_USER,
-    payload: {},
-  }).isLoading).toEqual(true);
+    expect(loginReducer(null, {
+      type: LOGIN_USER,
+      payload: {},
+    }).isLoading).toEqual(true);
   });
   it('it should set isAuthenticated to true on login success', () => {
     expect(loginReducer(null, {

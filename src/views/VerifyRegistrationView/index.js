@@ -1,8 +1,8 @@
-import React from "react";
-import {connect} from "react-redux";
-import VerifyRegistrationComponent from "../../components/VerifyRegistration";
-import {verifyUser} from "../../redux/actions/VerifyRegistrationActions/actions";
-import {bindActionCreators} from "redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import VerifyRegistrationComponent from '../../components/VerifyRegistration';
+import { verifyUser } from '../../redux/actions/VerifyRegistrationActions/actions';
 
 class VerifyRegistrationView extends React.Component {
   constructor(props) {
@@ -10,20 +10,16 @@ class VerifyRegistrationView extends React.Component {
     this.state = {
       verified: false,
       message: '',
-      errors: {}
+      errors: {},
     };
   }
- 
 
-  componentDidMount(){
+
+  componentDidMount() {
       const { verifyUser: verifyAction } = this.props;
-      const token = this.props.match.params.token
-      verifyAction({token})
+      const token = this.props.match.params.token;
+      verifyAction({ token });
   }
-
-  componentWillReceiveProps(nextprops) {
-
-}
 
 
   render() {
@@ -37,16 +33,13 @@ class VerifyRegistrationView extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    verify: state.verifyUser
-  };
-};
+const mapStateToProps = state => ({
+    verify: state.verifyUser,
+  });
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({verifyUser}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ verifyUser }, dispatch);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(VerifyRegistrationView);

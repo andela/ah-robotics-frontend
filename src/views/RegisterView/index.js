@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import RegisterComponent from '../../components/Register';
 import { registerUser } from '../../redux/actions/RegisterActions/actions';
-import { bindActionCreators } from 'redux';
 
 class RegisterView extends React.Component {
   constructor(props) {
@@ -12,13 +12,13 @@ class RegisterView extends React.Component {
       username: '',
       password: '',
       confirmPassword: '',
-      errors: {}
+      errors: {},
     };
     // this.onChange = this.onChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextprops){
+  componentWillReceiveProps(nextprops) {
     if (nextprops.register.success === true) {
       this.props.history.push('/login');
     }
@@ -28,7 +28,7 @@ class RegisterView extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     const { registerUser: registerAction } = this.props;
     e.preventDefault();
     const registerData = {
@@ -38,8 +38,9 @@ class RegisterView extends React.Component {
     };
     registerAction(registerData);
   }
+
   render() {
-    const loading = this.props.register.isRegistering
+    const loading = this.props.register.isRegistering;
     return (
       <RegisterComponent
         onChange={this.onChange}
@@ -52,11 +53,9 @@ class RegisterView extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
+const mapStateToProps = state => ({
     register: state.register,
-  };
-};
+  });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ registerUser }, dispatch);
 

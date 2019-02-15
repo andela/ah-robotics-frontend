@@ -1,18 +1,18 @@
 import {
   VERIFY_START,
   VERIFY_ERROR,
-  VERIFY_SUCCESS
+  VERIFY_SUCCESS,
 } from '../../actions/VerifyRegistrationActions/types';
 
 const initialState = {
   success: false,
   isVerifying: false,
-  errors: {}
+  errors: {},
 };
 
 const verifyReducer = (state = initialState, action) => {
   switch (action.type) {
-  case  VERIFY_START: {
+  case VERIFY_START: {
     return { ...state, isVerifying: true };
   }
   case VERIFY_SUCCESS: {

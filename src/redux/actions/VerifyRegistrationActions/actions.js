@@ -1,26 +1,20 @@
 import {
   VERIFY_START,
   VERIFY_ERROR,
-  VERIFY_SUCCESS
+  VERIFY_SUCCESS,
 } from './types';
 
-export const verifyUser = (payload) => {
-  return {
+export const verifyUser = payload => ({
     type: VERIFY_START,
-    payload: payload
-  };
-};
+    payload,
+  });
 
-export const verifySuccess = (payload) => {
-  return {
+export const verifySuccess = payload => ({
     type: VERIFY_SUCCESS,
-    payload: payload
-  };
-};
+    payload,
+  });
 
-export const verifyFail = (payload) => {
-  return {
+export const verifyFail = payload => ({
     type: VERIFY_ERROR,
-    payload: payload
-  };
-};
+    payload,
+  });

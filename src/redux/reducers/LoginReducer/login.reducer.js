@@ -18,17 +18,17 @@ const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_USER: {
       return {
- ...state, isLoading: true, errors: {}, isAuthenticated: false,
-};
+        ...state, isLoading: true, errors: {}, isAuthenticated: false,
+      };
     }
     case LOGIN_SUCCESS: {
       return {
         ...state,
-...action.payload,
-isLoading: false,
-errors: {},
+        ...action.payload,
+        isLoading: false,
+        errors: {},
         success: true,
-isAuthenticated: true,
+        isAuthenticated: true,
       };
     }
     case LOGIN_ERROR: {

@@ -1,40 +1,26 @@
-import React, { Component } from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Home from './components/Home/';
-import LoginComponent from './components/Login/';
+import HomeView from './views/HomeView';
 import RegisterView from './views/RegisterView';
-import ErrorComponent from './components/Error/';
-<<<<<<< HEAD
-import NavigationComponent from './components/Navigation/';
-<<<<<<< HEAD
-=======
-// import NavigationComponent from './components/Navigation/';
->>>>>>> feat(userRegistration): add registration functionality
-=======
-import VerifyRegistrationView from './views/VerifyRegistrationView';
->>>>>>> feat(register): add email verification functionality
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <div>
-<<<<<<< HEAD
-          <NavigationComponent/>
-=======
-          {/*<NavigationComponent/>*/}
->>>>>>> feat(userRegistration): add registration functionality
-          <Switch>
-            <Route path ="/" component={Home} exact/>
-            <Route path ="/login" component={LoginComponent}/>
-            <Route path ="/register" component={RegisterView}/>
-            <Route path ="/verify/:token" component={VerifyRegistrationView}/>
-            <Route component={ErrorComponent}/>
-          </Switch>
-        </div>
-      </BrowserRouter>
-    );
-  }
-}
+import LoginView from './views/LoginView';
+import Error from './views/ErrorView';
+import NavigationComponent from './views/NavigationVew';
+import VerifyRegistrationView from './views/VerifyRegistrationView/index';
+
+const App = () => (
+  <BrowserRouter>
+    <div>
+      <NavigationComponent />
+      <Switch>
+        <Route path="/" component={HomeView} exact />
+        <Route path="/login" component={LoginView} exact />
+        <Route path="/register" component={RegisterView} />
+        <Route path="/verify/:token" component={VerifyRegistrationView} />
+        <Route component={Error} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+);
 
 export default App;

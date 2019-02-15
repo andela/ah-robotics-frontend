@@ -1,27 +1,20 @@
 import {
   REGISTER_START,
   REGISTER_ERROR,
-  REGISTER_SUCCESS
+  REGISTER_SUCCESS,
 } from './types';
 
-export const registerUser = (payload) => {
-  return {
+export const registerUser = payload => ({
     type: REGISTER_START,
-    payload: payload
-  };
-};
+    payload,
+  });
 
-export const registerSuccess = (payload) => {
-  return {
+export const registerSuccess = payload => ({
     type: REGISTER_SUCCESS,
-    payload: payload
-  };
-};
+    payload,
+  });
 
-export const registerFail = (payload) => {
-  return {
+export const registerFail = payload => ({
     type: REGISTER_ERROR,
-    payload: payload
-  };
-};
-
+    payload,
+  });
