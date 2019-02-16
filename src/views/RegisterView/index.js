@@ -19,9 +19,10 @@ class RegisterView extends Component {
     }
   }
 
-  componentWillReceiveProps(nextprops) {
-    if (nextprops.register.success === true) {
-      this.props.history.push('/login');
+  componentWillReceiveProps(nextProps) {
+    const { register, history } = nextProps;
+    if (register.success === true) {
+      history.push('/login');
     }
   }
 

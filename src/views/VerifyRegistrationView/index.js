@@ -8,6 +8,7 @@ import VerifyRegistrationComponent from '../../components/VerifyRegistration';
 import { verifyUser } from '../../redux/actions/VerifyRegistrationActions/actions';
 
 class VerifyRegistrationView extends React.Component {
+<<<<<<< HEAD
   componentDidMount() {
       const { verifyUser: verifyAction } = this.props;
       const { match } = this.props;
@@ -47,20 +48,28 @@ class VerifyRegistrationView extends React.Component {
   }
 
 
+=======
+>>>>>>> feat(register): refactor code
   componentDidMount() {
       const { verifyUser: verifyAction } = this.props;
-      const token = this.props.match.params.token;
+      const { match } = this.props;
+      const { token } = match.params;
       verifyAction({ token });
   }
 
 
   render() {
-    const loading = this.props.verify.isVerifying;
+    const current = this.props;
     return (
       <VerifyRegistrationComponent
+<<<<<<< HEAD
         verifyUser={this.props.verify}
         loading={loading}
 >>>>>>> feat(register): add email verification functionality
+=======
+        verifyUser={current.verify}
+        loading={current.verify.isVerifying}
+>>>>>>> feat(register): refactor code
       />
     );
   }
@@ -68,6 +77,9 @@ class VerifyRegistrationView extends React.Component {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> feat(register): refactor code
 VerifyRegistrationView.propTypes = {
   verifyUser: PropTypes.func.isRequired,
   verify: PropTypes.shape({
@@ -81,6 +93,7 @@ VerifyRegistrationView.propTypes = {
   }).isRequired,
 };
 
+<<<<<<< HEAD
 const mapStateToProps = state => ({
     verify: state.verifyUser,
   });
@@ -97,6 +110,8 @@ const mapStateToProps = state => {
   };
 };
 =======
+=======
+>>>>>>> feat(register): refactor code
 const mapStateToProps = state => ({
     verify: state.verifyUser,
   });
