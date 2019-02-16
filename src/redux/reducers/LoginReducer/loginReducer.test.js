@@ -1,4 +1,4 @@
-import loginReducer, { initialState } from './login.reducer';
+import loginReducer, { initialState } from './loginReducer';
 import { LOGIN_ERROR, LOGIN_SUCCESS, LOGIN_USER } from '../../actions/LoginActions/types';
 
 describe('Login reducer tests', () => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Grid, Header } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import './verification.scss';
 import logo from './logo.png';
 
@@ -19,5 +20,9 @@ const VerifyRegistrationComponent = ({ verifyUser }) => (
     </Grid>
   </div>
 );
+
+VerifyRegistrationComponent.propTypes = {
+  verifyUser: PropTypes.shape({}).isRequired,
+};
 
 export default VerifyRegistrationComponent;

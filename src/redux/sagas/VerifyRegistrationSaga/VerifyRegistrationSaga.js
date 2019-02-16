@@ -6,7 +6,6 @@ import * as types from '../../actions/VerifyRegistrationActions/types';
 function* verifyRegistrationSaga({ payload }) {
   try {
     const response = yield call(axios.get, `https://ah-robotics-staging.herokuapp.com/api/v1/users/verify/${payload.token}`);
-    console.log(response.data);
     yield put({
       type: types.VERIFY_SUCCESS,
       payload: { data: response.data },

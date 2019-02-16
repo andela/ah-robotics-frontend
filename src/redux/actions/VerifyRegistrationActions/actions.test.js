@@ -10,7 +10,6 @@ const user = {
 
 describe('verify actions', () => {
   it('should create an action to start verification', () => {
-    // const text = 'Finish docs'
     const expectedAction = {
       type: types.VERIFY_START,
       payload: user,
@@ -19,7 +18,6 @@ describe('verify actions', () => {
   });
 
   it('should create an action to indicate successful verification', () => {
-    // const text = 'Finish docs'
     const expectedAction = {
       type: types.VERIFY_SUCCESS,
       payload: user,
@@ -28,7 +26,6 @@ describe('verify actions', () => {
   });
 
   it('should create an action to indicate failed verification', () => {
-    // const text = 'Finish docs'
     const expectedAction = {
       type: types.VERIFY_ERROR,
       payload: user,
