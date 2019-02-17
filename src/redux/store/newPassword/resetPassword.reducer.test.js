@@ -12,12 +12,12 @@ describe('newPassword reducer tests', () => {
     payload: {},
   }).isResetting).toEqual(true);
   });
-//   it('it should set isAuthenticated to true on login success', () => {
-//     expect(newPasswordReducer(null, {
-//       type: NEW_PASSWORD_SUCCESS,
-//       payload: {},
-//     }).isResetting).toEqual(false);
-//   });
+  it('it should set isResetting to succesful on resetPassword', () => {
+    expect(newPasswordReducer(null, {
+      type: NEW_PASSWORD_SUCCESS,
+      payload: {},
+    }).isResetting).toEqual(false);
+  });
 //   it('it should set isResetting to false on resetPassword error', () => {
 //     expect(newPasswordReducer(null, {
 //       type: NEW_PASSWORD_ERROR,
