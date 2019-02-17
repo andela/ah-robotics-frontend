@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, Image, Grid, Header, Segment } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import './resetpassword.scss';
 import logo from './logo.png';
 
@@ -19,11 +19,11 @@ const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
             {(response.errors) ? (
               <p style={{ color: 'red' }}>{response.errors[0]}</p>
             ) : (
-              <p style={{ color: 'green' }}>Success! {response.message}</p>
+              <p style={{ color: '#00d0a0' }}>Success! {response.message}</p>
             )}
             <Form.Input fluid className='txt-login' placeholder='Email address' transparent onChange={onChange} name="email" />
             <br />
-            <Button type="submit" color='green' className='btn-login' loading={response.isReseting} fluid size='large' style={{ border: 30 }} onClick={handleSubmit}>
+            <Button type="submit" id='btn-fix' className='btn-login' loading={response.isReseting} fluid size='large' style={{ border: 30 }} onClick={handleSubmit}>
               Reset Password
             </Button>
           </Segment>

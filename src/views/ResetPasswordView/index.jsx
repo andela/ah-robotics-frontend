@@ -21,22 +21,16 @@ export class ResetPasswordView extends Component {
     const data = {
       ...this.state
     };
-
-    //console.log(data)
     resetPasswordAction(data);
   };
   render() {
-<<<<<<< HEAD
-=======
-    //console.log(this.props.resetPassword)
->>>>>>> c6d89c5... feat(resetPassword): fix reset password errors
     return (
       <ResetPasswordComponent onChange={this.onChange} handleSubmit={this.handleSubmit} response={this.props.resetPassword}/>
     )
   }
 }
-const mapStateToProps = (state) => ({
-  resetPassword: state.resetPassword
+const mapStateToProps = ({resetPassword}) => ({
+  resetPassword
 
 });
 
