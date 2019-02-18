@@ -1,13 +1,13 @@
 import {
   NEW_PASSWORD_START,
   NEW_PASSWORD_ERROR,
-  NEW_PASSWORD_SUCCESS
+  NEW_PASSWORD_SUCCESS,
 } from './types';
 
-import { 
-  newPasswordStart, 
-  newPasswordSuccess, 
-  newPasswordFail
+import {
+  newPasswordStart,
+  newPasswordSuccess,
+  newPasswordFail,
 } from './actions';
 
 describe('Password reset trigger', () => {

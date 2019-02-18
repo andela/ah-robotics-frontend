@@ -1,16 +1,16 @@
 import {
   NEW_PASSWORD_START,
   NEW_PASSWORD_SUCCESS,
-  NEW_PASSWORD_ERROR
+  NEW_PASSWORD_ERROR,
 } from '../../actions/newPasswordActions/types';
-  
+
 const initialState = {
   success: false,
   isResetting: false,
   message: '',
-  errors: {}
+  errors: {},
 };
-  
+
 const newPasswordReducer = (state = initialState, action) => {
   switch (action.type) {
   case NEW_PASSWORD_START: {
@@ -21,7 +21,7 @@ const newPasswordReducer = (state = initialState, action) => {
       ...action.payload,
       success: true,
       isResetting: false,
-      message: 'success'
+      message: 'success',
     };
   }
   case NEW_PASSWORD_ERROR: {
@@ -31,5 +31,5 @@ const newPasswordReducer = (state = initialState, action) => {
     return state;
   }
 };
-  
+
 export default newPasswordReducer;

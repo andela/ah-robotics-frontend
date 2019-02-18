@@ -22,6 +22,9 @@ export const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
 
             <br/>
             <Form.Input transparent
+              fluid placeholder='New Password' onChange={onChange} type='password' name="password"/>
+            <br />
+            <Form.Input transparent
               fluid placeholder='Confirm Password' onChange={onChange} type='password' name="confirm_password"/>
             <br />
             <Button type="submit" id='btn-fix' className='btn-login' fluid size='large' loading={response.isResetting} style={{ border: 30 }} onClick={handleSubmit}>

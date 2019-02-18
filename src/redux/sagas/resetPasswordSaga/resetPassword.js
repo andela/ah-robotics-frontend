@@ -3,22 +3,22 @@ import axios from 'axios';
 import * as types from '../../actions/resetPasswordActions/resetPasswordTypes';
 
 
-function * resetPassword ({ payload }) {
+function* resetPassword({ payload }) {
   try {
     const response = yield call(axios.post, 'https://ah-robotics-staging.herokuapp.com/api/v1/account/forgot_password/', payload);
     yield put({
       type: types.RESET_PASSWORD_SUCCESS,
-      payload: {message: response.data.message} 
+      payload: { message: response.data.message },
     });
   } catch (err) {
     yield put({
       type: types.RESET_PASSWORD_ERROR,
-      payload: {errors: err.response.data}
+      payload: { errors: err.response.data },
     });
   }
 }
 
-function * watchResetPassword () {
+function* watchResetPassword() {
   yield takeEvery(types.RESET_PASSWORD_START, resetPassword);
 }
 
