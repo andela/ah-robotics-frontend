@@ -3,10 +3,10 @@ import LoginComponent from '.';
 
 it('app should render login view page Component', () => {
   const props = {
-      errors: {
-        error: '',
-      },
-    };
+    errors: {
+      error: '',
+    },
+  };
 
   const onChange = () => ({});
   const handleSubmit = () => ({});

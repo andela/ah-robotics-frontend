@@ -7,7 +7,7 @@ const NavigationComponent = () => (
   <div>
 
     <Container>
-      <Menu className="navbar" pointing secondary>
+      <Menu pointing secondary>
         <NavLink to="/">
           <Menu.Item name="Home" active />
         </NavLink>

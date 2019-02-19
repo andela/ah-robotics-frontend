@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
- Button, Label, Message, Form, Image, Grid, Header, Segment,
+  Button, Label, Message, Form, Image, Grid, Header, Segment,
 } from 'semantic-ui-react';
 import './login.scss';
 import PropTypes from 'prop-types';
@@ -10,37 +10,29 @@ import logo from '../../logo.png';
 
 // Create a login component view
 // This code is a modification of the sample login page in Semantic UI
-const LoginComponent = ({
- onChange, handleSubmit, login,
-}) => (
+const LoginComponent = (
+  { onChange, handleSubmit, login },
+) => (
   <div className="login-form">
     <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
       <Grid.Column className="form-container">
         <Image textAlign="center" src={logo} className="img-logo" alt="logo" />
         <Header as="h2" className="login-header" textAlign="center">
-              Login
+          Login
         </Header>
-        {(login.errors.error)
-          ? (
-            <Message
-              color="red"
-              size="tiny"
-            >
-              {login.errors.error}
-            </Message>
-          ) : null}
+        {(login.errors.error) ? (<Message color="red" size="tiny">{login.errors.error}</Message>) : null}
 
         <Form size="large">
           <Segment basic>
-
-            {(login.errors.email) ? <Label size="tiny" pointing="below" basic color="red">{login.errors.email}</Label> : null}
+            {(login.errors.email)
+              ? <Label size="tiny" pointing="below" basic color="red">{login.errors.email}</Label> : null}
             <Form.Input
               fluid
               icon="user"
               iconPosition="left"
               className="txt-login"
               name="email"
-              placeholder="email address"
+              placeholder="Email"
               transparent
               onChange={onChange}
             />
@@ -59,7 +51,15 @@ const LoginComponent = ({
               />
             </Form.Field>
             <br />
-            <Button type="submit" loading={login.isLoading} className="btn-login bg-green" fluid size="medium" style={{ border: 30 }} onClick={handleSubmit}>
+            <Button
+              type="submit"
+              loading={login.isLoading}
+              className="btn-login bg-green"
+              fluid
+              size="medium"
+              style={{ border: 30 }}
+              onClick={handleSubmit}
+            >
               Login
             </Button>
           </Segment>
@@ -74,11 +74,11 @@ const LoginComponent = ({
         <br />
         <br />
         <p>
-              Forgot
+          Forgot
           <NavLink to="reset"> Password? Reset</NavLink>
         </p>
         <p>
-              Dont have an account?
+          Dont have an account?
           <NavLink to="register"> Register</NavLink>
           {' '}
 
