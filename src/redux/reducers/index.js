@@ -10,6 +10,7 @@ import ratings from './RatingsReducer/ratingsReducer';
 import userProfileReducer from './userProfileReducer/userProfileReducer';
 import editProfileReducer from './editProfileReducer/editProfileReducer';
 
+import socialReducer from './SocialAuth/social.reducer';
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   ratings,
   userProfile: userProfileReducer,
   editProfile: editProfileReducer,
+  socialAuth: socialReducer,
 });
 
 export default rootReducer;

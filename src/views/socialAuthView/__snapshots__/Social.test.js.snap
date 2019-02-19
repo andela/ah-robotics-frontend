@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Social View app should match the snapshot 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`test create article view it should match snapshot 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
