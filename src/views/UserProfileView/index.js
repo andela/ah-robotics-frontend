@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { Loader } from 'semantic-ui-react';
 import ProfileComponent from '../../components/Profile';
 import { profileData } from '../../redux/actions/userProfileActions/actions';
 
@@ -22,7 +23,7 @@ class ProfileView extends Component {
     const userProfile = profile.profile;
     return (
       profile.isLoading
-          ? <h1>loading</h1>
+          ? <Loader active inline />
           : <ProfileComponent profile={userProfile} />
     );
   }

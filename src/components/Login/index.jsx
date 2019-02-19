@@ -6,6 +6,7 @@ import {
 import './login.scss';
 import PropTypes from 'prop-types';
 import logo from '../../logo.png';
+import SocialAuth from '../../views/socialAuthView';
 
 
 // Create a login component view
@@ -64,11 +65,7 @@ const LoginComponent = (
         </Form>
         <br />
         <p>or log in with</p>
-        <div>
-          <Button circular color="vk" icon="facebook f" />
-          <Button circular color="twitter" icon="twitter" />
-          <Button circular color="google plus" icon="google" />
-        </div>
+        <SocialAuth />
         <br />
 
         <p>

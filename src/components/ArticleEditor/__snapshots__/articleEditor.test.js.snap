@@ -56,23 +56,26 @@ exports[`test article editor component it should match snapshot 1`] = `
       </GridColumn>
     </GridRow>
   </Grid>
-  <div>
-     
-    <p
-      className="editor-error"
+  <div
+    className="editor-container"
+  >
+    <div>
+      <p
+        className="editor-error"
+      />
+    </div>
+    <CKEditor
+      activeClass=""
+      config={Object {}}
+      content=""
+      events={
+        Object {
+          "change": [MockFunction],
+        }
+      }
+      isScriptLoaded={false}
+      scriptUrl="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"
     />
   </div>
-  <CKEditor
-    activeClass=""
-    config={Object {}}
-    content=""
-    events={
-      Object {
-        "change": [MockFunction],
-      }
-    }
-    isScriptLoaded={false}
-    scriptUrl="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"
-  />
 </Container>
 `;

@@ -13,8 +13,8 @@ const RatingComponent = ({ prop, handleRate }) => {
         prop.ratings.isError === true && (
           <Message color="red">
             {
-              prop.ratings.error.detail === 'Cannot decode the given token'
-              && 'Please login to Rate this article'
+              prop.ratings.error.detail ? 'Cannot decode the given token'
+              && 'Please login to Rate this article' : prop.ratings.error.message
             }
 
           </Message>
@@ -25,17 +25,20 @@ const RatingComponent = ({ prop, handleRate }) => {
 
         {
           /* Display a loader if the ratings data is still loading */
-          (ratings.isLoading)
-          && <Loader active inline />}
-        {
+          (ratings.isLoading || articles.isFetching)
+          ? <Loader active inline />
+          : (
           /* If the a user rates an article successfully,
           display the updated avarage rating */
           (ratings.isUpdated && !ratings.isLoading)
-            ? (`Avg(${Math.round(ratings.rating.data.average_rating * 10) / 10})`)
+            ? (`Average(${Math.round(ratings.rating.data.average_rating * 10) / 10})`)
             // Otherwise, get the initial article's rating and display
             : (articles.data.article)
-            ? (`Avg(${articles.data.article.rating.average_rating === null && 0})`) : 0
-        }
+            ? (`Average(${!articles.data.article.rating.average_rating
+              ? 0
+              : Math.round(articles.data.article.rating.average_rating * 10) / 10})`)
+            : 0
+        )}
         <Rating icon="star" maxRating={5} onRate={handleRate} />
       </Segment>
     </div>

@@ -39,7 +39,7 @@ const ArticleComponent = ({ article, rating, isFetching }) => {
 };
 ArticleComponent.propTypes = {
   article: PropTypes.shape({}).isRequired,
-  rating: PropTypes.shape.isRequired,
+  rating: PropTypes.func.isRequired,
   isFetching: PropTypes.bool.isRequired,
 };
 export default ArticleComponent;

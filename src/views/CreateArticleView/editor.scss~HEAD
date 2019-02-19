@@ -1,4 +1,0 @@
-
-.ui.grid>.row>.column {
-    height: 100px;
-}

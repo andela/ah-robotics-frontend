@@ -10,10 +10,10 @@ const setUserToken = (token) => {
 
 export const setCurrentUser = (user) => {
   const activeUser = user || null;
-  JSON.stringify(localStorage.setItem('user', activeUser));
+  localStorage.setItem('user', JSON.stringify(activeUser));
 };
 
-export const getAccessToken = () => JSON.parse(localStorage.getItem(AUTH_TOKEN));
+export const getAccessToken = () => localStorage.getItem(AUTH_TOKEN);
 
 export const isLoggedIn = () => {
   try {
