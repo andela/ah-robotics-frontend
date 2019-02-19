@@ -7,6 +7,9 @@ import newPasswordReducer from './newPasswordReducer/newPasswordreducer';
 import fetchArticlesReducer from './ArticlesReducer/fetchArticlesReducer';
 import postArticlesReducer from './ArticlesReducer/postArticlesReducer';
 import ratings from './RatingsReducer/ratingsReducer';
+import userProfileReducer from './userProfileReducer/userProfileReducer';
+import editProfileReducer from './editProfileReducer/editProfileReducer';
+
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -17,6 +20,8 @@ const rootReducer = combineReducers({
   articles: fetchArticlesReducer,
   createArticle: postArticlesReducer,
   ratings,
+  userProfile: userProfileReducer,
+  editProfile: editProfileReducer,
 });
 
 export default rootReducer;
