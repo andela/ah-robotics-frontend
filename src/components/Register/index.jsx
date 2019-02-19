@@ -95,8 +95,9 @@ const RegisterComponent = ({
             />
             <br />
             <Button
+              id="btn-register"
               fluid
-              size="medium"
+              size="large"
               loading={loading}
               onClick={handleSubmit}
             >

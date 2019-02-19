@@ -4,7 +4,7 @@ import {
   NEW_PASSWORD_ERROR,
 } from '../../actions/newPasswordActions/types';
 
-const initialState = {
+export const initialState = {
   success: false,
   isResetting: false,
   message: '',
@@ -21,7 +21,6 @@ const newPasswordReducer = (state = initialState, action) => {
       ...action.payload,
       success: true,
       isResetting: false,
-      message: 'success',
     };
   }
   case NEW_PASSWORD_ERROR: {

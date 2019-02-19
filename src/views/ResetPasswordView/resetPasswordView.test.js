@@ -1,13 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { NewPasswordView } from './index';
+import ResetPasswordView from './index';
 
 const response = {
   errors: {},
 };
 it('render a label', () => {
   const wrapper = shallow(
-    <NewPasswordView response={response} />,
-);
+    <ResetPasswordView response={response} />,
+  );
   expect(wrapper.length).toBe(1);
 });
