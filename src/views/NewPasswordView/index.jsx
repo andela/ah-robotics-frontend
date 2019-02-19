@@ -9,9 +9,12 @@ export class NewPasswordView extends Component {
     password: ''
   };
 
-  componentWillReceiveProps(nextprops) {
-    if (nextprops.newPassword.success === true) {
-      setInterval(()=>{this.props.history.push("/login")}, 3000)
+  componentWillReceiveProps(nextProps) {
+    const { history, newPassword } = nextProps;
+    if (newPassword.success === true) {
+      setInterval(() => {
+       history.push('/login');
+      }, 3000);
     }
   }
 

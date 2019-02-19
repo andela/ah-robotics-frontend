@@ -11,7 +11,7 @@ function* newPasswordSaga({ payload }) {
     const response = yield call(axios.put, `https://ah-robotics-staging.herokuapp.com/api/v1/account/reset_password/${payload.token}`, passData);
     yield put({
       type: types.NEW_PASSWORD_SUCCESS,
-      payload: response.data.user,
+      payload: response.data.message,
     });
   } catch (err) {
     yield put({

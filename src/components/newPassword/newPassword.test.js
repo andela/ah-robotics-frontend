@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ResetPasswordComponent from './index';
+import NewPasswordComponent from './index';
 
 const response = {
   errors: {},
@@ -10,7 +10,7 @@ it('render a label', () => {
   const handleSubmit = () => ({});
 
   const wrapper = shallow(
-    <ResetPasswordComponent
+    <NewPasswordComponent
       onChange={onChange}
       handleSubmit={handleSubmit}
       response={response}

@@ -1,5 +1,8 @@
 import React from 'react';
-import { Button, Form, Image, Grid, Header, Segment } from 'semantic-ui-react';
+import {
+  Button, Form, Image, Grid, Header, Segment,
+}
+  from 'semantic-ui-react';
 import './newpassword.scss';
 import logo from './logo.png';
 
