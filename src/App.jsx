@@ -4,7 +4,7 @@ import LoginView from './views/LoginView';
 import Error from './views/ErrorView';
 import NavigationComponent from './views/NavigationVew';
 import ArticlesView from './views/ArticlesView';
-import CreateArticle from './components/Editor';
+import CreateArticle from './views/CreateArticleView';
 
 const App = () => (
   <BrowserRouter>

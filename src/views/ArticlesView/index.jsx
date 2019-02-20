@@ -7,6 +7,11 @@ import PopularComponent from '../../components/Popular';
 import ArticlesListing from '../../components/ArticlesListing';
 
 class ArticlesView extends Component {
+  static propTypes={
+    getArticles: PropTypes.func.isRequired,
+    articles: PropTypes.arrayOf({}).isRequired,
+  }
+
   componentDidMount() {
     const { getArticles } = this.props;
     getArticles();
@@ -34,10 +39,5 @@ const mapStateToProps = ({ articles }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   getArticles: articleFetch,
 }, dispatch);
-
-ArticlesView.propsTypes = {
-  getArticles: PropTypes.func.isRequired,
-  articles: PropTypes.arrayOf({}).isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesView);
