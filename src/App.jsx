@@ -1,7 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
-import HomeView from './views/HomeView';
 import LoginView from './views/LoginView';
 import Error from './views/ErrorView';
 import NavigationComponent from './views/NavigationVew';
