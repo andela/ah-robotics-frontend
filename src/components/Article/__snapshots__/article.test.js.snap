@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`single article view tests it should match snapshot 1`] = `
+<Segment
+  basic={true}
+  loader={false}
+>
+  <Container
+    style={
+      Object {
+        "marginTop": "7em",
+      }
+    }
+    text={true}
+  >
+    <Header
+      as="h1"
+    />
+    <Image
+      as="img"
+      className="article-image"
+      src="https://source.unsplash.com/random/720x580"
+      ui={true}
+    />
+    <p />
+    <span
+      className="article-span"
+    />
+    | 
+    <span
+      className="article-span"
+    >
+      Sunday 24th February 2019
+    </span>
+  </Container>
+</Segment>
+`;

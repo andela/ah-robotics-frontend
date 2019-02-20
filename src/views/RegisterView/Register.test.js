@@ -10,8 +10,17 @@ function setup() {
   const registerSuccess = {
     register: {},
   };
+  const handleSubmit = jest.fn();
+  const onChange = jest.fn();
+  const errors = {};
 
-  const wrapper = shallow(<RegisterComponent registerSuccess={registerSuccess} />);
+  const wrapper = shallow(<RegisterComponent
+    registerSuccess={registerSuccess}
+    loading={false}
+    errors={errors}
+    onChange={onChange}
+    handleSubmit={handleSubmit}
+  />);
 
   return {
     // props,

@@ -3,9 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { Menu, Container } from 'semantic-ui-react';
 import './navigation.scss';
 import PropTypes from 'prop-types';
+import { logout } from '../../utils/auth';
 
 const guestLinks = (
   <Menu.Menu position="right">
+    <NavLink to="/">
+      <Menu.Item name="Home" />
+    </NavLink>
     <NavLink to="/login">
       <Menu.Item
         name="Login"
@@ -18,15 +22,19 @@ const guestLinks = (
 );
 const protectedLinks = (
   <Menu.Menu position="right">
-    <NavLink to="/articles">
-      <Menu.Item name="Articles" />
+    <NavLink to="/">
+      <Menu.Item name="Home" />
+    </NavLink>
+    <NavLink to="/articles/new-story">
+      <Menu.Item name="New Article" />
     </NavLink>
     <NavLink to="/profiles">
       <Menu.Item name="Profile" />
     </NavLink>
     <Menu.Menu position="right">
-      <NavLink to="/logout">
+      <NavLink to="/">
         <Menu.Item
+          onClick={() => logout()}
           name="Logout"
         />
       </NavLink>
@@ -46,6 +54,6 @@ const NavigationComponent = ({ isAuthenticated }) => (
 );
 
 NavigationComponent.propTypes = {
-  isAuthenticated: PropTypes.shape({}).isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
 };
 export default NavigationComponent;

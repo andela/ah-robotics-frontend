@@ -1,4 +1,4 @@
-import * as types from '../../actions/ArticleActions/articles.action.types';
+import * as types from '../../actions/ArticleActions/types';
 
 export const initialState = {
   errors: {},

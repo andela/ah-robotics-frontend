@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavigationComponent from '../../components/Navigation';
+import { isLoggedIn } from '../../utils/auth';
 
 class NavigationView extends Component {
   render() {
-    const { login } = this.props;
     return (
-      <NavigationComponent isAuthenticated={login.isAuthenticated} />
+      <NavigationComponent isAuthenticated={isLoggedIn()} />
     );
 }
 }

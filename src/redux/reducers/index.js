@@ -4,9 +4,8 @@ import registerReducer from './RegisterReducer/registerReducer';
 import verifyReducer from './VerifyRegristrationReducer/verifyRegistrationReducer';
 import resetPasswordReducer from './resetPasswordReducer/resetpasswordreducer';
 import newPasswordReducer from './newPasswordReducer/newPasswordreducer';
-import loginReducer from './LoginReducer/login.reducer';
-import fetchArticlesReducer from './ArticlesReducer/fetch.articles.reducer';
-import postArticlesReducer from './ArticlesReducer/post.articles.reducer';
+import fetchArticlesReducer from './ArticlesReducer/fetchArticlesReducer';
+import postArticlesReducer from './ArticlesReducer/postArticlesReducer';
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
   verifyUser: verifyReducer,
   resetPassword: resetPasswordReducer,
   newPassword: newPasswordReducer,
-  articles: articlesReducer,
   articles: fetchArticlesReducer,
   createArticle: postArticlesReducer,
 });

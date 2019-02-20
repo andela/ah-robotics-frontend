@@ -5,7 +5,7 @@ import setUserToken, { setCurrentUser } from '../../../utils/auth';
 
 function* loginWorker({ payload }) {
   try {
-    const apiUrl = 'http://ah-robotics-staging.herokuapp.com/api/v1/users/login/';
+    const apiUrl = 'https://ah-robotics-staging.herokuapp.com/api/v1/users/login/';
     const response = yield call(axios.post, apiUrl, { user: payload });
     yield put({
       type: types.LOGIN_SUCCESS,

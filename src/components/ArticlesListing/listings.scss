@@ -4,6 +4,7 @@
 .ui.items>.item>.image+.content{
   padding: 1.5em;
   min-height:300px ;
+  min-width: 34em;
 }
 .ui.divided.items>.item {
   border-top: none;
@@ -15,7 +16,8 @@
   height: auto;
   display: block;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  width: 100%;
 }
 .ui.items > .item > .image + .content {
   margin-left: 0.5em;
@@ -24,4 +26,13 @@
   width: 400px !important;
   height: auto;
   max-height: 300px;
+}
+.author-name{
+ text-transform: capitalize;
+}
+.ui.basic.segment {
+  margin-left: 4.5em;
+}
+.content .header > a{
+  text-transform:capitalize ;
 }

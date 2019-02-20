@@ -1,12 +1,12 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { api } from '../../../utils/auth';
-import * as types from '../../actions/ArticleActions/articles.action.types';
+import * as types from '../../actions/ArticleActions/types';
 
-function* postArticleWorker({ payload }) {
-  console.log(payload);
-  const apiUrl = '/articles/';
+export const apiClient = { createUserArticle: payload => api.post('/articles/', payload) };
+
+export function* postArticleWorker({ payload }) {
   try {
-    const response = yield call(api.post, apiUrl, { article: payload });
+    const response = yield call(apiClient.createUserArticle, { article: payload });
     yield put({
       type: types.ARTICLE_POST_SUCCESS,
       payload: { data: response.data },
@@ -19,8 +19,6 @@ function* postArticleWorker({ payload }) {
   }
 }
 
-function* postArticleWatcher() {
+export default function* postArticleWatcher() {
   yield takeEvery(types.ARTICLE_POST, postArticleWorker);
 }
-
-export default postArticleWatcher;

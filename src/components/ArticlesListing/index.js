@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Grid, Segment, img, Item,
+  Grid, Segment, Item,
 } from 'semantic-ui-react';
 import './listings.scss';
 import PropTypes from 'prop-types';
@@ -9,13 +9,13 @@ import ArticleItem from './ArticleItem';
 const ArticlesListing = ({ articles, isFetching }) => {
   const allArticles = articles.articles;
   return (
-    <Segment loading={isFetching}>
+    <Segment basic loading={isFetching}>
       <Grid>
         <Grid.Column width={12}>
           <Item.Group divided>
             {allArticles && allArticles.map(article => (
               (<ArticleItem article={article} />)
-              ))}
+            ))}
           </Item.Group>
         </Grid.Column>
         <Grid.Column width={4}>
@@ -26,7 +26,7 @@ const ArticlesListing = ({ articles, isFetching }) => {
 };
 
 ArticlesListing.propTypes = {
-articles: PropTypes.arrayOf({}).isRequired,
+  articles: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   isFetching: PropTypes.bool.isRequired,
 };
 export default ArticlesListing;

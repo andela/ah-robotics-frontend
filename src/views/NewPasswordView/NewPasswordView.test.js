@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { NewPasswordView } from './index';
+import NewPasswordView from './index';
 
 const response = {
   errors: {},

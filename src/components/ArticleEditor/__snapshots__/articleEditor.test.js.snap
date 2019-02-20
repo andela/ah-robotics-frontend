@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test article editor component it should match snapshot 1`] = `
+<Container>
+  <Grid>
+    <GridRow>
+      <GridColumn
+        width={12}
+      >
+        <p
+          className="editor-error"
+        />
+        <FormInput
+          as={[Function]}
+          className="editor-input"
+          control={[Function]}
+          fluid={true}
+          maxLength={80}
+          name="title"
+          onChange={[MockFunction]}
+          placeholder="Title"
+          transparent={true}
+        />
+        <p
+          className="editor-error"
+        />
+        <FormInput
+          as={[Function]}
+          className="editor-input"
+          control={[Function]}
+          fluid={true}
+          maxLength={80}
+          name="description"
+          onChange={[MockFunction]}
+          placeholder="Description"
+          required={true}
+          transparent={true}
+        />
+        <p
+          className="success-message"
+        />
+      </GridColumn>
+      <GridColumn
+        className="right-column"
+        width={4}
+      >
+        <Button
+          as="button"
+          basic={true}
+          color="green"
+          content="Post"
+          onClick={[MockFunction]}
+          position="right"
+          type="submit"
+        />
+      </GridColumn>
+    </GridRow>
+  </Grid>
+  <div>
+     
+    <p
+      className="editor-error"
+    />
+  </div>
+  <CKEditor
+    activeClass=""
+    config={Object {}}
+    content=""
+    events={
+      Object {
+        "change": [MockFunction],
+      }
+    }
+    isScriptLoaded={false}
+    scriptUrl="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"
+  />
+</Container>
+`;

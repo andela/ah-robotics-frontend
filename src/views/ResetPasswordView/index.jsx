@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import ResetPasswordComponent from '../../components/resetPassword';
 import { resetPasswordUser } from '../../redux/actions/resetPasswordActions/resetPasswordActions';
 
-export class ResetPasswordView extends Component {
+class ResetPasswordView extends Component {
   state = {
     email: '',
   };

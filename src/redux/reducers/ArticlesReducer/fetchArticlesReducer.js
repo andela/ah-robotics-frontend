@@ -1,4 +1,4 @@
-import * as types from '../../actions/ArticleActions/articles.action.types';
+import * as types from '../../actions/ArticleActions/types';
 
 export const initialState = {
   errors: {},
@@ -17,7 +17,7 @@ const fetchArticlesReducer = (state = initialState, action) => {
   }
     case types.ARTICLE_FETCH_SUCCESS: {
       return {
- ...state, ...action.payload, isFetching: false,
+        ...state, ...action.payload, isFetching: false,
       };
     }
     case types.ARTICLE_FETCH_ERROR: {
