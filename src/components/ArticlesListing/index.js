@@ -3,28 +3,30 @@ import {
   Grid, Segment, img, Item,
 } from 'semantic-ui-react';
 import './listings.scss';
+import PropTypes from 'prop-types';
 import ArticleItem from './ArticleItem';
 
-const ArticlesListing = ({ articles }) => {
+const ArticlesListing = ({ articles, isFetching }) => {
   const allArticles = articles.articles;
   return (
-    <Segment placeholder className="lowerSection">
-      <Grid columns={2} stackable textAlign="left">
-        <Grid.Row verticalAlign="middle">
-          <Grid.Column width={10}>
-            <Item.Group divided>
-              {allArticles && allArticles.map(article => (
+    <Segment loading={isFetching}>
+      <Grid>
+        <Grid.Column width={12}>
+          <Item.Group divided>
+            {allArticles && allArticles.map(article => (
               (<ArticleItem article={article} />)
               ))}
-            </Item.Group>
-          </Grid.Column>
-          <Grid.Column width={6}>
-            <p>Hello column</p>
-          </Grid.Column>
-        </Grid.Row>
+          </Item.Group>
+        </Grid.Column>
+        <Grid.Column width={4}>
+        </Grid.Column>
       </Grid>
     </Segment>
   );
 };
 
+ArticlesListing.propTypes = {
+articles: PropTypes.arrayOf({}).isRequired,
+  isFetching: PropTypes.bool.isRequired,
+};
 export default ArticlesListing;

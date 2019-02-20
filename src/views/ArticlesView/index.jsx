@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import { articleFetch } from '../../redux/actions/ArticleActions/articles.actions';
 import PopularComponent from '../../components/Popular';
 import ArticlesListing from '../../components/ArticlesListing';
@@ -16,11 +17,11 @@ class ArticlesView extends Component {
   }
 
   render() {
-    const { articles} = this.props;
+    const { articles } = this.props;
     return (
       <div>
-        <PopularComponent />
-        <ArticlesListing articles={articles.data} />
+        <PopularComponent isFetching={articles.isFetching} />
+        <ArticlesListing articles={articles.data} isFetching={articles.isFetching} />
       </div>
     );
   }
@@ -33,5 +34,10 @@ const mapStateToProps = ({ articles }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   getArticles: articleFetch,
 }, dispatch);
+
+ArticlesView.propsTypes = {
+  getArticles: PropTypes.func.isRequired,
+  articles: PropTypes.arrayOf({}).isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlesView);

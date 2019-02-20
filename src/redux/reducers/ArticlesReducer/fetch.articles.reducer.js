@@ -8,7 +8,7 @@ export const initialState = {
   data: {},
 };
 
-const articlesReducer = (state = initialState, action) => {
+const fetchArticlesReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.ARTICLE_FETCH: {
       return {
@@ -30,4 +30,4 @@ const articlesReducer = (state = initialState, action) => {
     }
 }
 };
-export default articlesReducer;
+export default fetchArticlesReducer;

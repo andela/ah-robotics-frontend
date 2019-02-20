@@ -1,9 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import CKEditor from 'react-ckeditor-component';
 import {
-  Button, Input, Segment, Form, Grid,
+  Button, Segment, Form, Grid,
 } from 'semantic-ui-react';
-import './editor.css';
+import './editor.scss';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { postArticle } from '../../redux/actions/ArticleActions/articles.actions';
 
 
 class CreateArticle extends Component {
@@ -11,15 +15,17 @@ class CreateArticle extends Component {
     title: '',
     description: '',
     body: '',
-    tags: {},
     errors: {},
+    tagList: [],
   };
 
   handleArticlePost = () => {
+    const { postArticle: postUserArticle } = this.props;
     const data = {
       ...this.state,
     };
     console.log(data);
+    postUserArticle(data);
   };
 
   onEditorChange = (event) => {
@@ -33,12 +39,14 @@ class CreateArticle extends Component {
 
   render() {
     const { body } = this.state;
+    const { createArticle } = this.props;
     return (
       <Segment>
         <Fragment>
           <Grid>
             <Grid.Row>
               <Grid.Column width={12}>
+                <p style={{ color: 'red' }}>{(createArticle.errors) && createArticle.errors.title && 'Title is required'}</p>
                 <Form.Input
                   fluid
                   name="title"
@@ -47,6 +55,7 @@ class CreateArticle extends Component {
                   style={{ width: '60%', marginBottom: '1em', marginTop: '1em' }}
                   onChange={this.onInputChange}
                 />
+                <p style={{ color: 'red' }}>{(createArticle.errors) && createArticle.errors.description && 'Description is required'}</p>
                 <Form.Input
                   fluid
                   name="description"
@@ -54,6 +63,7 @@ class CreateArticle extends Component {
                   transparent
                   style={{ width: '60%', marginBottom: '1em', borderTop: 0 }}
                   onChange={this.onInputChange}
+                  required
                 />
                 <Form.Input
                   fluid
@@ -63,10 +73,13 @@ class CreateArticle extends Component {
                   placeholder="Choose file"
                   transparent
                   style={{
- width: '60%', marginBottom: '2em', marginTop: '1em', float: 'left',
-}}
+                    width: '60%', marginBottom: '2em', marginTop: '1em', float: 'left',
+                  }}
                   onChange={this.onInputChange}
                 />
+                <p style={{ color: '#00d0a0', size: 'tiny' }}>
+                  {(createArticle.isPosted) && 'Article posted successfully'}
+                </p>
               </Grid.Column>
               <Grid.Column width={2}>
                 <Button
@@ -76,23 +89,33 @@ class CreateArticle extends Component {
                   content="Post"
                   style={{ margin: '0.8em' }}
                   onClick={this.handleArticlePost}
+                  loading={createArticle.isPosting}
                 />
               </Grid.Column>
             </Grid.Row>
           </Grid>
+          <div>
+            {' '}
+            <p style={{ color: 'red' }}>{(createArticle.errors) && createArticle.errors.body && 'Body cannot be empty'}</p>
+          </div>
           <CKEditor activeClass="p10" content={body} events={{ change: this.onEditorChange }} />
-          <Input
-            icon="tags"
-            iconPosition="left"
-            label={{ tag: true, content: 'Add Tag' }}
-            labelPosition="right"
-            placeholder="Enter tags"
-            onChange={this.onInputChange}
-          />
         </Fragment>
       </Segment>
     );
   }
 }
 
-export default CreateArticle;
+const mapStateToProps = ({ createArticle }) => ({
+  createArticle,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  postArticle,
+}, dispatch);
+
+CreateArticle.propTypes = {
+  postArticle: PropTypes.func.isRequired,
+  createArticle: PropTypes.shape({}).isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateArticle);

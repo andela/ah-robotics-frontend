@@ -1,29 +1,16 @@
 $banner-container-height : 450px;
-
-.banner-main{
-  padding: 0px !important;
-  margin: 0px !important;
-  overflow: hidden;
-  max-height: $banner-container-height;
+.ui.image {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.banner-main img{
-  height: 100%;
+.ui.grid>[class*="eight wide"].column {
+  max-height: 450px;
 }
-.banner-main .column{
-  padding: 0px !important;
-
+.right-banner .ui.image {
+  height: 200px;
 }
-.banner-segment{
-  padding: 0px !important;
-}
-.banner-right {
-  max-height: $banner-container-height;
-  padding: 0px !important;
-  overflow: hidden;
-}
-.banner-right .column{
-  max-height:50% ;
-}
-.banner-right .column, .row{
-  padding: 0px !important;
+.left-banner .ui.image {
+  height: 400px;
 }
