@@ -12,7 +12,10 @@
     "eslint-plugin-react": "^7.12.4",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "lodash": "^4.17.11",
+<<<<<<< HEAD
     "moment": "^2.24.0",
+=======
+>>>>>>> ft(aricles) : Creating,fetching single and fetching all articles
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.2",
