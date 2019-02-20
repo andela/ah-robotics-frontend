@@ -1,0 +1,25 @@
+.lowerSection{
+  margin-top: 50px !important;
+}
+.ui.items>.item>.image+.content{
+  padding: 1.5em;
+  min-height:300px ;
+}
+.ui.divided.items>.item {
+  border-top: none;
+}
+.ui.items>.item>.image>img {
+  padding-top: 1.5em;
+  padding-bottom: 0.2em;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+.ui.items > .item > .image + .content {
+  margin-left: 0.5em;
+}
+.ui.items>.item>.image:not(.ui){
+  width: 400px !important;
+  height: auto;
+  max-height: 300px;
+}

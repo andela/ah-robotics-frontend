@@ -1,0 +1,29 @@
+$banner-container-height : 450px;
+
+.banner-main{
+  padding: 0px !important;
+  margin: 0px !important;
+  overflow: hidden;
+  max-height: $banner-container-height;
+}
+.banner-main img{
+  height: 100%;
+}
+.banner-main .column{
+  padding: 0px !important;
+
+}
+.banner-segment{
+  padding: 0px !important;
+}
+.banner-right {
+  max-height: $banner-container-height;
+  padding: 0px !important;
+  overflow: hidden;
+}
+.banner-right .column{
+  max-height:50% ;
+}
+.banner-right .column, .row{
+  padding: 0px !important;
+}
