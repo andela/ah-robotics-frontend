@@ -2,7 +2,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import * as types from '../../actions/newPasswordActions/types';
 
-function* newPasswordSaga({ payload }) {
+export function* newPasswordSaga({ payload }) {
   try {
     const passData = {
       password: payload.password,

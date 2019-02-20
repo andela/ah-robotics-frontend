@@ -33,7 +33,6 @@ class App extends Component {
             <Route path="/profiles" component={ProfileView} />
             <Route path="/editprofile" component={profileEditView} />
             <Route component={Error} />
-
           </Switch>
         </div>
       </BrowserRouter>

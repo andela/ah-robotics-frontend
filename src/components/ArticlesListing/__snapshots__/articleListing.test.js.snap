@@ -3,6 +3,7 @@
 exports[`article listing component should match snapshot 1`] = `
 <Segment
   basic={true}
+  id="articles-list"
   loading={false}
 >
   <Grid>

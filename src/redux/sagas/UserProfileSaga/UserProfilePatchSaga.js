@@ -25,10 +25,10 @@ export function* userProfilePatchSaga({ payload }) {
   }
 }
 
-function* watchuserProfilePatch() {
+function* watchUserProfilePatch() {
   yield takeEvery(
     types.PROFILE_PATCH_START, userProfilePatchSaga,
   );
 }
 
-export default watchuserProfilePatch;
+export default watchUserProfilePatch;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Grid, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import '../Login/login.scss';
 import logo from './logo.png';
 
 

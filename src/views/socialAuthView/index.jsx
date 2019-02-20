@@ -15,6 +15,7 @@ import {
   TWITTER,
 } from '../../redux/actions/socialAuth/types';
 import ButtonComponent from '../../components/common/SocialButton';
+import '../../components/Login/login.scss';
 
 class SocialAuth extends Component {
   constructor(props) {

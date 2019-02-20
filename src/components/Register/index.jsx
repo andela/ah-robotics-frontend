@@ -1,30 +1,19 @@
 import React from 'react';
 import {
-  Button,
-  Form,
-  Image,
-  Grid,
-  Header,
-  Segment,
-  Label,
-  Message,
+  Button, Form, Image, Grid, Header, Segment, Label, Message,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import '../Login/login.scss';
 import logo from './logo.png';
 
 const RegisterComponent = ({
-  onChange,
-  handleSubmit,
-  errors,
-  loading,
-  registerSuccess,
+  onChange, handleSubmit, errors, loading, registerSuccess,
 }) => (
   <div className="login-form">
     <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
       <Grid.Column className="form-container">
-        <Image src={logo} alt="logo" />
-        <Header as="h2">Register</Header>
+        <Image src={logo} className="img-logo" alt="logo" />
+        <Header as="h2" className="login-header">Register</Header>
         {registerSuccess.success === true && (
           <Message
             color="success"

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add Comment Component Tests it should match snapshot 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`Comment List Component Tests it should match snapshot 1`] = `
+<Route>
+  <Component />
+</Route>
+`;
+
+exports[`Single Comment Component Tests it should match snapshot 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`Update Comment Component Tests it should match snapshot 1`] = `
+<Route>
+  <Component />
+</Route>
+`;

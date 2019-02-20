@@ -27,10 +27,10 @@ export function* userProfileSaga(payload) {
   }
 }
 
-function* watchuserProfile() {
+function* watchUserProfile() {
   yield takeEvery(
     types.PROFILE_DATA, userProfileSaga,
 );
 }
 
-export default watchuserProfile;
+export default watchUserProfile;
