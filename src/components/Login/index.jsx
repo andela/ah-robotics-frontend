@@ -30,7 +30,6 @@ const LoginComponent = (
               fluid
               icon="user"
               iconPosition="left"
-              className="txt-login"
               name="email"
               placeholder="Email"
               transparent
@@ -41,7 +40,6 @@ const LoginComponent = (
               <Form.Input
                 transparent
                 fluid
-                className="txt-login"
                 icon="lock"
                 iconPosition="left"
                 placeholder="Password"
@@ -56,7 +54,7 @@ const LoginComponent = (
               loading={login.isLoading}
               className="btn-login bg-green"
               fluid
-              size="medium"
+              size="large"
               style={{ border: 30 }}
               onClick={handleSubmit}
             >
@@ -72,10 +70,10 @@ const LoginComponent = (
           <Button circular color="google plus" icon="google" />
         </div>
         <br />
-        <br />
+
         <p>
           Forgot
-          <NavLink to="reset"> Password? Reset</NavLink>
+          <NavLink to="/resetpassword"> Password? Reset</NavLink>
         </p>
         <p>
           Dont have an account?
@@ -93,4 +91,6 @@ LoginComponent.propTypes = {
   login: PropTypes.shape({}).isRequired,
 
 };
+
+
 export default LoginComponent;

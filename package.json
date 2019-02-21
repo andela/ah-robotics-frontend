@@ -27,10 +27,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "lint": "eslint . --ext .js,.jsx",
-    "build": "react-scripts build",
+    "lint": " eslint . --ext .js,.jsx",
+    "build": " react-scripts build",
     "test": "react-scripts test --passWithNoTests",
-    "eject": "react-scripts eject"
+    "eject": " react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
