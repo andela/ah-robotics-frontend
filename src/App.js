@@ -29,6 +29,13 @@ class App extends Component {
             <Route path="/articles" component={ArticlesView} exact />
             <Route path="/articles/new-story" component={CreateArticle} exact />
             <Route component={Error} />
+            <Route
+              path="/ratings"
+              component={
+                      OneArticleView
+                    }
+            />
+
           </Switch>
         </div>
       </BrowserRouter>

@@ -4,8 +4,7 @@ import watchRegister from './RegisterSaga/RegisterSaga';
 import watchVerify from './VerifyRegistrationSaga/VerifyRegistrationSaga';
 import watchResetPassword from './resetPasswordSaga/resetPassword';
 import watchNewPassword from './newPasswordSaga/newPassword';
-import fetchArticlesWatcher from './ArticleSaga/fetchArticlesSaga';
-import postArticleWatcher from './ArticleSaga/postArticleSaga';
+import watchSelectRating from './RatingSaga/RatingSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -16,7 +15,7 @@ export default function* rootSaga() {
     fork(watchNewPassword),
     fork(fetchArticlesWatcher),
     fork(postArticleWatcher),
-    fork(watchRegister),
-    fork(watchVerify),
+    fork(watchSelectRating),
+
   ]);
 }
