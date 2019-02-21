@@ -20,5 +20,5 @@ export default function* rootSaga() {
     fork(postArticleWatcher),
     fork(watchRegister),
     fork(watchVerify),
-  ])
+  ]);
 }

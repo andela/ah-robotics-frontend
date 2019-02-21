@@ -2,8 +2,8 @@ import { put, call, takeEvery } from 'redux-saga/effects';
 import { api } from '../../../utils/auth';
 import * as types from '../../actions/ArticleActions/articles.action.types';
 
-function* fetchArticleWorker() {
-  const apiUrl = '/articles/';
+function* fetchArticleWorker({ page = 1 }) {
+  const apiUrl = `/articles/?page=${page}`;
   try {
     const response = yield call(api.get, apiUrl);
   yield put({
