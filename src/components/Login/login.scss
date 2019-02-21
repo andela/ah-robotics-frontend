@@ -1,6 +1,10 @@
 $primary-color: #00d0a0;
-body > div, body > div > div,body > div > div > div.login-form {
+body > div, body > div > div,body > div > div > div.login-form,body > div > div > div.ratings-container {
     height: 100%;
+}
+.ratings-container{
+    margin-top: 200px;
+    margin-left: 100px;
 }
 .txt-login{
     padding-bottom: 10px;

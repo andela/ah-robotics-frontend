@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import OneArticle from '../../components/MockArticle';
 import RatingsView from '../RatingsView';
 
 class OneArticleView extends Component {
@@ -8,7 +7,6 @@ class OneArticleView extends Component {
     render() {
         return (
           <div>
-            <OneArticle />
             <RatingsView />
           </div>
         );

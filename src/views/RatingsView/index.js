@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {
- Rating, Loader, Header, Segment,
-} from 'semantic-ui-react';
+import '../../components/Login/login.scss';
 import { selectedRating } from '../../redux/actions/RatingsActions/actions';
+import RatingComponent from '../../components/Ratings';
 
 class RatingsView extends Component {
   state = { }
+
+  square = { width: 175, height: 175 }
+
 
   handleRate = (e, { rating }) => {
     e.preventDefault();
@@ -22,25 +24,11 @@ class RatingsView extends Component {
       });
   };
 
+
   render() {
-    const { ratings } = this.props;
-    const square = { width: 175, height: 175 };
     return (
-      <div>
-        <Segment circular style={square}>
-          <Header as="h2">
-              Rating!
-            <Header.Subheader>
-              {ratings.isLoading === true && <Loader active inline />}
-              {ratings.isUpdated
-              ? (ratings.isLoading === false
-                && JSON.stringify(ratings.rating.data.average_rating)) : null}
-            </Header.Subheader>
-          </Header>
-          <Rating icon="star" maxRating={5} onRate={this.handleRate} />
-        </Segment>
-      </div>
-    );
+      <RatingComponent prop={this.props} square={this.square} handleRate={this.handleRate} />
+ );
   }
 }
 
@@ -48,7 +36,6 @@ class RatingsView extends Component {
 // set proptypes validation
 RatingsView.propTypes = {
   selectedRating: PropTypes.func.isRequired,
-  ratings: PropTypes.shape().isRequired,
 };
 
 // map the ratings state to props
