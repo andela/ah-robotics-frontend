@@ -13,7 +13,7 @@ class ArticlesView extends Component {
   static propTypes={
     getArticles: PropTypes.func.isRequired,
     articles: PropTypes.arrayOf({}).isRequired,
-  }
+  };
 
   state = {
     activePage: 1,
@@ -25,10 +25,11 @@ class ArticlesView extends Component {
   }
 
   handlePaginationChange = (e, { activePage }) => {
+    const prop = this.state;
     this.setState({ activePage }, () => {
     const { getArticles } = this.props;
-    getArticles(this.state.activePage);
-    this.setState({ activePage: this.state.activePage });
+    getArticles(prop.activePage);
+    this.setState({ activePage: prop.activePage });
     });
   }
 

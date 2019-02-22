@@ -54,7 +54,7 @@ const NavigationComponent = ({ isAuthenticated }) => (
     </Container>
 
   </div>
-);
+)
 
 NavigationComponent.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
