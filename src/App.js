@@ -7,6 +7,7 @@ import Error from './components/Error/index';
 import ResetPasswordView from './views/ResetPasswordView';
 import NavigationComponent from './views/NavigationView';
 import NewPasswordView from './views/NewPasswordView';
+import RegisterView from './views/RegisterView';
 import VerifyRegistrationView from './views/VerifyRegistrationView/index';
 import ArticlesView from './views/ArticlesListingView';
 import CreateArticle from './views/CreateArticleView';

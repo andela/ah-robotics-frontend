@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import logo from './logo.png';
 
 
-export const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
+const NewPasswordComponent = ({ onChange, handleSubmit, response }) => (
   <div className="login-form">
     <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
       <Grid.Column className="form-container">

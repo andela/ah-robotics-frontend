@@ -25,11 +25,12 @@ class ArticlesView extends Component {
   }
 
   handlePaginationChange = (e, { activePage }) => {
-    const prop = this.state;
     this.setState({ activePage }, () => {
-    const { getArticles } = this.props;
-    getArticles(prop.activePage);
-    this.setState({ activePage: prop.activePage });
+      const currentState = this.state;
+      const currentPage = currentState.activePage;
+      const { getArticles } = this.props;
+      getArticles(currentPage);
+      this.setState({ activePage: currentPage });
     });
   }
 

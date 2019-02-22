@@ -6,8 +6,6 @@ import watchResetPassword from './resetPasswordSaga/resetPassword';
 import watchNewPassword from './newPasswordSaga/newPassword';
 import fetchArticlesWatcher from './ArticleSaga/fetchArticlesSaga';
 import postArticleWatcher from './ArticleSaga/postArticleSaga';
-import watchRegister from './RegisterSaga/RegisterSaga';
-import watchVerify from './VerifyRegistrationSaga/VerifyRegistrationSaga';
 
 export default function* rootSaga() {
   yield all([

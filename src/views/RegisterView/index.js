@@ -19,13 +19,6 @@ class RegisterView extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { register, history } = nextProps;
-    if (register.success === true) {
-      history.push('/login');
-    }
-  }
-
   onChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };

@@ -80,10 +80,10 @@ const LoginComponent = (
           <NavLink to="register"> Register</NavLink>
           {' '}
 
-                                </p>
-                              </Grid.Column>
-                            </Grid>
-                          </div>
+        </p>
+      </Grid.Column>
+    </Grid>
+  </div>
 );
 LoginComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
