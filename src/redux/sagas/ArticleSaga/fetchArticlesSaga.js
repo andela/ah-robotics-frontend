@@ -13,7 +13,7 @@ function* fetchArticleWorker({ page = 1 }) {
 } catch (error) {
     yield put({
       type: types.ARTICLE_FETCH_ERROR,
-      payload: { errors: error.response.data.errors },
+      payload: { errors: error.response.data },
     });
   }
 }

@@ -3,11 +3,10 @@ import './articles.scss';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import Pagination from 'react-js-pagination';
+import { Pagination } from 'semantic-ui-react';
 import { articleFetch } from '../../redux/actions/ArticleActions/articles.actions';
 import PopularComponent from '../../components/Popular';
 import ArticlesListing from '../../components/ArticlesListing';
-//import { Pagination } from 'semantic-ui-react'
 
 
 class ArticlesView extends Component {
@@ -16,32 +15,27 @@ class ArticlesView extends Component {
     articles: PropTypes.arrayOf({}).isRequired,
   }
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      activePage: 1,
-    };
-  }
+  state = {
+    activePage: 1,
+  };
 
   componentDidMount() {
     const { getArticles } = this.props;
     getArticles();
   }
 
-  componentWillReceiveProps(nextProps) {
-
-  }
-
-  handlePageChange = (pageNumber) => {
+  handlePaginationChange = (e, { activePage }) => {
+    this.setState({ activePage }, () => {
     const { getArticles } = this.props;
-    getArticles(pageNumber);
-    this.setState({ activePage: pageNumber });
+    getArticles(this.state.activePage);
+    this.setState({ activePage: this.state.activePage });
+    });
   }
+
 
   render() {
     const { articles } = this.props;
-    const { activePage } = this.props;
-    
+    const { activePage } = this.state;
 
     return (
       <div>
@@ -49,29 +43,13 @@ class ArticlesView extends Component {
         <ArticlesListing articles={articles.data} isFetching={articles.isFetching} />
         { articles.data.count > 10 && (
         <div>
-         <Pagination
-            className="pagination"
-            prevPageText="previous"
-            nextPageText="next"
-            firstPageText="first"
-            lastPageText="last"
-            activePage={activePage}
-            itemsCountPerPage={10}
-            totalItemsCount={articles.data.count}
-            pageRangeDisplayed={Math.ceil(articles.data.count / 10)}
-            onChange={this.handlePageChange}
-          />  
 
-          {/* <Pagination 
+          <Pagination
             id="pagination"
-            defaultActivePage={activePage} 
-            totalPages={Math.ceil(articles.data.count / 10)} 
+            totalPages={Math.ceil(articles.data.count / 10)}
             activePage={activePage}
-            
-            totalItemsCount={articles.data.count}
-            pageRangeDisplayed={Math.ceil(articles.data.count / 10)}
-            onClick={this.handlePageChange}
-          />  */}
+            onPageChange={this.handlePaginationChange}
+          />
         </div>
          )}
 
