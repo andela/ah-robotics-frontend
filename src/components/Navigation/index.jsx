@@ -26,9 +26,6 @@ const protectedLinks = (
     <NavLink to="/">
       <Menu.Item name="Home" />
     </NavLink>
-    <NavLink to="/ratings">
-      <Menu.Item name="Ratings" />
-    </NavLink>
     <NavLink to="/articles/new-story">
       <Menu.Item name="New Article" />
     </NavLink>

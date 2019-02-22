@@ -20,22 +20,29 @@ exports[`single article view tests it should match snapshot 1`] = `
     <p
       id="article-description"
     />
-    <span
-      className="article-span"
-    />
-    | 
-    <span
-      className="article-span"
-    >
-      Wednesday 27th February 2019
-    </span>
     <Image
       as="img"
       className="article-image"
       src="https://source.unsplash.com/random/720x580"
       ui={true}
     />
-    <span
+    <div
+      className="clearfix"
+    >
+      <span
+        className="article-span"
+      />
+      | 
+      <span
+        className="article-span"
+      >
+        Wednesday 27th February 2019
+      </span>
+      <span
+        className="article-span float-right"
+      />
+    </div>
+    <div
       className="article-body"
     />
   </Container>

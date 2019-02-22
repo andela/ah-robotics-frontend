@@ -1,6 +1,8 @@
 $primary-color: #00d0a0;
-body > div, body > div > div,body > div > div > div.login-form,body > div > div > div.ratings-container {
-    height: 100%;
+
+body>div>div>div.login-form,
+body>div>div>div.ratings-container {
+    height: 100% !important;
 }
 .ratings-container{
     margin-top: 200px;

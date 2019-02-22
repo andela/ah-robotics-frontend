@@ -8,35 +8,38 @@ import Moment from 'moment';
 import './article.scss';
 
 
-const ArticleComponent = ({ article, isFetching }) => {
+const ArticleComponent = ({ article, rating, isFetching }) => {
   const fetchedArticle = article.article;
   return (
     <Segment loader={isFetching} basic>
       <Container text style={{ marginTop: '7em' }}>
         <Header id="single-article-head" as="h1">{fetchedArticle && fetchedArticle.title}</Header>
         <p id="article-description">{fetchedArticle && fetchedArticle.description}</p>
-        <span className="article-span">
-          {fetchedArticle && fetchedArticle.author.username}
-        </span>
-        {'| '}
-        <span className="article-span">
-          {Moment(fetchedArticle && fetchedArticle.created_at).format('dddd Do MMMM YYYY')}
-        </span>
         <Image
           src={(fetchedArticle && fetchedArticle.image)
         || 'https://source.unsplash.com/random/720x580'}
           className="article-image"
         />
-        <span className="article-body">
+        <div className="clearfix">
+          <span className="article-span">
+            {fetchedArticle && fetchedArticle.author.username}
+          </span>
+          {'| '}
+          <span className="article-span">
+            {Moment(fetchedArticle && fetchedArticle.created_at).format('dddd Do MMMM YYYY')}
+          </span>
+          <span className="article-span float-right">{rating}</span>
+        </div>
+        <div className="article-body">
           { fetchedArticle && renderHtml(fetchedArticle.body)}
-        </span>
-
+        </div>
       </Container>
     </Segment>
 );
 };
 ArticleComponent.propTypes = {
   article: PropTypes.shape({}).isRequired,
+  rating: PropTypes.shape.isRequired,
   isFetching: PropTypes.bool.isRequired,
 };
 export default ArticleComponent;

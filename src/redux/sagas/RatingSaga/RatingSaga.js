@@ -1,16 +1,16 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
-import axios from 'axios';
 import * as types from '../../actions/RatingsActions/types';
+import { api } from '../../../utils/auth';
 
-function* ratingWorker({ payload }) {
-  const token = localStorage.getItem('accessToken');
-  const headers = {
-    'Content-Type': 'application/json',
-    Authorization: `TOKEN ${token}`,
+export const apiClient = {
+  ratingsUrl: (slug, payload) => api.post(`/rate/${slug}/`, payload),
 };
+
+export function* processRatings({ payload }) {
   try {
-    const apiUrl = 'https://ah-robotics-staging.herokuapp.com/api/v1/rate/this-is-africa/';
-    const response = yield call(axios.post, apiUrl, { user_rating: payload.rating }, { headers });
+    const { slug } = payload.match.params;
+    const response = yield call(apiClient.ratingsUrl,
+      slug, { user_rating: payload.rating });
     yield put({
       type: types.RATING_SUCCESS,
       payload: { rating: response.data },
@@ -28,7 +28,7 @@ function* ratingWorker({ payload }) {
 }
 
 function* watchSelectRating() {
-  yield takeLatest(types.SELECT_RATE, ratingWorker);
+  yield takeLatest(types.SELECT_RATE, processRatings);
 }
 
 export default watchSelectRating;

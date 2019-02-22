@@ -1,35 +1,49 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import {
-    Header, Segment, Grid, Rating, Loader,
+  Segment, Rating, Loader, Message,
 } from 'semantic-ui-react';
 
-const RatingComponent = ({ prop, square, handleRate }) => (
-  <div className="ratings-container">
-    <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
-      <Grid.Column className="form-container">
-        <Segment circular style={square}>
-          <Header as="h2">
-                Rating!
-            <Header.Subheader>
-              {prop.ratings.isLoading === true && <Loader active inline />}
-              {prop.ratings.isUpdated
-                ? (prop.ratings.isLoading === false
-                  && JSON.stringify(prop.ratings.rating.data.average_rating)) : null}
-            </Header.Subheader>
-          </Header>
-          <Rating icon="star" maxRating={5} onRate={handleRate} />
-        </Segment>
-      </Grid.Column>
+const RatingComponent = ({ prop, handleRate }) => {
+  const { ratings, articles } = prop;
+  return (
+    <div>
 
-    </Grid>
+      {
+        prop.ratings.isError === true && (
+          <Message color="red">
+            {
+              prop.ratings.error.detail === 'Cannot decode the given token'
+              && 'Please login to Rate this article'
+            }
 
-  </div>
-);
+          </Message>
+        )
+      }
+
+      <Segment basic>
+
+        {
+          /* Display a loader if the ratings data is still loading */
+          (ratings.isLoading)
+          && <Loader active inline />}
+        {
+          /* If the a user rates an article successfully,
+          display the updated avarage rating */
+          (ratings.isUpdated && !ratings.isLoading)
+            ? (`Avg(${Math.round(ratings.rating.data.average_rating * 10) / 10})`)
+            // Otherwise, get the initial article's rating and display
+            : (articles.data.article)
+            ? (`Avg(${articles.data.article.rating.average_rating === null && 0})`) : 0
+        }
+        <Rating icon="star" maxRating={5} onRate={handleRate} />
+      </Segment>
+    </div>
+  );
+};
 RatingComponent.propTypes = {
-    handleRate: PropTypes.func.isRequired,
-    square: PropTypes.number.isRequired,
-    prop: PropTypes.shape({}).isRequired,
-  };
+  handleRate: PropTypes.func.isRequired,
+  prop: PropTypes.shape({}).isRequired,
+};
 
 export default RatingComponent;

@@ -1,39 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`app should match the snapshot 1`] = `
-<div
-  className="ratings-container"
->
-  <Grid
-    style={
-      Object {
-        "height": "100%",
-      }
-    }
-    textAlign="center"
-    verticalAlign="middle"
+<div>
+  <Segment
+    basic={true}
   >
-    <GridColumn
-      className="form-container"
-    >
-      <Segment
-        circular={true}
-        style={0}
-      >
-        <Header
-          as="h2"
-        >
-          Rating!
-          <HeaderSubheader />
-        </Header>
-        <Rating
-          clearable="auto"
-          icon="star"
-          maxRating={5}
-          onRate={[Function]}
-        />
-      </Segment>
-    </GridColumn>
-  </Grid>
+    0
+    <Rating
+      clearable="auto"
+      icon="star"
+      maxRating={5}
+      onRate={[Function]}
+    />
+  </Segment>
 </div>
 `;
