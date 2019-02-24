@@ -12,16 +12,12 @@
     "eslint-plugin-react": "^7.12.4",
     "fork-ts-checker-webpack-plugin": "^0.5.2",
     "lodash": "^4.17.11",
-<<<<<<< HEAD
     "moment": "^2.24.0",
-=======
->>>>>>> ft(aricles) : Creating,fetching single and fetching all articles
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.8.2",
     "react-ckeditor-component": "^1.1.0",
     "react-dom": "^16.8.2",
-    "react-js-pagination": "^3.0.2",
     "react-redux": "^6.0.0",
     "react-render-html": "^0.6.0",
     "react-router-dom": "^4.3.1",

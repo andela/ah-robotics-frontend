@@ -7,11 +7,9 @@ import Error from './components/Error/index';
 import ResetPasswordView from './views/ResetPasswordView';
 import NavigationComponent from './views/NavigationView';
 import NewPasswordView from './views/NewPasswordView';
-import RegisterView from './views/RegisterView';
 import VerifyRegistrationView from './views/VerifyRegistrationView/index';
 import ArticlesView from './views/ArticlesListingView';
 import CreateArticle from './views/CreateArticleView';
-import ArticleView from './views/ArticleView';
 
 class App extends Component {
   render() {
@@ -26,8 +24,6 @@ class App extends Component {
             <Route path="/resetpassword" component={ResetPasswordView} />
             <Route path="/reset_password/:token" component={NewPasswordView} />
             <Route path="/" component={ArticlesView} exact />
-            <Route path="/article/:slug" component={ArticleView} />
-            <Route path="/login" component={LoginView} exact />
             <Route path="/articles" component={ArticlesView} exact />
             <Route path="/articles/new-story" component={CreateArticle} exact />
             <Route component={Error} />

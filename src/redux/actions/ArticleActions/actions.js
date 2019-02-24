@@ -1,8 +1,8 @@
 import * as types from './types';
 
-export const articleFetch = slug => ({
+export const articleFetch = page => ({
   type: types.ARTICLE_FETCH,
-  slug,
+  page,
 });
 
 export const articleFetchSuccess = payload => ({
