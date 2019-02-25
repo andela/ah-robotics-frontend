@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { Pagination } from 'semantic-ui-react';
 import { articleFetch, clearState } from '../../redux/actions/ArticleActions/actions';
 import PopularComponent from '../../components/Popular';
-import { Pagination } from 'semantic-ui-react';
 import ArticlesListing from '../../components/ArticlesListing';
 import './articleslisting.scss';
 
@@ -23,12 +23,16 @@ class ArticlesView extends Component {
     getArticles();
   }
 
+  componentWillReceiveProps() {
+    window.scrollTo(0, 0);
+  }
+
   handlePaginationChange = (e, { activePage }) => {
     this.setState({ activePage }, () => {
       const currentState = this.state;
       const currentPage = currentState.activePage;
       const { getArticles } = this.props;
-      getArticles(currentPage);
+      getArticles({ page: currentPage });
       this.setState({ activePage: currentPage });
     });
   }
