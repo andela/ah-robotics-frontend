@@ -10,7 +10,7 @@ import {
   Message,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import './register.scss';
+import '../Login/login.scss';
 import logo from './logo.png';
 
 const RegisterComponent = ({
@@ -100,6 +100,7 @@ const RegisterComponent = ({
               size="large"
               loading={loading}
               onClick={handleSubmit}
+              className="btn-login bg-green"
             >
               Register
             </Button>

@@ -1,0 +1,38 @@
+.lowerSection{
+  margin-top: 50px !important;
+}
+.ui.items>.item>.image+.content{
+  padding: 1.5em;
+  min-height:300px ;
+  min-width: 34em;
+}
+.ui.divided.items>.item {
+  border-top: none;
+}
+.ui.items>.item>.image>img {
+  padding-top: 1.5em;
+  padding-bottom: 0.2em;
+  max-height: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.ui.items > .item > .image + .content {
+  margin-left: 0.5em;
+}
+.ui.items>.item>.image:not(.ui){
+  width: 400px !important;
+  height: auto;
+  max-height: 300px;
+}
+.author-name{
+ text-transform: capitalize;
+}
+.ui.basic.segment {
+  margin-left: 4.5em;
+}
+.content .header > a{
+  text-transform:capitalize ;
+}

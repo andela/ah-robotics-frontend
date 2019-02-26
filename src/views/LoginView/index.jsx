@@ -12,12 +12,12 @@ class LoginView extends Component {
     this.setState({ login: { success: false } });
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { login, history } = nextProps;
+  componentDidUpdate(prevProps, prevState, snapshot) {
+  const { login } = this.props;
     if (login.success) {
       setTimeout(() => {
-        history.push('/');
-      }, 800);
+        window.location.assign('/');
+      }, 1000);
     }
   }
 
@@ -49,7 +49,6 @@ class LoginView extends Component {
 LoginView.propTypes = {
   loginUser: PropTypes.func.isRequired,
   login: PropTypes.shape({}).isRequired,
-  history: PropTypes.shape({}).isRequired,
 };
 
 const mapStateToProps = ({ login }) => ({

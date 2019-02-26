@@ -1,0 +1,16 @@
+$banner-container-height : 450px;
+.ui.image {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ui.grid>[class*="eight wide"].column {
+  max-height: 450px;
+}
+.right-banner .ui.image {
+  height: 200px;
+}
+.left-banner .ui.image {
+  height: 400px;
+}
