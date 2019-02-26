@@ -22,7 +22,7 @@ const { page, slug } = payload || { page: 1, slug: '' };
   } catch (error) {
     yield put({
       type: types.ARTICLE_FETCH_ERROR,
-      payload: { errors: error.response.data.errors },
+      payload: { errors: error.response.data.message },
     });
   }
 }

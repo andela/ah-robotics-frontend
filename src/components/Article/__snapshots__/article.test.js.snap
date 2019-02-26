@@ -15,14 +15,11 @@ exports[`single article view tests it should match snapshot 1`] = `
   >
     <Header
       as="h1"
+      id="single-article-head"
     />
-    <Image
-      as="img"
-      className="article-image"
-      src="https://source.unsplash.com/random/720x580"
-      ui={true}
+    <p
+      id="article-description"
     />
-    <p />
     <span
       className="article-span"
     />
@@ -30,8 +27,17 @@ exports[`single article view tests it should match snapshot 1`] = `
     <span
       className="article-span"
     >
-      Monday 25th February 2019
+      Wednesday 27th February 2019
     </span>
+    <Image
+      as="img"
+      className="article-image"
+      src="https://source.unsplash.com/random/720x580"
+      ui={true}
+    />
+    <span
+      className="article-body"
+    />
   </Container>
 </Segment>
 `;
