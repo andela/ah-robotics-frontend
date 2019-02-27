@@ -1,8 +1,8 @@
-import * as types from './types';
+import * as types from './articles.action.types';
 
-export const articleFetch = payload => ({
+export const articleFetch = page => ({
   type: types.ARTICLE_FETCH,
-  payload,
+  page,
 });
 
 export const articleFetchSuccess = payload => ({
@@ -13,9 +13,6 @@ export const articleFetchSuccess = payload => ({
 export const articleFetchError = payload => ({
   type: types.ARTICLE_FETCH_ERROR,
   payload,
-});
-export const clearState = () => ({
-type: types.CLEAR,
 });
 export const postArticle = payload => ({
   type: types.ARTICLE_POST,

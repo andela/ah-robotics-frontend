@@ -25,10 +25,8 @@ describe('fetch article saga tests', () => {
     const errors = {
       response: {
         data: {
-            errors: {
-              error: 'something went wrong',
-            },
-          },
+              message: 'something went wrong',
+        },
       },
     };
     apiClient.fetchUserArticles = jest.fn(() => Promise.reject(errors));
@@ -37,7 +35,7 @@ describe('fetch article saga tests', () => {
     expect(dispatchedActions).toEqual(
       [{
  type: 'ARTICLE_FETCH_ERROR',
-      payload: { errors: { error: 'something went wrong' } },
+      payload: { errors: 'something went wrong' },
 }],
 );
   });

@@ -10,7 +10,7 @@ class ArticleView extends Component {
   componentDidMount() {
     const { match, fetchSingle } = this.props;
     const { slug } = match.params;
-    fetchSingle(slug);
+    fetchSingle({ slug });
   }
 
   render() {

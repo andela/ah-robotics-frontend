@@ -5,6 +5,7 @@ import './navigation.scss';
 import PropTypes from 'prop-types';
 import { logout } from '../../utils/auth';
 
+
 const guestLinks = (
   <Menu.Menu position="right">
     <NavLink to="/">
@@ -44,12 +45,14 @@ const protectedLinks = (
 
 const NavigationComponent = ({ isAuthenticated }) => (
   <div>
+
     <Container>
       <Menu className="navbar" pointing secondary>
         {!isAuthenticated && guestLinks}
         {isAuthenticated && protectedLinks}
       </Menu>
     </Container>
+
   </div>
 );
 

@@ -1,15 +1,36 @@
 .article-image{
-  margin-top: 2em;
-}
-.article-container{
-  margin-top: 7em;
-}
-p img{
-  display: block;
-  max-width: 650px;
-  height: auto;
-  width:auto;
-}
-.article-span{
-  font-weight: 600;
-}
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+  }
+  .article-container{
+    margin-top: 7em;
+  }
+  p img{
+    display: block;
+    max-width: 650px;
+    height: auto;
+    width:auto;
+  }
+  .article-span{
+    font-weight: 600;
+    color: 	#707070;
+  }
+  
+  #single-article-head{
+    color: #202020 !important;
+    text-align: left;
+    font-size: 3em;
+    font-family: 'Open Sans';
+  }
+
+  .article-body{
+    color: black;
+    letter-spacing: 1.4px;
+    font-family: Raleway, sans-serif;
+    font-size: 18px;
+  }
+
+  #article-description{
+    font-weight: 700;
+    color: #383838 !important;
+  }

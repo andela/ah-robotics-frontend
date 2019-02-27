@@ -13,13 +13,8 @@ const ArticleComponent = ({ article, isFetching }) => {
   return (
     <Segment loader={isFetching} basic>
       <Container text style={{ marginTop: '7em' }}>
-        <Header as="h1">{fetchedArticle && fetchedArticle.title}</Header>
-        <Image
-          src={(fetchedArticle && fetchedArticle.image)
-        || 'https://source.unsplash.com/random/720x580'}
-          className="article-image"
-        />
-        <p>{fetchedArticle && fetchedArticle.description}</p>
+        <Header id="single-article-head" as="h1">{fetchedArticle && fetchedArticle.title}</Header>
+        <p id="article-description">{fetchedArticle && fetchedArticle.description}</p>
         <span className="article-span">
           {fetchedArticle && fetchedArticle.author.username}
         </span>
@@ -27,8 +22,15 @@ const ArticleComponent = ({ article, isFetching }) => {
         <span className="article-span">
           {Moment(fetchedArticle && fetchedArticle.created_at).format('dddd Do MMMM YYYY')}
         </span>
+        <Image
+          src={(fetchedArticle && fetchedArticle.image)
+        || 'https://source.unsplash.com/random/720x580'}
+          className="article-image"
+        />
+        <span className="article-body">
+          { fetchedArticle && renderHtml(fetchedArticle.body)}
+        </span>
 
-        { fetchedArticle && renderHtml(fetchedArticle.body)}
       </Container>
     </Segment>
 );

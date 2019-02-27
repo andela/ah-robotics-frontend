@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.com/andela/ah-robotics-frontend.svg?branch=ch-travis-integration-162949031)](https://travis-ci.com/andela/ah-robotics-frontend)
 [![CircleCI](https://circleci.com/gh/andela/ah-robotics-frontend.svg?style=svg)](https://circleci.com/gh/andela/ah-robotics-frontend)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8694c456caebc8cb7b64/maintainability)](https://codeclimate.com/github/andela/ah-robotics-frontend/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8694c456caebc8cb7b64/test_coverage)](https://codeclimate.com/github/andela/ah-robotics-frontend/test_coverage)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8a7f9d785f57487d82168df31da93cce)](https://app.codacy.com/app/Teatoller/ah-robotics-frontend?utm_source=github.com&utm_medium=referral&utm_content=andela/ah-robotics-frontend&utm_campaign=Badge_Grade_Dashboard)
 
 ## Vision

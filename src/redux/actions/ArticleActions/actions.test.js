@@ -5,10 +5,6 @@ import {
 import * as types from './types';
 
 describe('articles action tests', () => {
-it('test article fetch action', () => {
-  const slug = 'this-is-it';
-  expect(articleFetch(slug)).toEqual({ slug, type: types.ARTICLE_FETCH });
-});
   it('test article fetch action success', () => {
     const articles = { articles: [] };
     expect(articleFetchSuccess(articles)).toEqual(

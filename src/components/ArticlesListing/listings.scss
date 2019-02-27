@@ -36,3 +36,21 @@
 .content .header > a{
   text-transform:capitalize ;
 }
+
+.author-name, .read-time-all{
+  font-family: 'Open Sans';
+}
+
+.article-title{
+  font-family: 'Open Sans', sans-serif;
+  color: #00d0a0 !important; 
+}
+
+.article-title:hover{
+  color: #06a580 !important;
+}
+.article-text{
+  font-family: Raleway, sans-serif;
+  letter-spacing: 1.0px;
+  font-size: 16px;
+}
