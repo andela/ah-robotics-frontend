@@ -6,6 +6,7 @@ import resetPasswordReducer from './resetPasswordReducer/resetpasswordreducer';
 import newPasswordReducer from './newPasswordReducer/newPasswordreducer';
 import fetchArticlesReducer from './ArticlesReducer/fetchArticlesReducer';
 import postArticlesReducer from './ArticlesReducer/postArticlesReducer';
+import ratings from './RatingsReducer/ratingsReducer';
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   newPassword: newPasswordReducer,
   articles: fetchArticlesReducer,
   createArticle: postArticlesReducer,
+  ratings,
 });
 
 export default rootReducer;

@@ -28,7 +28,9 @@ class App extends Component {
             <Route path="/article/:slug" component={ArticleView} />
             <Route path="/articles" component={ArticlesView} exact />
             <Route path="/articles/new-story" component={CreateArticle} exact />
+
             <Route component={Error} />
+
           </Switch>
         </div>
       </BrowserRouter>

@@ -17,7 +17,7 @@ const fetchArticlesReducer = (state = initialState, action) => {
   }
     case types.ARTICLE_FETCH_SUCCESS: {
       return {
-        ...state, ...action.payload, isFetching: false,
+        ...state, ...action.payload, isFetching: false, success: true,
       };
     }
     case types.ARTICLE_FETCH_ERROR: {

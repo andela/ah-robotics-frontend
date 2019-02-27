@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app should match the snapshot 1`] = `
+<div>
+  <Segment
+    basic={true}
+  >
+    0
+    <Rating
+      clearable="auto"
+      icon="star"
+      maxRating={5}
+      onRate={[Function]}
+    />
+  </Segment>
+</div>
+`;

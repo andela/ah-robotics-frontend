@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import './resetpassword.scss';
 import PropTypes from 'prop-types';
 import logo from './logo.png';
+
 const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
   <div className="login-form">
     <Grid textAlign="center" style={{ height: '100%' }} verticalAlign="middle">

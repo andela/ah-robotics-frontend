@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { articleFetch } from '../../redux/actions/ArticleActions/actions';
 import ArticleComponent from '../../components/Article';
+import RatingsView from '../RatingsView/index';
 
 class ArticleView extends Component {
   componentDidMount() {
@@ -16,13 +17,22 @@ class ArticleView extends Component {
   render() {
     const { articles } = this.props;
     return (
-      <ArticleComponent article={articles.data} isFetching={articles.isFetching} />
+      <div>
+        <ArticleComponent
+          article={articles.data}
+          rating={
+            <RatingsView />}
+          isFetching={
+          articles.isFetching
+          }
+        />
+      </div>
     );
   }
 }
 
 const mapStateToProps = ({ articles }) => ({
-articles,
+  articles,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
