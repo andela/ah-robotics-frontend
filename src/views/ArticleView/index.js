@@ -14,11 +14,23 @@ import CommentsListComponent
 
 
 class ArticleView extends Component {
+  imageInput = React.createRef();
+
   componentDidMount() {
     const { match, fetchSingle } = this.props;
     const { slug } = match.params;
     fetchSingle({ slug });
   }
+
+  handleEdit =(event) => {
+    event.preventDefault();
+    const { history } = this.props;
+    history.push('/articles/update/');
+  };
+
+  getInputFocus =() => {
+    this.imageInput.current.click();
+  };
 
   render() {
     const { articles } = this.props;
@@ -30,6 +42,9 @@ class ArticleView extends Component {
           rating={
             <RatingsView />}
           isFetching={articles.isFetching}
+          handleEdit={this.handleEdit}
+          imageInput={this.imageInput}
+          getInputFocus={this.getInputFocus}
         />
         {currentUser !== null ? (
           <div>

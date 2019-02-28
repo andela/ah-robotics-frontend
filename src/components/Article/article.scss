@@ -1,3 +1,4 @@
+$primary-color: #00d0a0;
 .article-image{
     margin-top: 2em;
     margin-bottom: 1.5em;
@@ -36,6 +37,7 @@
     font-weight: 700;
     color: #383838 !important;
   }
+<<<<<<< HEAD
   .float-right{
     float: right;
     margin-top: -15px;
@@ -48,3 +50,14 @@
    height: 0;
    clear: both;
 }
+=======
+.ui.basic.buttons {
+  margin-right: 4rem;
+}
+.article-edit i{
+  color: $primary-color;
+}
+.article-delete i{
+  color:red;
+}
+>>>>>>> d62d0ef... ft(articles): editing and deleting articles

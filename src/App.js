@@ -13,6 +13,8 @@ import ArticleView from './views/ArticleView';
 import CreateArticle from './views/CreateArticleView';
 import ProfileView from './views/UserProfileView';
 import profileEditView from './views/ProfileEditView';
+import UpdateArticleView from './views/UpdateArticleView';
+
 
 class App extends Component {
   render() {
@@ -32,6 +34,7 @@ class App extends Component {
             <Route path="/articles/new-story" component={CreateArticle} exact />
             <Route path="/profiles" component={ProfileView} />
             <Route path="/editprofile" component={profileEditView} />
+            <Route path="/articles/update/" component={UpdateArticleView} />
             <Route component={Error} />
           </Switch>
         </div>

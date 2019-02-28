@@ -31,3 +31,17 @@ export const postArticleError = payload => ({
   type: types.ARTICLE_POST_ERROR,
   payload,
 });
+export const updateUserArticle = payload => ({
+  type: types.ARTICLE_UPDATE,
+  payload,
+});
+
+export const updateUserArticleSuccess = payload => ({
+  type: types.ARTICLE_UPDATE_SUCCESS,
+  payload,
+});
+
+export const updateUserArticleError = payload => ({
+  type: types.ARTICLE_UPDATE_ERROR,
+  payload,
+});
