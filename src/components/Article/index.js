@@ -1,6 +1,6 @@
 import React from 'react';
 import {
- Container, Header, Image, Segment,
+ Container, Header, Image, Segment, Label,
 } from 'semantic-ui-react';
 import renderHtml from 'react-render-html';
 import PropTypes from 'prop-types';
@@ -30,6 +30,16 @@ const ArticleComponent = ({ article, rating, isFetching }) => {
           </span>
           <span className="article-span float-right">{rating}</span>
         </div>
+        {
+            (fetchedArticle)
+            && fetchedArticle.tagList.map((object, i) => (
+              <Label as="a" color="teal" tag>
+                {
+                  object
+                }
+              </Label>
+            ))
+        }
         <div className="article-body">
           { fetchedArticle && renderHtml(fetchedArticle.body)}
         </div>

@@ -3,12 +3,14 @@ import {
   Button, Container, Form, Grid,
 } from 'semantic-ui-react';
 import CKEditor from 'react-ckeditor-component';
+import TagsInput from 'react-tagsinput';
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import './articleEditor.scss';
+import 'react-tagsinput/react-tagsinput.css';
 
 const ArticleEditor = ({
- onInputChange, onEditorChange, handleArticlePost, createArticle, body,
+  onInputChange, onEditorChange, handleArticlePost, createArticle, body, handleChange, state,
 }) => (
   <Container>
     <Fragment>
@@ -44,6 +46,7 @@ const ArticleEditor = ({
               required
               maxLength={80}
             />
+            <TagsInput value={state.tags} onChange={handleChange} />
             <p className="success-message">
               {(createArticle.isPosted) && 'Article posted successfully'}
             </p>
@@ -76,5 +79,7 @@ ArticleEditor.propTypes = {
   handleArticlePost: PropTypes.func.isRequired,
   createArticle: PropTypes.shape({}).isRequired,
   body: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  state: PropTypes.shape.isRequired,
 };
 export default ArticleEditor;
