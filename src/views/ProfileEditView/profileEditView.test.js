@@ -12,8 +12,7 @@ function setup() {
 
   const wrapper = shallow(
     <ProfileEditComponent handleSubmit={handleSubmit} profile={profile} onChange={onChange} />,
-);
-
+  );
   return {
     wrapper,
   };

@@ -17,11 +17,9 @@ const user = profile;
             </Grid.Column>
             <Grid.Column width={6}>
               <Header id="sample-header" as="h3">
-                <b>Username: </b>
-                {user.profile && user.profile.username }
+                <span id="user-username">{user.profile && user.profile.username }</span>
               </Header>
               <p>
-                <b id="bio">Bio: </b>
                 {' '}
                 <span id="bio-text">{user.profile && user.profile.bio }</span>
               </p>
@@ -29,7 +27,7 @@ const user = profile;
           </Grid.Row>
           <GridRow>
             <div>
-              <Button positive><NavLink to="editprofile"><span id="edit-profile">Edit Profile</span></NavLink></Button>
+              <Button id="edit-profile-btn" positive><NavLink to="editprofile"><span id="edit-profile">Edit Profile</span></NavLink></Button>
             </div>
           </GridRow>
           <Grid.Row>
@@ -38,7 +36,7 @@ const user = profile;
                 <Icon name="users" />
                 {' '}
                 Followers
-                <Label color="green" floating>
+                <Label color="teal" floating>
                   {user.profile && user.profile.followers}
                 </Label>
               </Menu.Item>

@@ -12,22 +12,22 @@ profileData, Error, profileUpdate, userImageUpload,
 } from './actions';
 
 describe('Profile action creator', () => {
-it('should dispatch PROFILE_DATA', () => {
+  it('should dispatch PROFILE_DATA', () => {
   expect(profileData({}).type).toEqual(PROFILE_DATA);
 });
-it('should dispatch PROFILE_ERROR', () => {
+  it('should dispatch PROFILE_ERROR', () => {
   expect(Error({}).type).toEqual(PROFILE_ERROR);
 });
-it('should dispatch PROFILE_PATCH', () => {
+  it('should dispatch PROFILE_PATCH', () => {
   expect(profileUpdate({}).type).toEqual(PROFILE_PATCH_START);
 });
-it('should dispatch PROFILE_ERROR', () => {
+  it('should dispatch PROFILE_ERROR', () => {
   expect(userImageUpload({}).type).toEqual(UPLOAD_IMAGE_START);
 });
-it('should dispatch PROFILE_PATCH', () => {
+  it('should dispatch PROFILE_PATCH', () => {
   expect(userImageUploadSuccess({}).type).toEqual(UPLOAD_IMAGE_SUCCESS);
 });
-it('should dispatch PROFILE_PATCH', () => {
+  it('should dispatch PROFILE_PATCH', () => {
   expect(userImageUploadError({}).type).toEqual(UPLOAD_IMAGE_ERROR);
 });
 });

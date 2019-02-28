@@ -17,14 +17,14 @@ const ProfileEditComponent = ({
           {/* {console.log(profile.profileData)} */}
           <Grid.Column>
             <Grid.Column width={4}>
-              <Image id="sample-img" src={userProfile && userProfile.image} size="medium" circular className="App-logo" color="red" alt="logo" />
+              <Image id="sample-edit-img" src={userProfile && userProfile.image} size="medium" circular className="App-logo" color="red" alt="logo" />
             </Grid.Column>
             <Input type="file" name="image" accept="image/*" onChange={onImageChange} />
           </Grid.Column>
-
           <Grid.Column verticalAlign="middle">
             <Form.Field className="bio-textarea">
-              <Form.TextArea rows="10" label="Bio input" placeholder="Tell us more about you..." name="bio" onChange={onChange} value={profile.bio} />
+              <p id="edit-form-area">Biography</p>
+              <Form.TextArea rows="10" maxLength="500" placeholder="Tell us more about you..." name="bio" onChange={onChange} value={profile.bio} />
             </Form.Field>
           </Grid.Column>
         </Grid>
@@ -33,10 +33,10 @@ const ProfileEditComponent = ({
 
       <Divider vertical />
     </Segment>
-    <Button.Group>
+    <Button.Group id="btn-grp">
       <Button><NavLink to="profiles">Cancel</NavLink></Button>
       <Button.Or />
-      <Button fluid type="submit" onClick={handleSubmit} positive>Save</Button>
+      <Button id="save-btn" fluid type="submit" onClick={handleSubmit} positive>Save</Button>
     </Button.Group>
   </Container>
     );

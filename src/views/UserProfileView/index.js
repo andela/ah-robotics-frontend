@@ -17,10 +17,6 @@ class ProfileView extends Component {
     profileAction(payload);
   }
 
-  componentWillReceiveProps(nextProps) {
-
-  }
-
   render() {
     const { profile } = this.props;
     const userProfile = profile.profile;

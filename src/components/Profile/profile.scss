@@ -1,6 +1,8 @@
 #sample-img{
     margin-top: 50px;
-    border-radius: 10%;
+    border-radius: 50%;
+    width: 85%;
+    height: 200%;
 }
 
 #sample-header{
@@ -10,6 +12,8 @@
 
 #edit-profile {
     color: #fff;
+    padding: 20px;
+    margin-top: -5px;
 }
 
 #bio{
@@ -20,10 +24,24 @@
 }
 
 #bio-text {
-    color: grey;
+    color: #404040;
+    
 }
 .float{
     float:  left !important;
     display: block;
     height: 330px !important;
+}
+
+#user-username{
+    color: #404040;
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-right: 60px;
+}
+
+#edit-profile-btn{
+    border-radius: 20px !important;
+    height: 100%;
+    background-color: #00d0a0;
 }

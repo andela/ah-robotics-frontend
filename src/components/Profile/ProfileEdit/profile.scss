@@ -6,3 +6,27 @@
     max-width: 45rem !important;
 
 }
+
+#btn-grp{
+    margin-left: 470px;
+}
+
+#save-btn{
+    width: 60%;
+    background-color: #00d0a0;
+}
+
+#save-btn:hover{
+    background-color: #00a37d;
+}
+
+#edit-form-area{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#sample-edit-img{
+    border-radius: 50%;
+    width: 50%;
+}
