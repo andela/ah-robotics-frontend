@@ -1,7 +1,6 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import * as types from '../../actions/LoginActions/types';
-import setUserToken, { setCurrentUser } from '../../../utils/auth';
 
 function* loginWorker({ payload }) {
   try {
@@ -12,8 +11,8 @@ function* loginWorker({ payload }) {
       payload: { user: response.data.user },
     });
     const { token } = response.data.user;
-    setUserToken(token);
-    setCurrentUser(response.data.user);
+    localStorage.setItem('accessToken', JSON.stringify(token));
+    localStorage.setItem('user', JSON.stringify(response.data.user));
   } catch (error) {
     yield put({
       type: types.LOGIN_ERROR,

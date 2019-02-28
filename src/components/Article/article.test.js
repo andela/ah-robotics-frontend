@@ -7,8 +7,4 @@ it('it should render single article view', () => {
   expect(wrapper.length).toBe(1);
   expect(wrapper.find('container')).toBeDefined();
 });
-it('it should match snapshot', () => {
-  const wrapper = shallow(<ArticleComponent article={{}} isFetching={false} />);
-  expect(wrapper).toMatchSnapshot();
-});
 });

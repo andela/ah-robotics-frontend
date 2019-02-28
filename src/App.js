@@ -11,6 +11,8 @@ import VerifyRegistrationView from './views/VerifyRegistrationView/index';
 import ArticlesView from './views/ArticlesListingView';
 import ArticleView from './views/ArticleView';
 import CreateArticle from './views/CreateArticleView';
+import ProfileView from './views/UserProfileView';
+import profileEditView from './views/ProfileEditView';
 
 class App extends Component {
   render() {
@@ -28,7 +30,8 @@ class App extends Component {
             <Route path="/article/:slug" component={ArticleView} />
             <Route path="/articles" component={ArticlesView} exact />
             <Route path="/articles/new-story" component={CreateArticle} exact />
-
+            <Route path="/profiles" component={ProfileView} />
+            <Route path="/editprofile" component={profileEditView} />
             <Route component={Error} />
 
           </Switch>
