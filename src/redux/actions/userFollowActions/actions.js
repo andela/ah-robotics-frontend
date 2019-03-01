@@ -22,7 +22,7 @@ export const profileFollowError = payload => ({
     type: PROFILE_FOLLOW_ERROR,
     payload,
 });
-export const profileFollowersStart = payload => ({
+export const profileFollowersUpdate = payload => ({
     type: PROFILE_FOLLOWERS_START,
     payload,
 });
