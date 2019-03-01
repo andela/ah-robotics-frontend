@@ -35,7 +35,8 @@ const user = profile;
               <Menu.Item as="a">
                 <Icon name="users" />
                 {' '}
-                Followers
+                {/* Followers */}
+                <a href id="edit-profile-btn" positive><NavLink to="followersprofile"><span id="edit-profile">Followers</span></NavLink></a>
                 <Label color="teal" floating>
                   {user.profile && user.profile.followers}
                 </Label>
@@ -43,7 +44,8 @@ const user = profile;
               <Menu.Item as="a">
                 <Icon name="users" />
                 {' '}
-                Following
+                {/* Following */}
+                <a href id="edit-profile-btn" positive><NavLink to="followingprofile"><span id="edit-profile">Following</span></NavLink></a>
                 <Label color="teal" floating>
                   {user.profile && user.profile.following_count }
                 </Label>

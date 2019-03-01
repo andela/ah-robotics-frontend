@@ -7,9 +7,6 @@ import {
     PROFILE_FOLLOWING_START,
     PROFILE_FOLLOWING_ERROR,
     PROFILE_FOLLOWING_SUCCESS,
-    PROFILE_DELETE_START,
-    PROFILE_DELETE_SUCCESS,
-    PROFILE_DELETE_ERROR,
 } from '../../actions/userFollowActions/types';
 
 export const initialState = {
@@ -24,28 +21,28 @@ export const initialState = {
 const userFollowReducer = (state = initialState, action) => {
     switch (action.type) {
         case PROFILE_FOLLOW_DATA: {
-            return {...state, ...action.payload, isLoading: false};
+            return { ...state, ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOW_DATA_SUCCESS: {
-            return {...state, isLoading: false};
+            return { ...state, isLoading: false };
         }
         case PROFILE_FOLLOWERS_ERROR: {
-            return {...state, isLoading: true, errors: {}};
+            return { ...state, isLoading: true, errors: {} };
         }
         case PROFILE_FOLLOWERS_START: {
-            return {...state, profileFollowData: action.payload, isLoading: true};
+            return { ...state, profileFollowData: action.payload, isLoading: true };
         }
         case PROFILE_FOLLOWERS_SUCCESS: {
-            return {...action.payload, isLoading: false};
+            return { ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOWING_START: {
-            return {...state, profileFollowData: action.payload, isLoading: true};
+            return { ...state, profileFollowData: action.payload, isLoading: true };
         }
         case PROFILE_FOLLOWING_SUCCESS: {
-            return {...action.payload, isLoading: false};
+            return { ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOWING_ERROR: {
-            return {...state, isLoading: true, errors: {}};
+            return { ...state, isLoading: true, errors: {} };
         }
         default:
             return state;

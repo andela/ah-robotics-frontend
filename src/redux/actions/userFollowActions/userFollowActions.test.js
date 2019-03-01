@@ -7,9 +7,6 @@ import {
     PROFILE_FOLLOWING_START,
     PROFILE_FOLLOWING_ERROR,
     PROFILE_FOLLOWING_SUCCESS,
-    PROFILE_DELETE_START,
-    PROFILE_DELETE_SUCCESS,
-    PROFILE_DELETE_ERROR,
 } from './types';
 
 import {
@@ -49,4 +46,3 @@ describe('Profile action creator', () => {
         expect(profileFollowingSuccess({}).type).toEqual(PROFILE_FOLLOWING_SUCCESS);
     });
 });
-  

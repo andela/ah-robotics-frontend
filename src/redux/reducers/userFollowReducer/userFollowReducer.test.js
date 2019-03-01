@@ -17,8 +17,12 @@ import {
 describe('userFollowReducer tests', () => {
   it('it should have an initial state', () => {
     expect(userFollowReducer(userFollowReducer.initialState, {})).toEqual({
-    profileFollowData: {}, error: {}, profileFollowersUpdate: false, isLoading: false, Following: 0,
-    Followers: 0,
+        profileFollowData: {},
+        error: {},
+        profileFollowersUpdate: false,
+        isLoading: false,
+        Following: 0,
+        Followers: 0,
 });
   });
   it('it should show isloading set false', () => {

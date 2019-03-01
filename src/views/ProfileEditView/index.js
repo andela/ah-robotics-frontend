@@ -34,6 +34,7 @@ class profileEditView extends Component {
           const { image } = this.state;
           imageData.data = { image };
           const user = JSON.parse(localStorage.getItem('user'));
+          const token = localStorage.getItem('accessToken');
           const { username } = user;
           imageData.username = username;
           const { userImageUpload: uploadImage } = this.props;

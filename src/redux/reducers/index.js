@@ -19,6 +19,7 @@ import deleteArticleReducer from './ArticlesReducer/deleteArticleReducer';
 import updateImageReducer from './ArticlesReducer/updateImageReducer';
 import likeReducer from './LikeDislikeReducer/likeReducer';
 import dislikeReducer from './LikeDislikeReducer/dislikeReducer';
+import userFollowReducer from './userFollowReducer/userFollowReducer';
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -41,6 +42,7 @@ const rootReducer = combineReducers({
   updateImage: updateImageReducer,
   like: likeReducer,
   dislike: dislikeReducer,
+  followUser: userFollowReducer,
 });
 
 export default rootReducer;
