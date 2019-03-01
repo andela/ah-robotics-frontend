@@ -45,3 +45,17 @@ export const updateUserArticleError = payload => ({
   type: types.ARTICLE_UPDATE_ERROR,
   payload,
 });
+export const deleteUserArticle = payload => ({
+  type: types.ARTICLE_DELETE,
+  payload,
+});
+
+export const deleteUserArticleSuccess = payload => ({
+  type: types.ARTICLE_DELETE_SUCCESS,
+  payload,
+});
+
+export const deleteUserArticleError = payload => ({
+  type: types.ARTICLE_DELETE_ERROR,
+  payload,
+});

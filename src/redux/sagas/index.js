@@ -16,6 +16,7 @@ import getCommentsWatcher from './CommentSaga/getCommentsSaga';
 import deleteCommentWatcher from './CommentSaga/deleteCommentSaga';
 import updateCommentWatcher from './CommentSaga/updateCommentSaga';
 import updateArticleWatcher from './ArticleSaga/updateArticleSaga';
+import deleteArticleWatcher from './ArticleSaga/deleteArticleSaga';
 
 
 export default function* rootSaga() {
@@ -39,5 +40,6 @@ export default function* rootSaga() {
     fork(watchRegister),
     fork(watchVerify),
     fork(updateArticleWatcher),
+    fork(deleteArticleWatcher),
   ]);
 }

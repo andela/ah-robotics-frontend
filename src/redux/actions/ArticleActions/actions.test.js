@@ -1,6 +1,7 @@
 import {
- articleFetch, articleFetchError, articleFetchSuccess, postArticle,
-  postArticleError, postArticleSuccess,
+  articleFetchError, articleFetchSuccess, postArticle,
+  postArticleError, postArticleSuccess, updateUserArticle,
+  updateUserArticleError, updateUserArticleSuccess,
 } from './actions';
 import * as types from './types';
 
@@ -35,5 +36,28 @@ describe('articles action tests', () => {
       title: 'title is required',
     };
     expect(postArticleError(errors)).toEqual({ payload: errors, type: types.ARTICLE_POST_ERROR });
+  });
+  it('test update article action', () => {
+    const article = {
+      title: 'party x',
+      description: 'this is it',
+      body: '.. fix ...',
+      tagList: ['fam', 'ke'],
+    };
+    expect(updateUserArticle(article)).toEqual({ payload: article, type: types.ARTICLE_UPDATE });
+  });
+  it('test update article action success', () => {
+    const message = 'article updated successfully';
+    expect(updateUserArticleSuccess(message)).toEqual(
+      { payload: message, type: types.ARTICLE_UPDATE_SUCCESS },
+    );
+  });
+  it('test update article action error', () => {
+    const errors = {
+      title: 'title is required',
+    };
+    expect(updateUserArticleError(errors)).toEqual(
+      { payload: errors, type: types.ARTICLE_UPDATE_ERROR },
+   );
   });
 });

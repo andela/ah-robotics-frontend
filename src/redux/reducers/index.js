@@ -15,6 +15,7 @@ import allCommentsReducer from './CommentReducers/allCommentsReducer';
 import updateCommentReducer from './CommentReducers/updateCommentReducer';
 import deleteCommentReducer from './CommentReducers/deleteCommentReducer';
 import updateArticlesReducer from './ArticlesReducer/updateArticleReducer';
+import deleteArticleReducer from './ArticlesReducer/deleteArticleReducer';
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   deleteComment: deleteCommentReducer,
   getComments: allCommentsReducer,
   updateArticle: updateArticlesReducer,
+  deleteArticle: deleteArticleReducer,
 });
 
 export default rootReducer;

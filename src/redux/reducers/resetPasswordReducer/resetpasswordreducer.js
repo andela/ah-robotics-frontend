@@ -4,7 +4,7 @@ import {
   RESET_PASSWORD_ERROR,
 } from '../../actions/resetPasswordActions/resetPasswordTypes';
 
-const initialState = {
+export const initialState = {
   email: '',
   errors: {},
   success: false,

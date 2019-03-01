@@ -107,6 +107,7 @@ UpdateArticleView.propTypes = {
   updateArticleAction: PropTypes.func.isRequired,
   clearUpdate: PropTypes.func.isRequired,
   history: PropTypes.shape({}).isRequired,
+  articles: PropTypes.shape({}).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UpdateArticleView);

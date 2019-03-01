@@ -9,9 +9,17 @@ function setup() {
   const profile = {};
   const handleSubmit = () => ({});
   const onChange = () => ({});
+  const onImageChange = () => ({});
+  const userProfile = {};
 
   const wrapper = shallow(
-    <ProfileEditComponent handleSubmit={handleSubmit} profile={profile} onChange={onChange} />,
+    <ProfileEditComponent
+      handleSubmit={handleSubmit}
+      profile={profile}
+      onChange={onChange}
+      onImageChange={onImageChange}
+      userProfile={userProfile}
+    />,
   );
   return {
     wrapper,

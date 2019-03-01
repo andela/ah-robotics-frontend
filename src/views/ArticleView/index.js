@@ -30,6 +30,7 @@ class ArticleView extends Component {
 
   getInputFocus =() => {
     // this.imageInput.current.click();
+    // console.log(this.imageInput.current);
   };
 
   render() {
@@ -69,5 +70,6 @@ ArticleView.propTypes = {
   match: PropTypes.shape({}).isRequired,
   fetchSingle: PropTypes.shape({}).isRequired,
   articles: PropTypes.shape({}).isRequired,
+  history: PropTypes.shape({}).isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleView);

@@ -37,7 +37,7 @@ $primary-color: #00d0a0;
     font-weight: 700;
     color: #383838 !important;
   }
-<<<<<<< HEAD
+
   .float-right{
     float: right;
     margin-top: -15px;
@@ -50,7 +50,6 @@ $primary-color: #00d0a0;
    height: 0;
    clear: both;
 }
-=======
 .ui.basic.buttons {
   margin-right: 4rem;
 }
@@ -60,4 +59,27 @@ $primary-color: #00d0a0;
 .article-delete i{
   color:red;
 }
->>>>>>> d62d0ef... ft(articles): editing and deleting articles
+
+#delete-article-body {
+  height: 120px;
+}
+#delete-text-section {
+  align-items: center;
+  padding-bottom: 10px;
+}
+#delete-popup-text {
+  font-size: large;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#cancel-article-button {
+  background-color: #A9A9A9;
+  border-bottom-left-radius: 20px !important;
+  border-top-left-radius: 20px 20px !important;
+}
+#delete-article-button {
+  background-color: #B22222;
+  border-bottom-right-radius: 20px !important;
+  border-top-right-radius: 20px 20px !important;
+}
+
