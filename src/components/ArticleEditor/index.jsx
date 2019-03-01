@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent */
 import {
   Button, Container, Form, Grid,
 } from 'semantic-ui-react';
@@ -60,11 +61,12 @@ const ArticleEditor = ({
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <div>
-        {' '}
-        <p className="editor-error">{(createArticle.errors) && createArticle.errors.body && 'Body cannot be empty'}</p>
-      </div>
+      <div className="editor-container">
+        <div>
+          <p className="editor-error">{(createArticle.errors) && createArticle.errors.body && 'Body cannot be empty'}</p>
+        </div>
       <CKEditor content={body} events={{ change: onEditorChange }} />
+      </div>
     </Fragment>
   </Container>
 );

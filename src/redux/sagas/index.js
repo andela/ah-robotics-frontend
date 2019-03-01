@@ -10,6 +10,7 @@ import postArticleWatcher from './ArticleSaga/postArticleSaga';
 import watchuserProfile from './UserProfileSaga/UserProfileSaga';
 import watchuserProfilePatch from './UserProfileSaga/UserProfilePatchSaga';
 import watchImageUpload from './UserProfileSaga/uploadImageSaga';
+import socialAuthWatcher from './SocialAuth/SocialAuthSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -21,9 +22,9 @@ export default function* rootSaga() {
     fork(postArticleWatcher),
     fork(watchSelectRating),
     fork(fetchArticleWatcher),
-    fork(postArticleWatcher),
     fork(watchuserProfile),
     fork(watchuserProfilePatch),
     fork(watchImageUpload),
+    fork(socialAuthWatcher),
   ]);
 }

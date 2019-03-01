@@ -44,7 +44,6 @@ const mapStateToProps = ({
   }) => ({
   ratings, articles,
 });
-
 const mapDispatchToProps = dispatch => bindActionCreators({
 selectedRating,
 }, dispatch);
