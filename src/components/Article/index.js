@@ -7,19 +7,21 @@ import renderHtml from 'react-render-html';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
 import './article.scss';
+import { getCurrentUser } from '../../utils/auth';
 
-
-
+const activeUser = getCurrentUser();
 const ArticleComponent = ({
- article, isFetching, handleEdit, imageInput, getInputFocus,
+ article, isFetching, handleEdit, imageInput, getInputFocus, rating,
 }) => {
   const fetchedArticle = article.article;
   return (
     <Segment loader={isFetching} basic>
-      <Button.Group basic size="small" style={{ float: 'right' }}>
-        <Button className="article-edit" content="Edit Article" icon="edit outline" onClick={handleEdit} />
-        <Button className="article-delete" content="Delete Article" icon="trash alternate outline" />
-      </Button.Group>
+      {fetchedArticle && activeUser.username === fetchedArticle.author.username ? (
+        <Button.Group basic size="small" style={{ float: 'right' }}>
+          <Button className="article-edit" content="Edit Article" icon="edit outline" onClick={handleEdit} hidden />
+          <Button className="article-delete" content="Delete Article" icon="trash alternate outline" hidden />
+        </Button.Group>
+      ) : null}
       <Container text style={{ marginTop: '7em' }}>
         <Header id="single-article-head" as="h1">{fetchedArticle && fetchedArticle.title}</Header>
         <p id="article-description">{fetchedArticle && fetchedArticle.description}</p>

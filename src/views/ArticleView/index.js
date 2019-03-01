@@ -29,7 +29,7 @@ class ArticleView extends Component {
   };
 
   getInputFocus =() => {
-    this.imageInput.current.click();
+    // this.imageInput.current.click();
   };
 
   render() {

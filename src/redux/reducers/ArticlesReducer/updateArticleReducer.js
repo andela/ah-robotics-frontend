@@ -24,6 +24,9 @@ const updateArticlesReducer = (state = initialState, action) => {
         ...state, ...action.payload, isUpdating: false, isUpdated: false,
       };
     }
+    case types.CLEAR: {
+      return initialState;
+    }
     default: {
       return state;
     }

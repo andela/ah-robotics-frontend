@@ -12,7 +12,7 @@ export const setCurrentUser = (user) => {
   const activeUser = user || null;
   localStorage.setItem('user', JSON.stringify(activeUser));
 };
-
+export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
 export const getAccessToken = () => localStorage.getItem(AUTH_TOKEN);
 
 export const isLoggedIn = () => {

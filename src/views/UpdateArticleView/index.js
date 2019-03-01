@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import UpdateArticleComponent from '../../components/UpdateArticle';
-import { updateUserArticle } from '../../redux/actions/ArticleActions/actions';
+import { clearState, updateUserArticle } from '../../redux/actions/ArticleActions/actions';
 
 class UpdateArticleView extends Component {
   state = {
@@ -12,38 +12,48 @@ class UpdateArticleView extends Component {
     description: '',
     body: '',
     errors: {},
-    tagList: [{ id: '1', text: 'TIA' }],
+    tagList: [],
+    tag: '',
+    slug: '',
   };
 
 componentWillMount() {
-  const { articles } = this.props;
+  const { articles, history } = this.props;
+  if (!articles.data.article) {
+    history.push('/');
+  }
   const { article } = articles.data;
-  this.setState({ body: article && article.body });
+   this.setState(article && {
+                body: article.body,
+                title: article.title,
+                description: article.description,
+                slug: article.slug,
+                tagList: article.tagList,
+      });
 }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    const { history, updateArticle } = this.props;
+    const { history, updateArticle, clearUpdate } = this.props;
     const { data, isUpdated } = updateArticle;
     if (isUpdated) {
       const { slug } = data.article;
       setTimeout(() => {
+        clearUpdate();
         history.push(`/article/${slug}`);
       }, 1000);
     }
   }
 
-  handleDelete = (i) => {
-    const { tagList } = this.state;
-    this.setState({
-      tagList: tagList.filter((tag, index) => index !== i),
-    });
+  handleChangeInput = (tag) => {
+    this.setState({ tag });
   };
 
-  handleAddition = (tag) => {
-    console.log(tag);
-    const { tagList } = this.state;
-    const items = [].concat(tagList, tag);
-    this.setState({ tagList: items });
+  handleChange = (tags) => {
+    const { tagList, tag } = this.state;
+    const tagSet = new Set(tagList.map(item => item.toLowerCase()));
+    if (!tagSet.has(tag.toLowerCase())) {
+      this.setState({ tagList: tags });
+    }
   };
 
   handleArticleUpdate = () => {
@@ -64,20 +74,19 @@ componentWillMount() {
   };
 
   render() {
-    const { body, tagList } = this.state;
-    const { updateArticle, articles } = this.props;
-    const { article } = articles.data;
+    const { updateArticle } = this.props;
+    const tagEvents = {
+      handleChange: this.handleChange,
+      handleChangeInput: this.handleChangeInput,
+    };
     return (
       <UpdateArticleComponent
-        article={article}
         onInputChange={this.onInputChange}
         onEditorChange={this.onEditorChange}
         updateArticle={updateArticle}
         handleArticleUpdate={this.handleArticleUpdate}
-        body={body}
-        handleAddition={this.handleAddition}
-        handleDelete={this.handleDelete}
-        tagList={tagList}
+        articleProps={this.state}
+        tagEvents={tagEvents}
       />
 
     );
@@ -90,11 +99,13 @@ const mapStateToProps = ({ updateArticle, articles }) => ({
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   updateArticleAction: updateUserArticle,
+  clearUpdate: clearState,
 }, dispatch);
 
 UpdateArticleView.propTypes = {
-  updateArticle: PropTypes.func.isRequired,
-  updateArticleAction: PropTypes.shape({}).isRequired,
+  updateArticle: PropTypes.shape({}).isRequired,
+  updateArticleAction: PropTypes.func.isRequired,
+  clearUpdate: PropTypes.func.isRequired,
   history: PropTypes.shape({}).isRequired,
 };
 
