@@ -27,7 +27,7 @@ export function* uploadImageSaga({ payload }) {
   } catch (err) {
     yield put({
       type: types.UPLOAD_ARTICLE_IMAGE_ERROR,
-      payload: { errors: err.response },
+      payload: { errors: err.response.data.article.image },
     });
   }
 }

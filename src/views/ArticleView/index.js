@@ -12,7 +12,7 @@ import CommentsListComponent
   from '../../components/Comment/commentList';
 
 
-class ArticleView extends Component {
+export class ArticleView extends Component {
   imageInput = React.createRef();
 
   state={
@@ -85,7 +85,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 ArticleView.propTypes = {
   match: PropTypes.shape({}).isRequired,
-  fetchSingle: PropTypes.shape({}).isRequired,
+  fetchSingle: PropTypes.func.isRequired,
   articles: PropTypes.shape({}).isRequired,
   history: PropTypes.shape({}).isRequired,
   uploadImageAction: PropTypes.func.isRequired,

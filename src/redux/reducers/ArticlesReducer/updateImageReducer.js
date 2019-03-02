@@ -1,7 +1,7 @@
 import * as types from '../../actions/ArticleActions/types';
 
 export const initialState = {
-  errors: {},
+  errors: [],
   isUpdating: false,
   success: false,
   isUpdated: false,
@@ -16,7 +16,7 @@ const updateImageReducer = (state = initialState, action) => {
     }
     case types.UPLOAD_ARTICLE_IMAGE_SUCCESS: {
       return {
-        ...state, ...action.payload, isUpdating: false, isUpdated: true,
+        ...state, ...action.payload, isUpdating: false, isUpdated: true, errors: {},
       };
     }
     case types.UPLOAD_ARTICLE_IMAGE_ERROR: {

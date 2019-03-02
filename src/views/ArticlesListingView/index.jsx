@@ -35,7 +35,7 @@ class ArticlesView extends Component {
       getArticles({ page: currentPage });
       this.setState({ activePage: currentPage });
     });
-  }
+  };
 
   render() {
     const { articles } = this.props;

@@ -1,7 +1,7 @@
 import { runSaga } from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
-import postArticleWatcher, { postArticleWorker, apiClient } from './postArticleSaga';
-import * as types from '../../actions/ArticleActions/types';
+import postArticleWatcher, { postArticleWorker, apiClient } from '../postArticleSaga';
+import * as types from '../../../actions/ArticleActions/types';
 
 let dispatchedActions = [];
 const fakeStore = {

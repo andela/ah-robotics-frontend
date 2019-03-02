@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test create article view it should match snapshot 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<ArticleEditor
+  body=""
+  createArticle={Object {}}
+  handleArticlePost={[Function]}
+  handleChange={[Function]}
+  onEditorChange={[Function]}
+  onInputChange={[Function]}
+  state={
+    Object {
+      "body": "",
+      "description": "",
+      "errors": Object {},
+      "tagList": Array [],
+      "tags": Array [],
+      "title": "",
+    }
+  }
+/>
 `;

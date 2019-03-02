@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Container, Header, Image, Segment, Loader, Label, Grid,
+  Container, Header, Image, Segment, Loader, Label, Grid, Message,
 } from 'semantic-ui-react';
 import renderHtml from 'react-render-html';
 import PropTypes from 'prop-types';
@@ -12,7 +12,7 @@ import { getCurrentUser } from '../../utils/auth';
 import { deleteUserArticle } from '../../redux/actions/ArticleActions/actions';
 import ArticleButtonGroup from './ArticleButtonGroup';
 
-const activeUser = getCurrentUser();
+const activeUser = getCurrentUser() || '';
 
 class ArticleComponent extends Component {
   state = { isDeletePopUpOpen: false };
@@ -63,13 +63,20 @@ class ArticleComponent extends Component {
             handleEdit={handleEdit}
           />
         ) : null}
-        <Container text style={{ marginTop: '7em' }}>
+        <Container text style={{ marginTop: '0' }}>
+          {updateImage.errors[0] ? (
+            <Message color="red">
+              <p>
+                {updateImage.errors && updateImage.errors[0]}
+              </p>
+            </Message>
+          ) : null}
           { fetchedArticle && activeUser.username === fetchedArticle.author.username ? (
             <Grid divided="vertically">
               <Grid.Row columns={2}>
                 <Grid.Column>
                   <Label attached="top" style={{ display: fetchedArticle && fetchedArticle.image ? 'none' : '' }}>
-                    Include an image to your article.
+           Include an image to your article.
                   </Label>
                 </Grid.Column>
                 <Grid.Column>
@@ -85,7 +92,7 @@ class ArticleComponent extends Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
-            ) : null }
+           ) : null }
           <Header id="single-article-head" as="h1">{fetchedArticle && fetchedArticle.title}</Header>
           <p id="article-description">{fetchedArticle && fetchedArticle.description}</p>
           <Segment basic>
@@ -98,6 +105,10 @@ class ArticleComponent extends Component {
                   corner: 'right',
                   icon: 'edit outline',
                   onClick: getInputFocus,
+                  style: {
+                            display: (fetchedArticle && activeUser.username)
+                            !== fetchedArticle.author.username ? 'none' : '',
+                        },
                 }}
                 src={(fetchedArticle.image)}
                 className="article-image"
@@ -114,6 +125,16 @@ class ArticleComponent extends Component {
             </span>
             <span className="article-span float-right">{rating}</span>
           </div>
+          {
+            (fetchedArticle)
+            && fetchedArticle.tagList.map((object, i) => (
+              <Label as="a" color="teal" tag>
+                {
+                  object
+                }
+              </Label>
+            ))
+          }
           <span className="article-body">
             {fetchedArticle && renderHtml(fetchedArticle.body)}
           </span>
@@ -143,6 +164,6 @@ ArticleComponent.propTypes = {
   deleteArticleAction: PropTypes.func.isRequired,
   rating: PropTypes.shape({}).isRequired,
   onImageChange: PropTypes.func.isRequired,
-  updateImage: PropTypes.func.isRequired,
+  updateImage: PropTypes.shape({}).isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleComponent);

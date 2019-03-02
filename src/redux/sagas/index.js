@@ -38,8 +38,6 @@ export default function* rootSaga() {
     fork(getCommentsWatcher),
     fork(updateCommentWatcher),
     fork(deleteCommentWatcher),
-    fork(watchRegister),
-    fork(watchVerify),
     fork(updateArticleWatcher),
     fork(deleteArticleWatcher),
     fork(watchArticleImageUpload),

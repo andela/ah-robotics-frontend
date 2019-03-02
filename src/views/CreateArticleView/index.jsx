@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import ArticleEditor from '../../components/ArticleEditor';
 import { postArticle } from '../../redux/actions/ArticleActions/actions';
 
-class CreateArticle extends Component {
+export class CreateArticle extends Component {
   state = {
     title: '',
     description: '',
@@ -70,7 +70,7 @@ const mapStateToProps = ({ createArticle }) => ({
   createArticle,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
+export const mapDispatchToProps = dispatch => bindActionCreators({
   postArticle,
 }, dispatch);
 
