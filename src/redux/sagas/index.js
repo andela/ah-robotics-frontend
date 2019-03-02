@@ -20,6 +20,7 @@ import deleteArticleWatcher from './ArticleSaga/deleteArticleSaga';
 import watchArticleImageUpload from './ArticleSaga/uploadImageSaga';
 import watchLikeArticle from './LikeDislikeSaga/likeSaga';
 import watchDislikeArticle from './LikeDislikeSaga/dislikeSaga';
+import watchfollowingUserProfile from './FollowSaga/userFollowingSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -44,5 +45,6 @@ export default function* rootSaga() {
     fork(watchArticleImageUpload),
     fork(watchLikeArticle),
     fork(watchDislikeArticle),
+    fork(watchfollowingUserProfile),
   ]);
 }
