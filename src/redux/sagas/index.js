@@ -21,6 +21,9 @@ import watchArticleImageUpload from './ArticleSaga/uploadImageSaga';
 import watchLikeArticle from './LikeDislikeSaga/likeSaga';
 import watchDislikeArticle from './LikeDislikeSaga/dislikeSaga';
 import watchfollowingUserProfile from './FollowSaga/userFollowingSaga';
+import watchfollowers from './FollowSaga/FollowersSaga';
+import watchfollowing from './FollowSaga/FollowingSaga';
+import watchFollowUserPost from './FollowSaga/FollowSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -46,5 +49,8 @@ export default function* rootSaga() {
     fork(watchLikeArticle),
     fork(watchDislikeArticle),
     fork(watchfollowingUserProfile),
+    fork(watchfollowers),
+    fork(watchfollowing),
+    fork(watchFollowUserPost),
   ]);
 }

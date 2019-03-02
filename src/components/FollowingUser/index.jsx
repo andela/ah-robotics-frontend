@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-   Image, Grid, Container, Icon, Label, Menu, Header, Placeholder, Segment
+   Image, Grid, Container, Icon, Label, Menu, Header, Placeholder, Segment, GridRow,
 } from 'semantic-ui-react';
 import './following.scss';
 import './../Login/login.scss';
@@ -18,15 +18,18 @@ const user = following;
               <Header id="sample-header" as="h3">
                 <span id="user-username">{user.following && user.following.username }</span>
               </Header>
-              <p>
+              {/* <p>
                 {' '}
                 <span id="bio-text">{user.following && user.following.bio }</span>
-              </p>
+              </p> */}
             </Grid.Column>
           </Grid.Row>
           {/* <GridRow>
             <div>
-              <Button id="edit-profile-btn" positive><NavLink to="editprofile"><span id="edit-profile">Edit Profile</span></NavLink></Button>
+              <Button id="edit-profile-btn" positive>
+              <NavLink to="editprofile"><span id="edit-profile">Edit Profile</span>
+              </NavLink>
+              </Button>
             </div>
           </GridRow> */}
           <Grid.Row>
@@ -50,6 +53,12 @@ const user = following;
             </Menu>
           </Grid.Row>
           <Grid columns={3} stackable>
+          <GridRow>
+            <p>
+                {' '}
+                <span id="bio-text">{user.following && user.following.username }</span>
+              </p>
+          </GridRow>
     <Grid.Column>
       <Segment raised>
         <Placeholder>

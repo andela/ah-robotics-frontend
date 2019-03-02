@@ -15,7 +15,7 @@ import ProfileView from './views/UserProfileView';
 import profileEditView from './views/ProfileEditView';
 import UpdateArticleView from './views/UpdateArticleView';
 import FollowersComponent from './views/FollowersView';
-import FollowingComponent from './views/FollowingView'
+import FollowingComponent from './views/FollowingView';
 
 class App extends Component {
   render() {

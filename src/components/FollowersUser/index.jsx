@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-   Image, Grid, Container, Icon, Label, Menu, Header, Placeholder, Segment
+   Image, Grid, Container, Icon, Label, Menu, Header, Placeholder, Segment,
 } from 'semantic-ui-react';
 import './follow.scss';
 import './../Login/login.scss';
@@ -26,7 +26,10 @@ const user = profile;
           </Grid.Row>
           {/* <GridRow>
             <div>
-              <Button id="edit-profile-btn" positive><NavLink to="editprofile"><span id="edit-profile">Edit Profile</span></NavLink></Button>
+              <Button id="edit-profile-btn" positive>
+              <NavLink to="editprofile"><span id="edit-profile">Edit Profile</span>
+              </NavLink>
+              </Button>
             </div>
           </GridRow> */}
           <Grid.Row>
@@ -54,12 +57,12 @@ const user = profile;
       <Segment raised>
         <Placeholder>
           <Placeholder.Header image>
-            <Placeholder.Line Placeholder="username" type="text" hello />
-            <Placeholder.Line Placeholder="bio" />
+            <Placeholder.Line />
+            <Placeholder.Line />
           </Placeholder.Header>
           <Placeholder.Paragraph>
-            <Placeholder.Line length='medium' />
-            <Placeholder.Line length='short' />
+            <Placeholder.Line length="medium" />
+            <Placeholder.Line length="short" />
           </Placeholder.Paragraph>
         </Placeholder>
       </Segment>
@@ -73,14 +76,13 @@ const user = profile;
             <Placeholder.Line />
           </Placeholder.Header>
           <Placeholder.Paragraph>
-            <Placeholder.Line length='medium' />
-            <Placeholder.Line length='short' />
+            <Placeholder.Line length="medium" />
+            <Placeholder.Line length="short" />
           </Placeholder.Paragraph>
         </Placeholder>
       </Segment>
     </Grid.Column>
-
-    <Grid.Column>
+            <Grid.Column>
       <Segment raised>
         <Placeholder>
           <Placeholder.Header image>
@@ -88,12 +90,12 @@ const user = profile;
             <Placeholder.Line />
           </Placeholder.Header>
           <Placeholder.Paragraph>
-            <Placeholder.Line length='medium' />
-            <Placeholder.Line length='short' />
+            <Placeholder.Line length="medium" />
+            <Placeholder.Line length="short" />
           </Placeholder.Paragraph>
         </Placeholder>
       </Segment>
-    </Grid.Column>
+            </Grid.Column>
   </Grid>
         </Grid>
 

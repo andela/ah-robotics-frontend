@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import FollowersComponent from '../../components/FollowersUser';
-import { profileFollowData } from '../../redux/actions/userFollowActions/actions'
+import { profileFollowData } from '../../redux/actions/userFollowActions/actions';
 
 class FollowView extends Component {
   state = { };
