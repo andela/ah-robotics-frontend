@@ -20,6 +20,11 @@ const fetchArticlesReducer = (state = initialState, action) => {
         ...state, ...action.payload, isFetching: false, success: true,
       };
     }
+    case types.ARTICLE_FETCH_UPDATE: {
+      return {
+        ...state, ...action.payload, isFetching: false, success: true,
+      };
+    }
     case types.ARTICLE_FETCH_ERROR: {
       return {
         ...state, ...action.payload, isFetching: false,

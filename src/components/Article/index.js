@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
- Container, Header, Image, Segment, Label,
- Input,
-
+  Container, Header, Image, Segment, Loader, Label, Grid,
 } from 'semantic-ui-react';
 import renderHtml from 'react-render-html';
 import PropTypes from 'prop-types';
@@ -19,7 +17,7 @@ const activeUser = getCurrentUser();
 class ArticleComponent extends Component {
   state = { isDeletePopUpOpen: false };
 
-componentWillUpdate(nextProps, nextState, nextContext) {
+  componentWillUpdate(nextProps, nextState, nextContext) {
   const { deleteArticle } = nextProps;
   if (deleteArticle.isDeleted) {
      window.location.assign('/');
@@ -52,6 +50,7 @@ componentWillUpdate(nextProps, nextState, nextContext) {
       articles, isFetching, handleEdit, imageInput, deleteArticle, rating,
     } = this.props;
     const { article: fetchedArticle } = articles.data;
+    const { getInputFocus, onImageChange, updateImage } = this.props;
     const { isDeletePopUpOpen } = this.state;
     return (
       <Segment loader={isFetching} basic>
@@ -65,25 +64,46 @@ componentWillUpdate(nextProps, nextState, nextContext) {
           />
         ) : null}
         <Container text style={{ marginTop: '7em' }}>
+          { fetchedArticle && activeUser.username === fetchedArticle.author.username ? (
+            <Grid divided="vertically">
+              <Grid.Row columns={2}>
+                <Grid.Column>
+                  <Label attached="top" style={{ display: fetchedArticle && fetchedArticle.image ? 'none' : '' }}>
+                    Include an image to your article.
+                  </Label>
+                </Grid.Column>
+                <Grid.Column>
+                  <input
+                    style={{ display: fetchedArticle && fetchedArticle.image ? 'none' : '' }}
+                    type="file"
+                    name="image"
+                    accept="image/*"
+                    placeholder="Add image"
+                    ref={imageInput}
+                    onChange={onImageChange}
+                  />
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
+            ) : null }
           <Header id="single-article-head" as="h1">{fetchedArticle && fetchedArticle.title}</Header>
           <p id="article-description">{fetchedArticle && fetchedArticle.description}</p>
-          <Input
-            style={{ display: 'none' }}
-            type="file"
-            name="image"
-            ref={imageInput}
-          />
-          <Image
-            label={{
-              as: 'a',
-              color: 'teal',
-              corner: 'right',
-              icon: 'edit outline',
-            }}
-            src={(fetchedArticle && fetchedArticle.image)
-            || 'https://source.unsplash.com/random/720x580'}
-            className="article-image"
-          />
+          <Segment basic>
+            <Loader size="huge" active={updateImage.isUpdating} />
+            {fetchedArticle && fetchedArticle.image ? (
+              <Image
+                label={{
+                  as: 'a',
+                  color: 'teal',
+                  corner: 'right',
+                  icon: 'edit outline',
+                  onClick: getInputFocus,
+                }}
+                src={(fetchedArticle.image)}
+                className="article-image"
+              />
+            ) : null}
+          </Segment>
           <div className="clearfix">
             <span className="article-span">
               {fetchedArticle && fetchedArticle.author.username}
@@ -104,9 +124,10 @@ componentWillUpdate(nextProps, nextState, nextContext) {
   }
 }
 
-const mapStateToProps = ({ articles, deleteArticle }) => ({
+const mapStateToProps = ({ articles, deleteArticle, updateImage }) => ({
   articles,
   deleteArticle,
+  updateImage,
 });
 const mapDispatchToProps = dispatch => bindActionCreators({
   deleteArticleAction: deleteUserArticle,
@@ -117,8 +138,11 @@ ArticleComponent.propTypes = {
   deleteArticle: PropTypes.shape({}).isRequired,
   isFetching: PropTypes.bool.isRequired,
   handleEdit: PropTypes.func.isRequired,
+  getInputFocus: PropTypes.func.isRequired,
   imageInput: PropTypes.shape({}).isRequired,
   deleteArticleAction: PropTypes.func.isRequired,
   rating: PropTypes.shape({}).isRequired,
+  onImageChange: PropTypes.func.isRequired,
+  updateImage: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleComponent);

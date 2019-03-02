@@ -59,3 +59,15 @@ export const deleteUserArticleError = payload => ({
   type: types.ARTICLE_DELETE_ERROR,
   payload,
 });
+export const articleImageUpload = payload => ({
+  type: types.UPLOAD_ARTICLE_IMAGE_START,
+  payload,
+});
+export const articleImageUploadSuccess = payload => ({
+  type: types.UPLOAD_ARTICLE_IMAGE_SUCCESS,
+  payload,
+});
+export const articleImageUploadError = payload => ({
+  type: types.UPLOAD_ARTICLE_IMAGE_ERROR,
+  payload,
+});

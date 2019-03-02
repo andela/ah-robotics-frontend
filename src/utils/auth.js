@@ -30,7 +30,7 @@ export const logout = () => {
 };
 
 export const api = axios.create({
-  baseURL: 'https://ah-robotics-staging.herokuapp.com/api/v1',
+  baseURL: 'https://ah-robotics-staging-pr-33.herokuapp.com/api/v1',
   headers: getAccessToken() ? {
     Authorization: `token  ${getAccessToken()}`,
   } : {},
