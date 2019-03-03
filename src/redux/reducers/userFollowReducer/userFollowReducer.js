@@ -7,6 +7,9 @@ import {
     PROFILE_FOLLOWING_START,
     PROFILE_FOLLOWING_ERROR,
     PROFILE_FOLLOWING_SUCCESS,
+    PROFILE_FOLLOW_POST_START,
+    PROFILE_FOLLOW_POST_SUCCESS,
+    PROFILE_FOLLOW_POST_ERROR,
 } from '../../actions/userFollowActions/types';
 
 export const initialState = {
@@ -42,6 +45,15 @@ const userFollowReducer = (state = initialState, action) => {
             return { ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOWING_ERROR: {
+            return { ...state, isLoading: true, errors: {} };
+        }
+        case PROFILE_FOLLOW_POST_START: {
+            return { ...state, profileFollowData: action.payload, isLoading: true };
+        }
+        case PROFILE_FOLLOW_POST_SUCCESS: {
+            return { ...action.payload, isLoading: false };
+        }
+        case PROFILE_FOLLOW_POST_ERROR: {
             return { ...state, isLoading: true, errors: {} };
         }
         default:

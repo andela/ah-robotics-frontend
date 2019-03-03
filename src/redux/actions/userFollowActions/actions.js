@@ -7,6 +7,9 @@ import {
     PROFILE_FOLLOWING_START,
     PROFILE_FOLLOWING_ERROR,
     PROFILE_FOLLOWING_SUCCESS,
+    PROFILE_FOLLOW_POST_START,
+    PROFILE_FOLLOW_POST_ERROR,
+    PROFILE_FOLLOW_POST_SUCCESS,
   } from './types';
 
 
@@ -41,5 +44,17 @@ export const profileFollowingError = payload => ({
 });
 export const profileFollowingSuccess = payload => ({
     type: PROFILE_FOLLOWING_SUCCESS,
+    payload,
+});
+export const profileFollowPostStart = payload => ({
+    type: PROFILE_FOLLOW_POST_START,
+    payload,
+});
+export const profileFollowPostError = payload => ({
+    type: PROFILE_FOLLOW_POST_ERROR,
+    payload,
+});
+export const profileFollowPostSuccess = payload => ({
+    type: PROFILE_FOLLOW_POST_SUCCESS,
     payload,
 });

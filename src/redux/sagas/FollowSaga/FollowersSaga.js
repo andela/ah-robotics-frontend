@@ -5,12 +5,12 @@ import { api } from '../../../utils/auth';
 
 export const apiClient = {
   loadUserProfile: (username) => {
-    const url = `/profiles/${username}/following/`;
+    const url = `/profiles/${username}/followers/`;
     return (api.get(url));
   },
 };
 
-export function* FollowingUserSaga(payload) {
+export function* userFollowersSaga(payload) {
   const payloadData = payload.payload;
   const { username } = payloadData;
   try {
@@ -27,10 +27,10 @@ export function* FollowingUserSaga(payload) {
   }
 }
 
-function* watchfollowing() {
+function* watchfollowers() {
   yield takeEvery(
-    types.PROFILE_FOLLOW_DATA, FollowingUserSaga,
+    types.PROFILE_FOLLOW_DATA, userFollowersSaga,
 );
 }
 
-export default watchfollowing;
+export default watchfollowers;
