@@ -17,3 +17,50 @@ $banner-container-height : 450px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#my-segment{
+  width: 150%;
+  background-image: url('../../Authors.png');
+  height: 850px;
+  margin-left: -200px;
+  background-repeat: no-repeat;
+}
+
+#authors-div{
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+#authors-header{
+  color: #fff !important;
+  font-size: 65px;
+  margin-left: 150px;
+  margin-top:150px;
+  font-family: Raleway;
+  animation: fadeIn 3s;
+}
+#authors-text{
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  font-family: Raleway;
+  margin-left: 150px;
+  animation: fadeIn 3s;
+}
+
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

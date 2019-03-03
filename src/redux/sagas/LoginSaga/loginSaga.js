@@ -11,7 +11,11 @@ export const apiClient = {
 
 export function* loginWorker({ payload }) {
   try {
-    const response = yield call(apiClient.fetchUserLogin, { user: payload });
+// {/*<<<<<<< HEAD*/}
+//     {/*const response = yield call(apiClient.fetchUserLogin, { user: payload });*/}
+// {/*=======*/}
+    const apiUrl = 'https://ah-robotics-staging-pr-33.herokuapp.com/api/v1/users/login/';
+    const response = yield call(axios.post, apiUrl, { user: payload });
     yield put({
       type: types.LOGIN_SUCCESS,
       payload: { user: response.data.user },
