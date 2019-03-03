@@ -18,20 +18,8 @@ const user = profile;
               <Header id="sample-header" as="h3">
                 <span id="user-username">{user.profile && user.profile.username }</span>
               </Header>
-              {/* <p>
-                {' '}
-                <span id="bio-text">{user.profile && user.profile.bio }</span>
-              </p> */}
             </Grid.Column>
           </Grid.Row>
-          {/* <GridRow>
-            <div>
-              <Button id="edit-profile-btn" positive>
-              <NavLink to="editprofile"><span id="edit-profile">Edit Profile</span>
-              </NavLink>
-              </Button>
-            </div>
-          </GridRow> */}
           <Grid.Row>
             <Menu compact>
               <Menu.Item as="a">
@@ -42,23 +30,16 @@ const user = profile;
                   {user.profile && user.profile.followers}
                 </Label>
               </Menu.Item>
-              <Menu.Item as="a">
-                <Icon name="users" />
-                {' '}
-                Following
-                <Label color="teal" floating>
-                  {user.profile && user.profile.following_count }
-                </Label>
-              </Menu.Item>
             </Menu>
           </Grid.Row>
           <List divided verticalAlign="middle">
+            <h2>List of users following you</h2>
             {user.userFollowers && user.userFollowers.map((followerUser, index) => (
               <List.Item key={followerUser.username}>
                 <List.Content>
                   {index + 1}
                   -
-                  {followerUser.username}
+                  <a href={`profile/${followerUser.username}`}>{followerUser.username}</a>
                 </List.Content>
               </List.Item>
             ))}

@@ -34,6 +34,7 @@ class App extends Component {
             <Route path="/articles" component={ArticlesView} exact />
             <Route path="/articles/new-story" component={CreateArticle} exact />
             <Route path="/profiles" component={ProfileView} />
+            <Route path="/profile/:username" component={ProfileView} />
             <Route path="/editprofile" component={profileEditView} />
             <Route path="/articles/update/" component={UpdateArticleView} />
             <Route path="/followersprofile" component={FollowersComponent} />

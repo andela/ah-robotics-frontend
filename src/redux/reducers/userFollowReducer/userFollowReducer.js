@@ -10,11 +10,15 @@ import {
     PROFILE_FOLLOW_POST_START,
     PROFILE_FOLLOW_POST_SUCCESS,
     PROFILE_FOLLOW_POST_ERROR,
-} from '../../actions/userFollowActions/types';
+    PROFILE_FOLLOW_USER_ERROR,
+    USER_UNFOLLOW_START,
+    USER_UNFOLLOW_SUCCESS,
+    USER_UNFOLLOW_ERROR,
+} from '../../actions/UserFollowActions/types';
 
 export const initialState = {
-    error: {},
     isLoading: false,
+    error: {},
 };
 
 const userFollowReducer = (state = initialState, action) => {
@@ -50,7 +54,19 @@ const userFollowReducer = (state = initialState, action) => {
             return { ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOW_POST_ERROR: {
-            return { ...state, isLoading: true, errors: {} };
+            return { ...action.payload, isLoading: true, errors: {} };
+        }
+        case PROFILE_FOLLOW_USER_ERROR: {
+            return { isLoading: false, errors: action.payload };
+        }
+        case USER_UNFOLLOW_START: {
+            return { isLoading: true };
+        }
+        case USER_UNFOLLOW_SUCCESS: {
+            return { isLoading: false, ...action.payload };
+        }
+        case USER_UNFOLLOW_ERROR: {
+            return { isLoading: false, ...action.payload };
         }
         default:
             return state;

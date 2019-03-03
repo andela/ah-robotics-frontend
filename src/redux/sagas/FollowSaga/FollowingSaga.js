@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import * as types from '../../actions/userFollowActions/types';
+import * as types from '../../actions/UserFollowActions/types';
 import { api } from '../../../utils/auth';
 
 

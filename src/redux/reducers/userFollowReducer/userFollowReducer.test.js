@@ -1,28 +1,21 @@
 import userFollowReducer from './userFollowReducer';
 import {
-    PROFILE_FOLLOW_DATA,
-    PROFILE_FOLLOW_DATA_SUCCESS,
-    PROFILE_FOLLOWERS_START,
-    PROFILE_FOLLOWERS_ERROR,
-    PROFILE_FOLLOWERS_SUCCESS,
-    PROFILE_FOLLOWING_START,
-    PROFILE_FOLLOWING_ERROR,
-    PROFILE_FOLLOWING_SUCCESS,
-    PROFILE_DELETE_START,
-    PROFILE_DELETE_SUCCESS,
-    PROFILE_DELETE_ERROR,
-} from '../../actions/userFollowActions/types';
+  PROFILE_FOLLOW_DATA,
+  PROFILE_FOLLOW_DATA_SUCCESS,
+  PROFILE_FOLLOWERS_START,
+  PROFILE_FOLLOWERS_ERROR,
+  PROFILE_FOLLOWERS_SUCCESS,
+  PROFILE_FOLLOWING_START,
+  PROFILE_FOLLOWING_ERROR,
+  PROFILE_FOLLOWING_SUCCESS,
+} from '../../actions/UserFollowActions/types';
 
 
 describe('userFollowReducer tests', () => {
   it('it should have an initial state', () => {
     expect(userFollowReducer(userFollowReducer.initialState, {})).toEqual({
-        profileFollowData: {},
         error: {},
-        profileFollowersUpdate: false,
         isLoading: false,
-        Following: 0,
-        Followers: 0,
 });
   });
   it('it should show isloading set false', () => {

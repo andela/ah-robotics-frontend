@@ -10,6 +10,9 @@ import {
     PROFILE_FOLLOW_POST_START,
     PROFILE_FOLLOW_POST_ERROR,
     PROFILE_FOLLOW_POST_SUCCESS,
+    USER_UNFOLLOW_SUCCESS,
+    USER_UNFOLLOW_ERROR,
+    USER_UNFOLLOW_START,
   } from './types';
 
 
@@ -56,5 +59,17 @@ export const profileFollowPostError = payload => ({
 });
 export const profileFollowPostSuccess = payload => ({
     type: PROFILE_FOLLOW_POST_SUCCESS,
+    payload,
+});
+export const userUnfollowStart = payload => ({
+    type: USER_UNFOLLOW_START,
+    payload,
+});
+export const userUnfollowSuccess = payload => ({
+    type: USER_UNFOLLOW_SUCCESS,
+    payload,
+});
+export const userUnfollowError = payload => ({
+    type: USER_UNFOLLOW_ERROR,
     payload,
 });

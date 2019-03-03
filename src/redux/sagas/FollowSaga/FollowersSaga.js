@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import * as types from '../../actions/userFollowActions/types';
+import * as types from '../../actions/UserFollowActions/types';
 import { api } from '../../../utils/auth';
 
 
@@ -10,8 +10,8 @@ export const apiClient = {
   },
 };
 
-export function* userFollowersSaga(payload) {
-  const payloadData = payload.payload;
+export function* userFollowersSaga({ payload }) {
+  const payloadData = payload;
   const { username } = payloadData;
   try {
     const response = yield call(apiClient.loadUserProfile, username);

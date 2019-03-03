@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import FollowingComponent from '../../components/FollowingUser';
-import { profileFollowData } from '../../redux/actions/userFollowActions/actions';
+import { profileFollowData } from '../../redux/actions/UserFollowActions/actions';
 
 class FollowingView extends Component {
   state = { };
@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 FollowingView.propTypes = {
   profile: PropTypes.shape({}).isRequired,
   profileFollowData: PropTypes.shape({}).isRequired,
+  following: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FollowingView);

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import FollowersComponent from '../../components/FollowersUser';
-import { profileFollowData } from '../../redux/actions/userFollowActions/actions';
+import { profileFollowData } from '../../redux/actions/UserFollowActions/actions';
 
 class FollowView extends Component {
   state = { };
@@ -20,7 +20,7 @@ class FollowView extends Component {
   render() {
     const { followers } = this.props;
     const userProfile = followers.profile;
-    const { followers: userFollowers } = followers
+    const { followers: userFollowers } = followers;
     return (
       <FollowersComponent profile={userProfile} userFollowers={userFollowers} />
     );
@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 FollowView.propTypes = {
   profile: PropTypes.shape({}).isRequired,
   profileFollowData: PropTypes.shape({}).isRequired,
+  followers: PropTypes.instanceOf(Array).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FollowView);
