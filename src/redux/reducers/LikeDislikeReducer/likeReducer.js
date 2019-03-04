@@ -4,6 +4,7 @@ import {
   LIKE_ARTICLE_ERROR,
 } from '../../actions/LikeDislikeActions/types';
 
+
 export const initialState = {
   likes: 0,
   dislikes: 0,
