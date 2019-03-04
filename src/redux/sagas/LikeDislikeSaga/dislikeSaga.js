@@ -2,16 +2,14 @@ import { put, call, takeLatest } from 'redux-saga/effects';
 import * as types from '../../actions/LikeDislikeActions/types';
 import { api } from '../../../utils/auth';
 
-const slug = 'django-sims';
-
 export const apiDislikeClient = {
-    dislikeUrl: (slug, payload) => api.post(`articles/${slug}/dislike/`, payload),
+    dislikeUrl: slug => api.post(`articles/${slug}/dislike/`),
 };
 
 
-export function* dislike({ payload }) {
+export function* dislike(payload) {
+    const { slug } = payload.payload;
     try {
-        const { slug } = payload.match.params;
         const response = yield call(apiDislikeClient.dislikeUrl, slug);
         yield put({
             type: types.DISLIKE_ARTICLE_SUCCESS,

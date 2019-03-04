@@ -2,14 +2,13 @@ import { put, call, takeLatest } from 'redux-saga/effects';
 import * as types from '../../actions/LikeDislikeActions/types';
 import { api } from '../../../utils/auth';
 
-const slug = 'django-sims';
 
 export const apiLikeClient = {
   likeUrl: slug => api.post(`/articles/${slug}/like/`),
 };
 
-
-export function* like({ payload }) {
+export function* like(payload) {
+  const { slug } = payload.payload;
   try {
     const response = yield call(apiLikeClient.likeUrl, slug);
     yield put({
@@ -23,7 +22,6 @@ export function* like({ payload }) {
     });
   }
 }
-
 
 function* watchLikeArticle() {
   yield takeLatest(types.LIKE_ARTICLE_REQUEST, like);

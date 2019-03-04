@@ -31,7 +31,12 @@ p img {
 .article-body {
   color: black;
   margin-top: 30px;
-  font-family: -apple-system, 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
+//<<<<<<< HEAD
+//  font-family: -apple-system, 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
+//=======
+  letter-spacing: 1.4px;
+  font-family: Raleway, sans-serif;
+//>>>>>>> feat(likeDislike): implement like/dislike functionality
   font-size: 18px;
 }
 
@@ -48,7 +53,7 @@ p img {
 .clearfix:after {
   content: " "; /* Older browser do not support empty content */
   visibility: hidden;
-  display: block;
+  display: inline-block;
   height: 0;
   clear: both;
 }
@@ -59,6 +64,7 @@ p img {
   margin-left: auto;
   margin-right: auto;
 }
+
 .ui.basic.buttons {
   margin-right: 4rem;
 }
@@ -90,5 +96,12 @@ p img {
   background-color: #B22222;
   border-bottom-right-radius: 20px !important;
   border-top-right-radius: 20px 20px !important;
+}
+
+#like-dislike-btn {
+  //margin-left: 150px;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
