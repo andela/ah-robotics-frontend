@@ -3,9 +3,15 @@ import './article.scss';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { articleFetch } from '../../redux/actions/ArticleActions/actions';
+import { articleFetch }
+  from '../../redux/actions/ArticleActions/actions';
 import ArticleComponent from '../../components/Article';
 import RatingsView from '../RatingsView/index';
+import AddCommentComponent
+  from '../../components/Comment/addComment';
+import CommentsListComponent
+  from '../../components/Comment/commentList';
+
 
 class ArticleView extends Component {
   componentDidMount() {
@@ -16,24 +22,29 @@ class ArticleView extends Component {
 
   render() {
     const { articles } = this.props;
+    const currentUser = JSON.parse(localStorage.getItem('user'));
     return (
       <div>
         <ArticleComponent
           article={articles.data}
           rating={
             <RatingsView />}
-          isFetching={
-          articles.isFetching
-          }
+          isFetching={articles.isFetching}
         />
+        {currentUser !== null ? (
+          <div>
+            <AddCommentComponent />
+            <CommentsListComponent
+              user={currentUser}
+            />
+          </div>
+        ) : null}
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ articles }) => ({
-  articles,
-});
+const mapStateToProps = ({ articles }) => ({ articles });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   fetchSingle: articleFetch,

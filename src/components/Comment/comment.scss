@@ -1,0 +1,126 @@
+$primary-color: #00d0a0;
+#comment-button, #update-comment-button {
+  background-color: $primary-color !important;
+  color: white !important;
+  border-radius: 20px !important;
+}
+#update-comment-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#comment-button {
+  margin-left: 81%;
+}
+#update-text-section {
+  padding-bottom: 5px;
+}
+#comment-area {
+  background: rgba(0, 0, 0, 0);
+  outline: 0;
+  cursor: text;
+  resize: none;
+  border: solid 2px rgba(230, 230, 230, 0.658);
+}
+#comment-section {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+#add-comment-section {
+  width: 52%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#add-comment-section > .segment {
+  width: 100%;
+  margin-left: 0;
+}
+#comment-section > .segment {
+  width: 100%;
+  margin-left: 0;
+}
+#comment-header > .segment {
+  width: 100%;
+  margin-left: 0;
+}
+#comment-header-section {
+  text-align: left;
+}
+#comment-detail {
+  width: 100%;
+}
+#no-comment-text {
+  font-weight: normal;
+}
+#comment-area {
+  width: 100%;
+}
+#update-comment-body {
+  height: 210px;
+}
+#delete-comment-body {
+  height: 120px;
+}
+#delete-text-section {
+  align-items: center;
+  padding-bottom: 10px;
+}
+#delete-popup-text {
+  font-size: large;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#comment-header-stuff {
+  display: flex;
+}
+
+#comment-header-text {
+  padding-right: 10px;
+  font-size: large;
+}
+#comment-header-icon {
+  font-size: large;
+}
+#cancel-comment-button {
+  background-color: #A9A9A9;
+  border-bottom-left-radius: 20px !important;
+  border-top-left-radius: 20px 20px !important;
+}
+#delete-comment-button {
+  background-color: #B22222;
+  border-bottom-right-radius: 20px !important;
+  border-top-right-radius: 20px 20px !important;
+}
+#update-popup-button {
+  background-color: $primary-color !important;
+  border-bottom-right-radius: 20px !important;
+  border-top-right-radius: 20px 20px !important;
+}
+#comment-list-section > .segment {
+  width: 100%;
+  margin-left: 0;
+}
+@media screen and (max-width: 800px) {
+  #comment-section {
+    width: 95%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #add-comment-section {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #add-comment-section > .segment, #comment-button {
+    width: 100%;
+  }
+
+  #comment-button{
+    margin-left: 0;
+  }
+}

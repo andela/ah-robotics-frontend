@@ -1,6 +1,6 @@
 import { runSaga } from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
-import watchuserProfilePatch, {
+import watchUserProfilePatch, {
     userProfilePatchSaga,
   apiClient,
 } from './UserProfilePatchSaga';
@@ -54,7 +54,7 @@ describe('update user profile saga tests', () => {
   });
 
   it('should listen for the required actions', () => {
-    const generator = watchuserProfilePatch();
+    const generator = watchUserProfilePatch();
     put({ type: types.PROFILE_PATCH_START });
     const next = generator.next();
     expect(next.value).toEqual(takeEvery('PROFILE_PATCH_START', userProfilePatchSaga));

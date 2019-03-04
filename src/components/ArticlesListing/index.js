@@ -9,7 +9,7 @@ import ArticleItem from './ArticleItem';
 const ArticlesListing = ({ articles, isFetching }) => {
   const allArticles = articles.articles;
   return (
-    <Segment basic loading={isFetching}>
+    <Segment id="articles-list" basic loading={isFetching}>
       <Grid>
         <Grid.Column width={12}>
           <Item.Group divided>

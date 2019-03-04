@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Pagination } from 'semantic-ui-react';
 import ArticlesView from './index';
 import PopularComponent from '../../components/Popular';
 import ArticlesListing from '../../components/ArticlesListing';
-import { Pagination } from 'semantic-ui-react';
 
 
 it('should render articles listing page', () => {

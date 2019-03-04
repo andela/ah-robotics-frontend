@@ -1,6 +1,6 @@
 import { runSaga } from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
-import watchuserProfile, {
+import watchUserProfile, {
     userProfileSaga,
   apiClient,
 } from './UserProfileSaga';
@@ -54,7 +54,7 @@ describe('upload user profile  saga tests', () => {
   });
 
   it('should listen for the required actions', () => {
-    const generator = watchuserProfile();
+    const generator = watchUserProfile();
     put({ type: types.PROFILE_DATA });
     const next = generator.next();
     expect(next.value).toEqual(takeEvery('PROFILE_DATA', userProfileSaga));

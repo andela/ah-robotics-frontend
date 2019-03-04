@@ -7,10 +7,14 @@ import watchResetPassword from './resetPasswordSaga/resetPassword';
 import watchNewPassword from './newPasswordSaga/newPassword';
 import watchSelectRating from './RatingSaga/RatingSaga';
 import postArticleWatcher from './ArticleSaga/postArticleSaga';
-import watchuserProfile from './UserProfileSaga/UserProfileSaga';
-import watchuserProfilePatch from './UserProfileSaga/UserProfilePatchSaga';
+import watchUserProfile from './UserProfileSaga/UserProfileSaga';
+import watchUserProfilePatch from './UserProfileSaga/UserProfilePatchSaga';
 import watchImageUpload from './UserProfileSaga/uploadImageSaga';
 import socialAuthWatcher from './SocialAuth/SocialAuthSaga';
+import addCommentWatcher from './CommentSaga/addCommentSaga';
+import getCommentsWatcher from './CommentSaga/getCommentsSaga';
+import deleteCommentWatcher from './CommentSaga/deleteCommentSaga';
+import updateCommentWatcher from './CommentSaga/updateCommentSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -22,9 +26,13 @@ export default function* rootSaga() {
     fork(postArticleWatcher),
     fork(watchSelectRating),
     fork(fetchArticleWatcher),
-    fork(watchuserProfile),
-    fork(watchuserProfilePatch),
+    fork(watchUserProfile),
+    fork(watchUserProfilePatch),
     fork(watchImageUpload),
     fork(socialAuthWatcher),
+    fork(addCommentWatcher),
+    fork(getCommentsWatcher),
+    fork(updateCommentWatcher),
+    fork(deleteCommentWatcher),
   ]);
 }

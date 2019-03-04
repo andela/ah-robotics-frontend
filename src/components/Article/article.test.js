@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleComponent from './index';
+import RatingsView from '../../views/ArticleView';
 
 describe('single article view tests', () => {
 it('it should render single article view', () => {
