@@ -31,12 +31,8 @@ p img {
 .article-body {
   color: black;
   margin-top: 30px;
-//<<<<<<< HEAD
-//  font-family: -apple-system, 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
-//=======
   letter-spacing: 1.4px;
   font-family: Raleway, sans-serif;
-//>>>>>>> feat(likeDislike): implement like/dislike functionality
   font-size: 18px;
 }
 
@@ -99,9 +95,6 @@ p img {
 }
 
 #like-dislike-btn {
-  //margin-left: 150px;
   display: flex;
   justify-content: flex-end;
-
 }
-
