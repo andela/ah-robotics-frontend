@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-   Image, Grid, Container, Icon, Label, Menu, Header, Placeholder, Segment,
+   Image, Grid, Container, Icon, Label, Menu, Header, List,
 } from 'semantic-ui-react';
 import './follow.scss';
-import './../Login/login.scss';
+import '../Login/login.scss';
 
 const FollowersComponent = (profile) => {
 const user = profile;
@@ -52,51 +52,17 @@ const user = profile;
               </Menu.Item>
             </Menu>
           </Grid.Row>
-          <Grid columns={3} stackable>
-    <Grid.Column>
-      <Segment raised>
-        <Placeholder>
-          <Placeholder.Header image>
-            <Placeholder.Line />
-            <Placeholder.Line />
-          </Placeholder.Header>
-          <Placeholder.Paragraph>
-            <Placeholder.Line length="medium" />
-            <Placeholder.Line length="short" />
-          </Placeholder.Paragraph>
-        </Placeholder>
-      </Segment>
-    </Grid.Column>
-
-    <Grid.Column>
-      <Segment raised>
-        <Placeholder>
-          <Placeholder.Header image>
-            <Placeholder.Line />
-            <Placeholder.Line />
-          </Placeholder.Header>
-          <Placeholder.Paragraph>
-            <Placeholder.Line length="medium" />
-            <Placeholder.Line length="short" />
-          </Placeholder.Paragraph>
-        </Placeholder>
-      </Segment>
-    </Grid.Column>
-            <Grid.Column>
-      <Segment raised>
-        <Placeholder>
-          <Placeholder.Header image>
-            <Placeholder.Line />
-            <Placeholder.Line />
-          </Placeholder.Header>
-          <Placeholder.Paragraph>
-            <Placeholder.Line length="medium" />
-            <Placeholder.Line length="short" />
-          </Placeholder.Paragraph>
-        </Placeholder>
-      </Segment>
-            </Grid.Column>
-  </Grid>
+          <List divided verticalAlign="middle">
+            {user.userFollowers && user.userFollowers.map((followerUser, index) => (
+              <List.Item key={followerUser.username}>
+                <List.Content>
+                  {index + 1}
+                  -
+                  {followerUser.username}
+                </List.Content>
+              </List.Item>
+            ))}
+          </List>
         </Grid>
 
       </Container>

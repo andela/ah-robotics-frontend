@@ -20,16 +20,15 @@ class FollowingView extends Component {
   render() {
     const { following } = this.props;
     const userProfile = following.profile;
+    const { following: followingUsers } = following;
     return (
-      following.isLoading
-          ? <h1>loading</h1>
-          : <FollowingComponent following={userProfile} />
+      <FollowingComponent following={userProfile} followingUsers={followingUsers} />
     );
   }
 }
 
 const mapStateToProps = state => ({
-  following: state.userProfile,
+  following: state.followUser,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

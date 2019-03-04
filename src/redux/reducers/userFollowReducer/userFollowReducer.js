@@ -13,12 +13,8 @@ import {
 } from '../../actions/userFollowActions/types';
 
 export const initialState = {
-    profileFollowData: {},
     error: {},
-    profileFollowersUpdate: false,
     isLoading: false,
-    Followers: 0,
-    Following: 0,
 };
 
 const userFollowReducer = (state = initialState, action) => {
@@ -27,7 +23,7 @@ const userFollowReducer = (state = initialState, action) => {
             return { ...state, ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOW_DATA_SUCCESS: {
-            return { ...state, isLoading: false };
+            return { ...state, ...action.payload, isLoading: false };
         }
         case PROFILE_FOLLOWERS_ERROR: {
             return { ...state, isLoading: true, errors: {} };

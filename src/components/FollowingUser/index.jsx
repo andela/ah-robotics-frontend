@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-   Image, Grid, Container, Icon, Label, Menu, Header, Placeholder, Segment, GridRow,
+   Image, Grid, Container, Icon, Label, Menu, Header, List,
 } from 'semantic-ui-react';
 import './following.scss';
-import './../Login/login.scss';
+import '../Login/login.scss';
 
 const FollowingComponent = (following) => {
 const user = following;
@@ -52,60 +52,18 @@ const user = following;
               </Menu.Item>
             </Menu>
           </Grid.Row>
-          <Grid columns={3} stackable>
-          <GridRow>
-            <p>
-                {' '}
-                <span id="bio-text">{user.following && user.following.username }</span>
-              </p>
-          </GridRow>
-    <Grid.Column>
-      <Segment raised>
-        <Placeholder>
-          <Placeholder.Header image>
-            <Placeholder.Line Placeholder="username" type="text" hello />
-            <Placeholder.Line Placeholder="bio" />
-          </Placeholder.Header>
-          <Placeholder.Paragraph>
-            <Placeholder.Line length='medium' />
-            <Placeholder.Line length='short' />
-          </Placeholder.Paragraph>
-        </Placeholder>
-      </Segment>
-    </Grid.Column>
-
-    <Grid.Column>
-      <Segment raised>
-        <Placeholder>
-          <Placeholder.Header image>
-            <Placeholder.Line />
-            <Placeholder.Line />
-          </Placeholder.Header>
-          <Placeholder.Paragraph>
-            <Placeholder.Line length='medium' />
-            <Placeholder.Line length='short' />
-          </Placeholder.Paragraph>
-        </Placeholder>
-      </Segment>
-    </Grid.Column>
-
-    <Grid.Column>
-      <Segment raised>
-        <Placeholder>
-          <Placeholder.Header image>
-            <Placeholder.Line />
-            <Placeholder.Line />
-          </Placeholder.Header>
-          <Placeholder.Paragraph>
-            <Placeholder.Line length='medium' />
-            <Placeholder.Line length='short' />
-          </Placeholder.Paragraph>
-        </Placeholder>
-      </Segment>
-    </Grid.Column>
-  </Grid>
+          <List divided verticalAlign="middle">
+            {user.followingUsers && user.followingUsers.map((followingUser, index) => (
+              <List.Item key={followingUser.username}>
+                <List.Content>
+                  {index + 1}
+                  -
+                  {followingUser.username}
+                </List.Content>
+              </List.Item>
+            ))}
+          </List>
         </Grid>
-
       </Container>
 );
 };

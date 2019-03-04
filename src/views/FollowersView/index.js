@@ -18,18 +18,17 @@ class FollowView extends Component {
   }
 
   render() {
-    const { profile } = this.props;
-    const userProfile = profile.profile;
+    const { followers } = this.props;
+    const userProfile = followers.profile;
+    const { followers: userFollowers } = followers
     return (
-      profile.isLoading
-          ? <h1>loading</h1>
-          : <FollowersComponent profile={userProfile} />
+      <FollowersComponent profile={userProfile} userFollowers={userFollowers} />
     );
   }
 }
 
 const mapStateToProps = state => ({
-  profile: state.userProfile,
+  followers: state.followUser,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
