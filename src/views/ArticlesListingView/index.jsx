@@ -24,7 +24,7 @@ class ArticlesView extends Component {
   }
 
   componentWillReceiveProps() {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 1000);
   }
 
   handlePaginationChange = (e, { activePage }) => {

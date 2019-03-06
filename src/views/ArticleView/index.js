@@ -55,8 +55,7 @@ export class ArticleView extends Component {
       <div>
         <ArticleComponent
           article={articles.data}
-          rating={
-            <RatingsView />}
+          rating={<RatingsView />}
           isFetching={articles.isFetching}
           handleEdit={this.handleEdit}
           imageInput={this.imageInput}
@@ -90,4 +89,5 @@ ArticleView.propTypes = {
   history: PropTypes.shape({}).isRequired,
   uploadImageAction: PropTypes.func.isRequired,
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleView);

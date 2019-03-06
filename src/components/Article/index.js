@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Container, Header, Image, Segment, Loader, Label, Grid, Message, Icon
+  Container, Header, Image, Segment, Loader, Label, Grid, Message, Icon,
 } from 'semantic-ui-react';
 import renderHtml from 'react-render-html';
 import PropTypes from 'prop-types';
@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import { getCurrentUser } from '../../utils/auth';
 import { deleteUserArticle } from '../../redux/actions/ArticleActions/actions';
 import ArticleButtonGroup from './ArticleButtonGroup';
+import LikeDislikeComponent from '../LikeDislike';
 
 const activeUser = getCurrentUser() || '';
 
@@ -109,7 +110,7 @@ class ArticleComponent extends Component {
               <Icon name="google" size="large" />
             </a>
             <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}/article/${fetchedArticle && fetchedArticle.slug}`} className="fb-xfbml-parse-ignore"><Icon name="facebook" size="large" /></a>
-            </div>
+          </div>
           <Segment basic>
             <Loader size="huge" active={updateImage.isUpdating} />
             {fetchedArticle && fetchedArticle.image ? (
@@ -153,6 +154,17 @@ class ArticleComponent extends Component {
           <span className="article-body">
             {fetchedArticle && renderHtml(fetchedArticle.body)}
           </span>
+          <div>
+
+            <LikeDislikeComponent
+              slug={fetchedArticle && fetchedArticle.slug}
+              likes={fetchedArticle && fetchedArticle.likes}
+              dislikes={fetchedArticle && fetchedArticle.dislikes}
+              likeStatus={fetchedArticle && fetchedArticle.like_status}
+              dislikeStatus={fetchedArticle && fetchedArticle.dislike_status}
+            />
+
+          </div>
 
         </Container>
       </Segment>
@@ -168,6 +180,7 @@ const mapStateToProps = ({ articles, deleteArticle, updateImage }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   deleteArticleAction: deleteUserArticle,
 }, dispatch);
+
 ArticleComponent.propTypes = {
   article: PropTypes.shape({}).isRequired,
   articles: PropTypes.shape({}).isRequired,

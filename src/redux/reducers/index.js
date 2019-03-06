@@ -17,6 +17,8 @@ import deleteCommentReducer from './CommentReducers/deleteCommentReducer';
 import updateArticlesReducer from './ArticlesReducer/updateArticleReducer';
 import deleteArticleReducer from './ArticlesReducer/deleteArticleReducer';
 import updateImageReducer from './ArticlesReducer/updateImageReducer';
+import likeReducer from './LikeDislikeReducer/likeReducer';
+import dislikeReducer from './LikeDislikeReducer/dislikeReducer';
 
 const rootReducer = combineReducers({
   login: loginReducer,
@@ -37,6 +39,8 @@ const rootReducer = combineReducers({
   updateArticle: updateArticlesReducer,
   deleteArticle: deleteArticleReducer,
   updateImage: updateImageReducer,
+  like: likeReducer,
+  dislike: dislikeReducer,
 });
 
 export default rootReducer;
