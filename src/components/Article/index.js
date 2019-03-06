@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import { getCurrentUser } from '../../utils/auth';
 import { deleteUserArticle } from '../../redux/actions/ArticleActions/actions';
 import ArticleButtonGroup from './ArticleButtonGroup';
+import LikeDislikeComponent from '../LikeDislike';
 
 const activeUser = getCurrentUser() || '';
 
@@ -153,6 +154,17 @@ class ArticleComponent extends Component {
           <span className="article-body">
             {fetchedArticle && renderHtml(fetchedArticle.body)}
           </span>
+          <div>
+
+            <LikeDislikeComponent
+              slug={fetchedArticle && fetchedArticle.slug}
+              likes={fetchedArticle && fetchedArticle.likes}
+              dislikes={fetchedArticle && fetchedArticle.dislikes}
+              likeStatus={fetchedArticle && fetchedArticle.like_status}
+              dislikeStatus={fetchedArticle && fetchedArticle.dislike_status}
+            />
+
+          </div>
 
         </Container>
       </Segment>
@@ -168,6 +180,7 @@ const mapStateToProps = ({ articles, deleteArticle, updateImage }) => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   deleteArticleAction: deleteUserArticle,
 }, dispatch);
+
 ArticleComponent.propTypes = {
   article: PropTypes.shape({}).isRequired,
   articles: PropTypes.shape({}).isRequired,

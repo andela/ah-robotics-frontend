@@ -1,0 +1,46 @@
+#thumbs-down:hover {
+  color: #943126;
+}
+
+#thumbs-down, #thumbs-up {
+  color: grey;
+}
+
+#thumbs-up:hover {
+  color: #3498db;
+}
+
+#thumbs-up-active {
+  color: #3498db;
+}
+
+#thumbs-down-active {
+  color: #943126;
+}
+
+#like-dislike-section {
+  //background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+#like-dislike-error {
+  align-content: center;
+  width: 100%;
+}
+
+#like-dislike-icons {
+  align-self: center;
+  display: flex;
+}
+
+#like-dislike-item {
+  display: flex;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#like-error-text {
+  text-align: center;
+}
+
