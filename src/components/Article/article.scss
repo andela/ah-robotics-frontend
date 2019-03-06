@@ -1,3 +1,4 @@
+$primary-color: #00d0a0;
 .article-image{
     margin-top: 2em;
     margin-bottom: 1.5em;
@@ -36,6 +37,7 @@
     font-weight: 700;
     color: #383838 !important;
   }
+
   .float-right{
     float: right;
     margin-top: -15px;
@@ -48,3 +50,36 @@
    height: 0;
    clear: both;
 }
+.ui.basic.buttons {
+  margin-right: 4rem;
+}
+.article-edit i{
+  color: $primary-color;
+}
+.article-delete i{
+  color:red;
+}
+
+#delete-article-body {
+  height: 120px;
+}
+#delete-text-section {
+  align-items: center;
+  padding-bottom: 10px;
+}
+#delete-popup-text {
+  font-size: large;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#cancel-article-button {
+  background-color: #A9A9A9;
+  border-bottom-left-radius: 20px !important;
+  border-top-left-radius: 20px 20px !important;
+}
+#delete-article-button {
+  background-color: #B22222;
+  border-bottom-right-radius: 20px !important;
+  border-top-right-radius: 20px 20px !important;
+}
+

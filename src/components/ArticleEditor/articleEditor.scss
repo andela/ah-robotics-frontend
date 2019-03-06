@@ -6,7 +6,9 @@
   float: left;
   width: 100%;
 }
-
+.editor-container{
+  margin-top: 5%;
+}
 .cke_reset {
   min-height: 400px;
   width: 100%;
@@ -16,6 +18,8 @@
   width: 60%;
   margin-bottom: 1em;
   margin-top: 1em;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .editor-error {
@@ -29,4 +33,17 @@ color: #00d0a0;
 }
 .ui.green.button {
   margin: 1em -0.2em 1em 1em;
+  margin: 1em;
+  margin-right: -0.2em;
+}
+.react-tagsinput {
+  border: 0 !important;
+  overflow: hidden;
+  padding-left: 0 !important;
+}
+.react-tagsinput-input {
+  padding-left: 0;
+}
+.react-tagsinput-tag {
+  margin-top: 2%;
 }

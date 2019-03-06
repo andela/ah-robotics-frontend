@@ -1,5 +1,5 @@
-import postArticlesReducer, { initialState } from './postArticlesReducer';
-import * as types from '../../actions/ArticleActions/types';
+import postArticlesReducer, { initialState } from '../postArticlesReducer';
+import * as types from '../../../actions/ArticleActions/types';
 
 describe('Post article reducer tests', () => {
   it('should have an initial state', () => {

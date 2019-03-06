@@ -34,9 +34,7 @@ class profileEditView extends Component {
           const { image } = this.state;
           imageData.data = { image };
           const user = JSON.parse(localStorage.getItem('user'));
-          const token = JSON.parse(localStorage.getItem('accessToken'));
           const { username } = user;
-          imageData.token = token;
           imageData.username = username;
           const { userImageUpload: uploadImage } = this.props;
           uploadImage(imageData);
@@ -82,8 +80,8 @@ const mapStateToProps = state => ({
   profile: state.userProfile,
 });
 
-const mapDispatchToprops = dispatch => bindActionCreators({
+const mapDispatchToProps = dispatch => bindActionCreators({
   profileUpdate, userImageUpload,
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToprops)(profileEditView);
+export default connect(mapStateToProps, mapDispatchToProps)(profileEditView);

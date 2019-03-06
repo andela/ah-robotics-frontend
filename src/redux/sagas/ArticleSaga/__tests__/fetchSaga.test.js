@@ -3,8 +3,8 @@ import { put, takeEvery } from 'redux-saga/effects';
 import fetchArticleWatcher, {
   fetchArticleWorker,
   apiClient,
-} from './fetchArticlesSaga';
-import * as types from '../../actions/ArticleActions/types';
+} from '../fetchArticlesSaga';
+import * as types from '../../../actions/ArticleActions/types';
 
 let dispatchedActions = [];
 const fakeStore = {

@@ -1,9 +1,9 @@
-import resetPasswordReducer from './resetpasswordreducer';
+import resetPasswordReducer, { initialState } from './resetpasswordreducer';
 import { RESET_PASSWORD_START, RESET_PASSWORD_SUCCESS, RESET_PASSWORD_ERROR } from '../../actions/resetPasswordActions/resetPasswordTypes';
 
 describe('resetPassword reducer tests', () => {
   it('it should have an initial state', () => {
-    expect(resetPasswordReducer(resetPasswordReducer.initialState, {})).toEqual({
+    expect(resetPasswordReducer(initialState, {})).toEqual({
 email: '', errors: {}, success: false, message: {},
 });
   });

@@ -15,6 +15,10 @@ import addCommentWatcher from './CommentSaga/addCommentSaga';
 import getCommentsWatcher from './CommentSaga/getCommentsSaga';
 import deleteCommentWatcher from './CommentSaga/deleteCommentSaga';
 import updateCommentWatcher from './CommentSaga/updateCommentSaga';
+import updateArticleWatcher from './ArticleSaga/updateArticleSaga';
+import deleteArticleWatcher from './ArticleSaga/deleteArticleSaga';
+import watchArticleImageUpload from './ArticleSaga/uploadImageSaga';
+
 
 export default function* rootSaga() {
   yield all([
@@ -34,5 +38,8 @@ export default function* rootSaga() {
     fork(getCommentsWatcher),
     fork(updateCommentWatcher),
     fork(deleteCommentWatcher),
+    fork(updateArticleWatcher),
+    fork(deleteArticleWatcher),
+    fork(watchArticleImageUpload),
   ]);
 }

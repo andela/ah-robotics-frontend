@@ -4,7 +4,7 @@ import {
 } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import './profile.scss';
-import './../Login/login.scss';
+import '../Login/login.scss';
 
 const ProfileComponent = (profile) => {
 const user = profile;

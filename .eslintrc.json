@@ -5,7 +5,8 @@
     "node": true
   },
   "rules": {
-    "no-undef": "off", 
+    "no-undef": "off",
+    "import/no-named-as-default": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],

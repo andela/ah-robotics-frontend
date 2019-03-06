@@ -1,5 +1,5 @@
-import fetchArticlesReducer, { initialState } from './fetchArticlesReducer';
-import * as types from '../../actions/ArticleActions/types';
+import fetchArticlesReducer, { initialState } from '../fetchArticlesReducer';
+import * as types from '../../../actions/ArticleActions/types';
 
 describe('Fetch articles reducer tests', () => {
   it('should have an initial state', () => {

@@ -12,7 +12,7 @@ export const setCurrentUser = (user) => {
   const activeUser = user || null;
   localStorage.setItem('user', JSON.stringify(activeUser));
 };
-
+export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
 export const getAccessToken = () => localStorage.getItem(AUTH_TOKEN);
 
 export const isLoggedIn = () => {
@@ -30,7 +30,7 @@ export const logout = () => {
 };
 
 export const api = axios.create({
-  baseURL: 'https://ah-robotics-staging.herokuapp.com/api/v1',
+  baseURL: 'https://ah-robotics-staging-pr-33.herokuapp.com/api/v1',
   headers: getAccessToken() ? {
     Authorization: `token  ${getAccessToken()}`,
   } : {},

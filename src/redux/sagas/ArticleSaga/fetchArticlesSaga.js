@@ -1,6 +1,6 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { api } from '../../../utils/auth';
-import * as types from '../../actions/ArticleActions/articles.action.types';
+import * as types from '../../actions/ArticleActions/types';
 
 const apiUrl = '/articles/';
 
