@@ -141,15 +141,15 @@ class ArticleComponent extends Component {
           </span>
           <div>
 
-          <LikeDislikeComponent
-            slug={fetchedArticle && fetchedArticle.slug}
-            likes={fetchedArticle && fetchedArticle.likes}
-            dislikes={fetchedArticle && fetchedArticle.dislikes}
-            likeStatus={fetchedArticle && fetchedArticle.like_status}
-            dislikeStatus={fetchedArticle && fetchedArticle.dislike_status}
-          />
+            <LikeDislikeComponent
+              slug={fetchedArticle && fetchedArticle.slug}
+              likes={fetchedArticle && fetchedArticle.likes}
+              dislikes={fetchedArticle && fetchedArticle.dislikes}
+              likeStatus={fetchedArticle && fetchedArticle.like_status}
+              dislikeStatus={fetchedArticle && fetchedArticle.dislike_status}
+            />
 
-        </div>
+          </div>
 
         </Container>
       </Segment>

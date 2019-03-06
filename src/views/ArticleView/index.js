@@ -10,11 +10,7 @@ import AddCommentComponent
   from '../../components/Comment/addComment';
 import CommentsListComponent
   from '../../components/Comment/commentList';
-import {
-  dislikeRequest,
-  likeRequest,
-}
-  from '../../redux/actions/LikeDislikeActions/actions';
+
 
 export class ArticleView extends Component {
   imageInput = React.createRef();
@@ -86,14 +82,12 @@ const mapDispatchToProps = dispatch => bindActionCreators({
   uploadImageAction: articleImageUpload,
 }, dispatch);
 
-ArticleView.propTypes = ({
+ArticleView.propTypes = {
   match: PropTypes.shape({}).isRequired,
   fetchSingle: PropTypes.func.isRequired,
   articles: PropTypes.shape({}).isRequired,
   history: PropTypes.shape({}).isRequired,
   uploadImageAction: PropTypes.func.isRequired,
-  likeRequest,
-  dislikeRequest,
-}, dispatch);
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleView);

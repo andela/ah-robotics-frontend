@@ -17,7 +17,6 @@ import deleteCommentReducer from './CommentReducers/deleteCommentReducer';
 import updateArticlesReducer from './ArticlesReducer/updateArticleReducer';
 import deleteArticleReducer from './ArticlesReducer/deleteArticleReducer';
 import updateImageReducer from './ArticlesReducer/updateImageReducer';
-import likeDislikeReducer from './LikeDislikeReducer/likeDislikeReducer';
 import likeReducer from './LikeDislikeReducer/likeReducer';
 import dislikeReducer from './LikeDislikeReducer/dislikeReducer';
 
@@ -40,7 +39,6 @@ const rootReducer = combineReducers({
   updateArticle: updateArticlesReducer,
   deleteArticle: deleteArticleReducer,
   updateImage: updateImageReducer,
-  likeDislike: likeDislikeReducer,
   like: likeReducer,
   dislike: dislikeReducer,
 });
