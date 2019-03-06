@@ -18,7 +18,8 @@ import updateCommentWatcher from './CommentSaga/updateCommentSaga';
 import updateArticleWatcher from './ArticleSaga/updateArticleSaga';
 import deleteArticleWatcher from './ArticleSaga/deleteArticleSaga';
 import watchArticleImageUpload from './ArticleSaga/uploadImageSaga';
-
+import watchLikeArticle from './LikeDislikeSaga/likeSaga';
+import watchDislikeArticle from './LikeDislikeSaga/dislikeSaga';
 
 export default function* rootSaga() {
   yield all([
@@ -41,5 +42,7 @@ export default function* rootSaga() {
     fork(updateArticleWatcher),
     fork(deleteArticleWatcher),
     fork(watchArticleImageUpload),
+    fork(watchLikeArticle),
+    fork(watchDislikeArticle),
   ]);
 }

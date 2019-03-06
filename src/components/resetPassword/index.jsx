@@ -56,7 +56,7 @@ const ResetPasswordComponent = ({ onChange, handleSubmit, response }) => (
           <NavLink to="/login"> Log In</NavLink>
           {' '}
           or
-          <NavLink to="/login"> Sign Up</NavLink>
+          <NavLink to="/login"> Register</NavLink>
           {' '}
         </p>
       </Grid.Column>
