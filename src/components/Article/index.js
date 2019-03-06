@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Container, Header, Image, Segment, Loader, Label, Grid, Message,
+  Container, Header, Image, Segment, Loader, Label, Grid, Message, Icon
 } from 'semantic-ui-react';
 import renderHtml from 'react-render-html';
 import PropTypes from 'prop-types';
@@ -95,6 +95,21 @@ class ArticleComponent extends Component {
            ) : null }
           <Header id="single-article-head" as="h1">{fetchedArticle && fetchedArticle.title}</Header>
           <p id="article-description">{fetchedArticle && fetchedArticle.description}</p>
+          <div>
+            <a
+              className="twitter-share-button"
+              href={`https://twitter.com/intent/tweet?text=${fetchedArticle && fetchedArticle.title}, ${fetchedArticle && fetchedArticle.description}, ${window.location.href}`}
+            >
+              <Icon
+                name="twitter"
+                size="large"
+              />
+            </a>
+            <a href={`https://plus.google.com/share?url=${window.location.href}`} target="_blank" rel="noopener noreferrer">
+              <Icon name="google" size="large" />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}/article/${fetchedArticle && fetchedArticle.slug}`} className="fb-xfbml-parse-ignore"><Icon name="facebook" size="large" /></a>
+            </div>
           <Segment basic>
             <Loader size="huge" active={updateImage.isUpdating} />
             {fetchedArticle && fetchedArticle.image ? (
