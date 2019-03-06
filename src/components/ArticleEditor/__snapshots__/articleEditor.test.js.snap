@@ -36,6 +36,42 @@ exports[`test article editor component it should match snapshot 1`] = `
           required={true}
           transparent={true}
         />
+        <TagsInput
+          addKeys={
+            Array [
+              9,
+              13,
+            ]
+          }
+          addOnBlur={false}
+          addOnPaste={false}
+          className="react-tagsinput"
+          disabled={false}
+          focusedClassName="react-tagsinput--focused"
+          inputProps={Object {}}
+          maxTags={-1}
+          onChange={[MockFunction]}
+          onlyUnique={false}
+          pasteSplit={[Function]}
+          preventSubmit={true}
+          removeKeys={
+            Array [
+              8,
+            ]
+          }
+          renderInput={[Function]}
+          renderLayout={[Function]}
+          renderTag={[Function]}
+          tagDisplayProp={null}
+          tagProps={
+            Object {
+              "className": "react-tagsinput-tag",
+              "classNameRemove": "react-tagsinput-remove",
+            }
+          }
+          validationRegex={/\\.\\*/}
+          value={Array []}
+        />
         <p
           className="success-message"
         />

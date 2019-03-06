@@ -13,6 +13,7 @@ class CreateArticle extends Component {
     body: '',
     errors: {},
     tagList: [],
+    tags: [],
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -26,11 +27,16 @@ class CreateArticle extends Component {
     }
   }
 
+  handleChange = (tags) => {
+    this.setState({ tags });
+  };
+
   handleArticlePost = () => {
     const { postArticle: postUserArticle } = this.props;
     const data = {
       ...this.state,
     };
+    data.tagList = data.tags;
     postUserArticle(data);
   };
 
@@ -53,6 +59,8 @@ class CreateArticle extends Component {
         createArticle={createArticle}
         handleArticlePost={this.handleArticlePost}
         body={body}
+        state={this.state}
+        handleChange={this.handleChange}
       />
     );
   }
