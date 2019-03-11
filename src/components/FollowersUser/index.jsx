@@ -2,21 +2,21 @@ import React from 'react';
 import {
    Image, Grid, Container, Icon, Label, Menu, Header, List,
 } from 'semantic-ui-react';
-import './following.scss';
+import './follow.scss';
 import '../Login/login.scss';
 
-const FollowingComponent = (following) => {
-const user = following;
+const FollowersComponent = (profile) => {
+const user = profile;
     return (
       <Container>
         <Grid>
           <Grid.Row className="float">
             <Grid.Column width={4}>
-              <Image id="sample-img" src={user.following && user.following.image} size="medium" circular className="App-logo" color="red" alt="logo" />
+              <Image id="sample-img" src={user.profile && user.profile.image} size="medium" circular className="App-logo" color="red" alt="logo" />
             </Grid.Column>
             <Grid.Column width={6}>
               <Header id="sample-header" as="h3">
-                <span id="user-username">{user.following && user.following.username }</span>
+                <span id="user-username">{user.profile && user.profile.username }</span>
               </Header>
             </Grid.Column>
           </Grid.Row>
@@ -25,27 +25,28 @@ const user = following;
               <Menu.Item as="a">
                 <Icon name="users" />
                 {' '}
-                Following
+                Followers
                 <Label color="teal" floating>
-                  {user.following && user.following.following_count }
+                  {user.profile && user.profile.followers}
                 </Label>
               </Menu.Item>
             </Menu>
           </Grid.Row>
           <List divided verticalAlign="middle">
-            <h2>List of users you are following </h2>
-            {user.followingUsers && user.followingUsers.map((followingUser, index) => (
-              <List.Item key={followingUser.username}>
+            <h2>List of users following you</h2>
+            {user.userFollowers && user.userFollowers.map((followerUser, index) => (
+              <List.Item key={followerUser.username}>
                 <List.Content>
                   {index + 1}
                   -
-                  <a href={`profile/${followingUser.username}`}>{followingUser.username}</a>
+                  <a href={`profile/${followerUser.username}`}>{followerUser.username}</a>
                 </List.Content>
               </List.Item>
             ))}
           </List>
         </Grid>
+
       </Container>
 );
 };
-export default FollowingComponent;
+export default FollowersComponent;

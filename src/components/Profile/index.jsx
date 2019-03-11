@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-   Image, Grid, Container, Icon, Label, Menu, Header, GridRow, Button,
+   Image, Grid, Container, Icon, Label, Menu, Header, GridRow, Button, Message,
 } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import './profile.scss';
@@ -23,6 +23,10 @@ const user = profile;
                 {' '}
                 <span id="bio-text">{user.profile && user.profile.bio }</span>
               </p>
+              { (user.followUser.detail) ? (<Message color="green">{ user.followUser.detail.message }</Message>) : null }
+              { (user.followUser.errors) ? (<Message color="red">{ user.followUser.errors.errors.detail.error }</Message>) : null}
+              { user.profile && (user.profile.following) ? <Button loading={user.followUser.isLoading} onClick={user.handleUnfollow && user.handleUnfollow} color="red">unfollow</Button> : <Button loading={user.followUser.isLoading} onClick={user.handleFollow && user.handleFollow}>Follow</Button> }
+              { (user.followUser.errors) ? (<p style={{ color: 'red' }}>{ user.followUser.errors.errors.detail.error }</p>) : null}
             </Grid.Column>
           </Grid.Row>
           <GridRow>
@@ -35,7 +39,8 @@ const user = profile;
               <Menu.Item as="a">
                 <Icon name="users" />
                 {' '}
-                Followers
+                {/* Followers */}
+                <a href id="edit-profile-btn" positive><NavLink to="followersprofile"><span id="edit-profile">Followers</span></NavLink></a>
                 <Label color="teal" floating>
                   {user.profile && user.profile.followers}
                 </Label>
@@ -43,7 +48,8 @@ const user = profile;
               <Menu.Item as="a">
                 <Icon name="users" />
                 {' '}
-                Following
+                {/* Following */}
+                <a href id="edit-profile-btn" positive><NavLink to="followingprofile"><span id="edit-profile">Following</span></NavLink></a>
                 <Label color="teal" floating>
                   {user.profile && user.profile.following_count }
                 </Label>

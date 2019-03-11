@@ -5,7 +5,6 @@ import {
 import { NavLink } from 'react-router-dom';
 import './profile.scss';
 import PropTypes from 'prop-types';
-// import imglove from '../Images/lov.jpeg';
 
 const ProfileEditComponent = ({
   userProfile, profile, handleSubmit, onChange, onImageChange,
@@ -14,7 +13,6 @@ const ProfileEditComponent = ({
     <Segment placeholder>
       <Form enctype="multipart/formdata">
         <Grid columns={2} relaxed="very" stackable>
-          {/* {console.log(profile.profileData)} */}
           <Grid.Column>
             <Grid.Column width={4}>
               <Image id="sample-edit-img" src={userProfile && userProfile.image} size="medium" circular className="App-logo" color="red" alt="logo" />
